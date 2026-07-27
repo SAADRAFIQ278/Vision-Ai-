@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Pricing – VisionAI | AI Video Generator Plans</title>
+
+    <meta name="description" content="Choose the perfect VisionAI plan for your needs. Flexible pricing for individuals, teams, and enterprises. Start creating stunning AI videos today." />
+    <meta name="keywords" content="AI video pricing, VisionAI plans, video generator pricing, AI video cost, subscription plans" />
+    <meta name="author" content="VisionAI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://visionai.com/pricing.html" />
+
+    <meta property="og:title" content="VisionAI Pricing – AI Video Generator Plans" />
+    <meta property="og:description" content="Choose the perfect VisionAI plan. Flexible pricing for creators, teams, and enterprises." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://visionai.com/pricing.html" />
+    <meta property="og:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VisionAI Pricing" />
+    <meta name="twitter:description" content="Choose the perfect VisionAI plan for your video creation needs." />
+    <meta name="twitter:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="pricing.css" />
+</head>
+<body>
+
+    <!-- ===== LOADER ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-ring">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="loader-text">VisionAI</p>
+    </div>
+
+    <!-- ===== STICKY NAVBAR ===== -->
+    <header id="navbar" role="banner" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="VisionAI Home">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Vision<span>AI</span></span>
+            </a>
+
+            <nav class="nav-links" role="navigation" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="models.html">AI Models</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html" class="active">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </header>
+
+    <!-- ===== PRICING HERO ===== -->
+    <section class="pricing-hero" aria-label="Pricing hero">
+        <div class="container">
+            <span class="section-tag">Pricing</span>
+            <h1 class="section-title">Choose Your <span class="gradient-text">Plan</span></h1>
+            <p class="section-desc">
+                Flexible pricing designed to fit your needs. Start creating stunning AI videos
+                with the plan that works best for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== PRICING TOGGLE ===== -->
+    <section class="pricing-toggle-section" aria-label="Billing toggle">
+        <div class="container">
+            <div class="pricing-toggle">
+                <span class="toggle-label active" id="monthlyLabel">Monthly</span>
+                <div class="toggle-track" id="billingToggle" role="button" tabindex="0" aria-label="Toggle billing period" aria-checked="false">
+                    <span class="toggle-thumb"></span>
+                </div>
+                <span class="toggle-label" id="annualLabel">Annual</span>
+                <span class="toggle-save">Save 20%</span>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING CARDS ===== -->
+    <section class="pricing-cards" aria-label="Pricing plans">
+        <div class="container">
+            <div class="pricing-grid">
+                <!-- Starter Plan -->
+                <div class="pricing-card" data-plan="starter" data-reveal data-delay="100">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Starter</h4>
+                        <p class="pricing-desc">For individual creators</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="19" data-annual="15">19</span>
+                        <span class="period">/mo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>50 video generations / mo</li>
+                        <li>720p export quality</li>
+                        <li>10 professional templates</li>
+                        <li>Basic AI models</li>
+                        <li>Community support</li>
+                        <li>Watermark included</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-outline btn-block">Get Started</a>
+                </div>
+
+                <!-- Pro Plan (Featured) -->
+                <div class="pricing-card featured" data-plan="pro" data-reveal data-delay="150">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Pro</h4>
+                        <p class="pricing-desc">For professional creators</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="49" data-annual="39">49</span>
+                        <span class="period">/mo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>500 video generations / mo</li>
+                        <li>4K export quality</li>
+                        <li>All templates (200+)</li>
+                        <li>All AI models</li>
+                        <li>Priority support</li>
+                        <li>Commercial license</li>
+                        <li>No watermark</li>
+                        <li>API access</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-primary btn-block">Get Started</a>
+                </div>
+
+                <!-- Enterprise Plan -->
+                <div class="pricing-card" data-plan="enterprise" data-reveal data-delay="200">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Enterprise</h4>
+                        <p class="pricing-desc">For large teams & orgs</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount" data-monthly="99" data-annual="79">99</span>
+                        <span class="period">/mo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited generations</li>
+                        <li>8K export quality</li>
+                        <li>Custom templates</li>
+                        <li>Private model deployment</li>
+                        <li>24/7 dedicated support</li>
+                        <li>SSO & enterprise security</li>
+                        <li>Custom integrations</li>
+                        <li>SLA guarantee</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-outline btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING COMPARISON TABLE ===== -->
+    <section class="pricing-comparison" aria-label="Plan comparison">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Compare</span>
+                <h2 class="section-title">Find Your <span class="gradient-text">Perfect Fit</span></h2>
+                <p class="section-desc">
+                    Detailed comparison of all VisionAI plans to help you make the right choice.
+                </p>
+            </div>
+
+            <div class="comparison-wrapper" data-reveal>
+                <div class="comparison-scroll">
+                    <table class="pricing-comparison-table">
+                        <thead>
+                            <tr>
+                                <th>Feature</th>
+                                <th>Starter</th>
+                                <th>Pro</th>
+                                <th>Enterprise</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Video Generations</td>
+                                <td>50 / mo</td>
+                                <td class="highlight">500 / mo</td>
+                                <td class="highlight">Unlimited</td>
+                            </tr>
+                            <tr>
+                                <td>Max Resolution</td>
+                                <td>720p</td>
+                                <td class="highlight">4K</td>
+                                <td class="highlight">8K</td>
+                            </tr>
+                            <tr>
+                                <td>Templates</td>
+                                <td>10</td>
+                                <td class="highlight">200+</td>
+                                <td class="highlight">Custom</td>
+                            </tr>
+                            <tr>
+                                <td>AI Models</td>
+                                <td>Basic</td>
+                                <td class="highlight">All</td>
+                                <td class="highlight">All + Private</td>
+                            </tr>
+                            <tr>
+                                <td>Commercial License</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>No Watermark</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>API Access</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Priority Support</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Dedicated Support</td>
+                                <td class="cross">✕</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>SSO & Enterprise Security</td>
+                                <td class="cross">✕</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>Custom Integrations</td>
+                                <td class="cross">✕</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                            </tr>
+                            <tr>
+                                <td>SLA Guarantee</td>
+                                <td class="cross">✕</td>
+                                <td class="cross">✕</td>
+                                <td class="check">✓</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== PRICING FAQ ===== -->
+    <section class="pricing-faq" aria-label="Pricing FAQ">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Pricing <span class="gradient-text">Questions</span></h2>
+                <p class="section-desc">
+                    Common questions about VisionAI pricing and plans.
+                </p>
+            </div>
+
+            <div class="pricing-faq-grid">
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I switch plans later?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Do you offer a free trial?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 7-day free trial on all plans. No credit card required. Start creating AI videos today.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What payment methods do you accept?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for enterprise plans.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I cancel my subscription anytime?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Absolutely. You can cancel your subscription at any time from your account settings. No cancellation fees.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is there a discount for annual billing?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! Annual billing saves you 20% compared to monthly billing. Switch to annual in the toggle above.</p>
+                    </div>
+                </div>
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What happens if I exceed my plan limits?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>You'll receive a notification when you're approaching your limit. You can purchase additional generations or upgrade your plan.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-card" data-reveal>
+                <div class="cta-content">
+                    <h2 class="cta-title">Start Creating with <span class="gradient-text">VisionAI</span> Today</h2>
+                    <p class="cta-desc">
+                        Join thousands of creators already using VisionAI. Choose your plan and
+                        start generating stunning AI videos in minutes.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg">
+                            Start Free Trial
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo" aria-label="Footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Vision<span>AI</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        VisionAI is the premier AI video generation platform for creators,
+                        marketers, and businesses. Transform your ideas into stunning videos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">🔗</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-desc">Stay updated with the latest features and releases.</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                    <p id="newsletterMessage" class="newsletter-message"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video">✕</button>
+            <div class="video-modal-body">
+                <video id="modalVideo" controls playsinline>
+                    <source src="" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Action completed successfully.</span>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="js/app.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/ai-demo.js" defer></script>
+
+    <!-- Page-specific JS -->
+    <script src="pricing.js" defer></script>
+</body>
+</html>

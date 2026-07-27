@@ -1,0 +1,627 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Documentation – VisionAI | AI Video Generator Docs</title>
+
+    <meta name="description" content="Comprehensive documentation for VisionAI. Learn how to use our AI video generation platform, API integration, and troubleshooting guides." />
+    <meta name="keywords" content="VisionAI docs, AI video documentation, API guide, video generation tutorials, VisionAI help" />
+    <meta name="author" content="VisionAI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://visionai.com/docs.html" />
+
+    <meta property="og:title" content="VisionAI Documentation – AI Video Platform" />
+    <meta property="og:description" content="Comprehensive documentation for VisionAI. Learn how to use our AI video generation platform." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://visionai.com/docs.html" />
+    <meta property="og:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VisionAI Documentation" />
+    <meta name="twitter:description" content="Comprehensive documentation for VisionAI." />
+    <meta name="twitter:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="docs.css" />
+</head>
+<body>
+
+    <!-- ===== LOADER ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-ring">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="loader-text">VisionAI</p>
+    </div>
+
+    <!-- ===== STICKY NAVBAR ===== -->
+    <header id="navbar" role="banner" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="VisionAI Home">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Vision<span>AI</span></span>
+            </a>
+
+            <nav class="nav-links" role="navigation" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="models.html">AI Models</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="docs.html" class="active">Docs</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </header>
+
+    <!-- ===== DOCS HERO ===== -->
+    <section class="docs-hero" aria-label="Documentation hero">
+        <div class="container">
+            <span class="section-tag">Documentation</span>
+            <h1 class="section-title">Build with <span class="gradient-text">VisionAI</span></h1>
+            <p class="section-desc">
+                Everything you need to know about using VisionAI, from getting started
+                to advanced API integrations and troubleshooting.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== DOCS LAYOUT ===== -->
+    <section class="docs-layout-section" aria-label="Documentation content">
+        <div class="container">
+            <div class="docs-layout">
+                <!-- ===== SIDEBAR ===== -->
+                <aside class="docs-sidebar" aria-label="Documentation navigation">
+                    <nav class="docs-nav">
+                        <ul>
+                            <li><a href="#getting-started" class="active">Getting Started</a></li>
+                            <li><a href="#quick-start">Quick Start Guide</a></li>
+                            <li><a href="#models">AI Models Overview</a></li>
+                            <li><a href="#templates">Using Templates</a></li>
+                            <li><a href="#generation">Video Generation</a></li>
+                            <li><a href="#export">Export & Sharing</a></li>
+                            <li><a href="#api">API Reference</a></li>
+                            <li><a href="#authentication">Authentication</a></li>
+                            <li><a href="#webhooks">Webhooks</a></li>
+                            <li><a href="#troubleshooting">Troubleshooting</a></li>
+                            <li><a href="#faq">FAQ</a></li>
+                            <li><a href="#support">Support</a></li>
+                        </ul>
+                    </nav>
+                </aside>
+
+                <!-- ===== MAIN CONTENT ===== -->
+                <main class="docs-content" aria-label="Documentation main content">
+                    <!-- Getting Started -->
+                    <section id="getting-started">
+                        <h2>Getting Started with VisionAI</h2>
+                        <p>
+                            Welcome to VisionAI! This guide will help you get started with our
+                            AI video generation platform. Whether you're a content creator,
+                            marketer, or developer, VisionAI makes it easy to create stunning
+                            videos with artificial intelligence.
+                        </p>
+                        <h3>What is VisionAI?</h3>
+                        <p>
+                            VisionAI is a cutting-edge AI video generation platform that turns
+                            text prompts into professional-quality videos. Our advanced AI models
+                            understand your creative vision and generate cinematic videos with
+                            realistic motion, lighting, and style.
+                        </p>
+                        <div class="docs-code">
+                            <span class="code-comment">// Example: Generate a video with VisionAI</span><br />
+                            const visionAI = new VisionAI({ apiKey: 'your-api-key' });<br />
+                            <br />
+                            const video = await visionAI.generate({<br />
+                            &nbsp;&nbsp;prompt: 'A futuristic city with flying cars, cyberpunk style, 4k',<br />
+                            &nbsp;&nbsp;model: 'visionai-pro',<br />
+                            &nbsp;&nbsp;duration: 30,<br />
+                            &nbsp;&nbsp;resolution: '4k'<br />
+                            });
+                        </div>
+                        <p>
+                            VisionAI offers three AI models: <strong>VisionAI-Pro</strong> for
+                            cinematic quality, <strong>VisionAI-Studio</strong> for balanced
+                            performance, and <strong>VisionAI-Lite</strong> for fast prototyping.
+                        </p>
+                    </section>
+
+                    <!-- Quick Start -->
+                    <section id="quick-start">
+                        <h2>Quick Start Guide</h2>
+                        <p>
+                            Follow these steps to create your first AI video with VisionAI:
+                        </p>
+                        <h3>Step 1: Sign Up</h3>
+                        <p>
+                            Create your free account at <a href="signup.html">VisionAI Sign Up</a>.
+                            No credit card required for the free trial.
+                        </p>
+                        <h3>Step 2: Write Your Prompt</h3>
+                        <p>
+                            Describe the video you want to create. Be specific about the style,
+                            mood, subject, and any visual elements you want to include.
+                        </p>
+                        <div class="docs-code">
+                            <span class="code-comment">// Example prompts:</span><br />
+                            "A cinematic landscape with dramatic sunset lighting, epic mountains, 8k"<br />
+                            "An animated explainer video for a tech startup, modern design, colorful"<br />
+                            "A product showcase with smooth 3D transitions and premium feel"
+                        </div>
+                        <h3>Step 3: Choose Your Model</h3>
+                        <p>
+                            Select the AI model that best fits your needs. For the highest quality,
+                            choose VisionAI-Pro. For faster results, choose VisionAI-Lite.
+                        </p>
+                        <h3>Step 4: Generate & Export</h3>
+                        <p>
+                            Click "Generate" and watch as VisionAI creates your video. Once
+                            complete, you can preview, edit, or export your video in your
+                            preferred format and resolution.
+                        </p>
+                    </section>
+
+                    <!-- AI Models -->
+                    <section id="models">
+                        <h2>AI Models Overview</h2>
+                        <p>
+                            VisionAI offers three powerful AI models optimized for different
+                            use cases and quality requirements.
+                        </p>
+                        <h3>VisionAI-Pro</h3>
+                        <p>
+                            Our flagship model for cinematic quality. Generates photorealistic
+                            videos with advanced motion synthesis, dynamic lighting, and
+                            exceptional detail. Best for film, commercials, and high-end
+                            productions.
+                        </p>
+                        <ul>
+                            <li>Resolution: Up to 8K</li>
+                            <li>Render Speed: ~45s per minute of video</li>
+                            <li>Style Options: 200+</li>
+                            <li>Motion Quality: ★★★★★</li>
+                        </ul>
+                        <h3>VisionAI-Studio</h3>
+                        <p>
+                            The perfect balance of quality and speed. Ideal for professional
+                            creators who need high-quality videos with fast turnaround times.
+                        </p>
+                        <ul>
+                            <li>Resolution: Up to 4K</li>
+                            <li>Render Speed: ~25s per minute of video</li>
+                            <li>Style Options: 120+</li>
+                            <li>Motion Quality: ★★★★</li>
+                        </ul>
+                        <h3>VisionAI-Lite</h3>
+                        <p>
+                            Lightning-fast generation for social media, drafts, and rapid
+                            prototyping. Great for high-volume content creation.
+                        </p>
+                        <ul>
+                            <li>Resolution: Up to 1080p</li>
+                            <li>Render Speed: ~12s per minute of video</li>
+                            <li>Style Options: 60+</li>
+                            <li>Motion Quality: ★★★</li>
+                        </ul>
+                    </section>
+
+                    <!-- Templates -->
+                    <section id="templates">
+                        <h2>Using Templates</h2>
+                        <p>
+                            VisionAI provides a library of professionally designed templates
+                            to accelerate your video creation process. Templates include
+                            pre-configured styles, transitions, and layouts.
+                        </p>
+                        <h3>How to Use Templates</h3>
+                        <p>
+                            1. Browse the <a href="templates.html">Templates Gallery</a><br />
+                            2. Click "Use Template" to load it into your project<br />
+                            3. Customize the content, text, and media<br />
+                            4. Adjust the AI settings and generate your video
+                        </p>
+                        <h3>Creating Custom Templates</h3>
+                        <p>
+                            You can create and save your own templates for consistent branding
+                            and faster production. Enterprise users can create custom templates
+                            with their own branding and style guidelines.
+                        </p>
+                    </section>
+
+                    <!-- Video Generation -->
+                    <section id="generation">
+                        <h2>Video Generation</h2>
+                        <p>
+                            Understanding the video generation process helps you get the best
+                            results from VisionAI.
+                        </p>
+                        <h3>Prompt Engineering</h3>
+                        <p>
+                            The quality of your generated video depends significantly on your
+                            prompt. Here are some tips for writing effective prompts:
+                        </p>
+                        <ul>
+                            <li><strong>Be specific:</strong> Describe the scene, style, mood, and key elements</li>
+                            <li><strong>Include style cues:</strong> Mention cinematic styles, artists, or genres</li>
+                            <li><strong>Define the setting:</strong> Location, time of day, weather, etc.</li>
+                            <li><strong>Specify quality:</strong> Use keywords like "4k," "high quality," "cinematic"</li>
+                            <li><strong>Describe motion:</strong> How objects move, camera angles, etc.</li>
+                        </ul>
+                        <div class="docs-code">
+                            <span class="code-comment">// Good prompt examples:</span><br />
+                            "A cinematic drone shot over a misty mountain range at sunrise, dramatic lighting, 8k"<br />
+                            "A professional product reveal with sleek dark background, smooth rotating animation, studio lighting"
+                        </div>
+                        <h3>Generation Settings</h3>
+                        <p>
+                            You can control various aspects of the generation process:
+                        </p>
+                        <ul>
+                            <li><strong>Duration:</strong> Video length in seconds (10-120)</li>
+                            <li><strong>Resolution:</strong> 720p, 1080p, 4K, or 8K (model dependent)</li>
+                            <li><strong>Style:</strong> Artistic style or visual theme</li>
+                            <li><strong>Seed:</strong> For reproducible results</li>
+                            <li><strong>Guidance Scale:</strong> How closely to follow the prompt</li>
+                        </ul>
+                    </section>
+
+                    <!-- Export -->
+                    <section id="export">
+                        <h2>Export & Sharing</h2>
+                        <p>
+                            VisionAI supports multiple export formats and sharing options for
+                            your generated videos.
+                        </p>
+                        <h3>Export Formats</h3>
+                        <ul>
+                            <li><strong>MP4:</strong> Standard video format, widely compatible</li>
+                            <li><strong>MOV:</strong> High-quality QuickTime format</li>
+                            <li><strong>WebM:</strong> Optimized for web use</li>
+                            <li><strong>GIF:</strong> Animated GIF for social media</li>
+                            <li><strong>Frame Sequence:</strong> Individual frames as PNG or JPEG</li>
+                        </ul>
+                        <h3>Sharing Options</h3>
+                        <ul>
+                            <li><strong>Direct Download:</strong> Download your video to your device</li>
+                            <li><strong>Share Link:</strong> Get a shareable link to your video</li>
+                            <li><strong>Social Media:</strong> Directly post to social media platforms</li>
+                            <li><strong>Embed:</strong> Embed your video on websites</li>
+                        </ul>
+                    </section>
+
+                    <!-- API -->
+                    <section id="api">
+                        <h2>API Reference</h2>
+                        <p>
+                            The VisionAI API allows you to integrate AI video generation into
+                            your own applications. Here's a quick overview of the main endpoints.
+                        </p>
+                        <h3>Authentication</h3>
+                        <p>
+                            All API requests require an API key. Include it in the Authorization
+                            header: <code>Authorization: Bearer YOUR_API_KEY</code>
+                        </p>
+                        <h3>Generate Video</h3>
+                        <div class="docs-code">
+                            <span class="code-comment">// POST /v1/generate</span><br />
+                            {<br />
+                            &nbsp;&nbsp;"prompt": "A futuristic city with flying cars",<br />
+                            &nbsp;&nbsp;"model": "visionai-pro",<br />
+                            &nbsp;&nbsp;"duration": 30,<br />
+                            &nbsp;&nbsp;"resolution": "4k",<br />
+                            &nbsp;&nbsp;"style": "cyberpunk"<br />
+                            }
+                        </div>
+                        <h3>Get Status</h3>
+                        <div class="docs-code">
+                            <span class="code-comment">// GET /v1/generation/{id}</span><br />
+                            {<br />
+                            &nbsp;&nbsp;"id": "gen_abc123",<br />
+                            &nbsp;&nbsp;"status": "processing|completed|failed",<br />
+                            &nbsp;&nbsp;"progress": 75,<br />
+                            &nbsp;&nbsp;"url": "https://visionai.com/videos/abc123.mp4"<br />
+                            }
+                        </div>
+                        <h3>List Models</h3>
+                        <div class="docs-code">
+                            <span class="code-comment">// GET /v1/models</span><br />
+                            {<br />
+                            &nbsp;&nbsp;"models": [<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;{ "id": "visionai-pro", "name": "VisionAI Pro", "max_resolution": "8k" },<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;{ "id": "visionai-studio", "name": "VisionAI Studio", "max_resolution": "4k" },<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;{ "id": "visionai-lite", "name": "VisionAI Lite", "max_resolution": "1080p" }<br />
+                            &nbsp;&nbsp;]<br />
+                            }
+                        </div>
+                    </section>
+
+                    <!-- Authentication -->
+                    <section id="authentication">
+                        <h2>Authentication</h2>
+                        <p>
+                            VisionAI uses API keys for authentication. You can generate and manage
+                            your API keys from your dashboard.
+                        </p>
+                        <h3>API Key Management</h3>
+                        <ul>
+                            <li><strong>Generate Key:</strong> Create a new API key from your dashboard</li>
+                            <li><strong>Revoke Key:</strong> Immediately revoke a compromised key</li>
+                            <li><strong>Key Permissions:</strong> Restrict keys to specific operations</li>
+                            <li><strong>IP Whitelist:</strong> Restrict API access to specific IP addresses</li>
+                        </ul>
+                        <div class="docs-code">
+                            <span class="code-comment">// Example: Using API key in a request</span><br />
+                            fetch('https://api.visionai.com/v1/generate', {<br />
+                            &nbsp;&nbsp;method: 'POST',<br />
+                            &nbsp;&nbsp;headers: {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;'Authorization': 'Bearer YOUR_API_KEY',<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;'Content-Type': 'application/json'<br />
+                            &nbsp;&nbsp;},<br />
+                            &nbsp;&nbsp;body: JSON.stringify({ prompt: '...' })<br />
+                            });
+                        </div>
+                    </section>
+
+                    <!-- Webhooks -->
+                    <section id="webhooks">
+                        <h2>Webhooks</h2>
+                        <p>
+                            Configure webhooks to receive real-time notifications about video
+                            generation events.
+                        </p>
+                        <h3>Available Events</h3>
+                        <ul>
+                            <li><strong>generation.started:</strong> When a generation begins</li>
+                            <li><strong>generation.progress:</strong> Progress updates during generation</li>
+                            <li><strong>generation.completed:</strong> When generation is complete</li>
+                            <li><strong>generation.failed:</strong> When generation fails</li>
+                        </ul>
+                        <h3>Webhook Payload</h3>
+                        <div class="docs-code">
+                            {<br />
+                            &nbsp;&nbsp;"event": "generation.completed",<br />
+                            &nbsp;&nbsp;"timestamp": "2026-01-15T10:30:00Z",<br />
+                            &nbsp;&nbsp;"data": {<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"id": "gen_abc123",<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"url": "https://visionai.com/videos/abc123.mp4",<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"duration": 30,<br />
+                            &nbsp;&nbsp;&nbsp;&nbsp;"resolution": "4k"<br />
+                            &nbsp;&nbsp;}<br />
+                            }
+                        </div>
+                    </section>
+
+                    <!-- Troubleshooting -->
+                    <section id="troubleshooting">
+                        <h2>Troubleshooting</h2>
+                        <p>
+                            Common issues and their solutions when using VisionAI.
+                        </p>
+                        <h3>Generation Fails</h3>
+                        <ul>
+                            <li><strong>Check prompt:</strong> Ensure your prompt is clear and not too long</li>
+                            <li><strong>Check model limits:</strong> Some models have resolution or duration limits</li>
+                            <li><strong>Check API key:</strong> Verify your API key is valid</li>
+                            <li><strong>Check credits:</strong> Ensure you have enough generation credits</li>
+                        </ul>
+                        <h3>Poor Quality Output</h3>
+                        <ul>
+                            <li><strong>Improve prompt:</strong> Use more descriptive language</li>
+                            <li><strong>Try a different model:</strong> Use a higher-quality model</li>
+                            <li><strong>Add style cues:</strong> Include "cinematic," "4k," "high quality"</li>
+                            <li><strong>Adjust settings:</strong> Increase guidance scale or change seed</li>
+                        </ul>
+                        <h3>API Rate Limits</h3>
+                        <ul>
+                            <li><strong>Starter:</strong> 50 requests per day</li>
+                            <li><strong>Pro:</strong> 500 requests per day</li>
+                            <li><strong>Enterprise:</strong> Unlimited requests</li>
+                        </ul>
+                    </section>
+
+                    <!-- FAQ -->
+                    <section id="faq">
+                        <h2>Frequently Asked Questions</h2>
+                        <h3>How long does video generation take?</h3>
+                        <p>
+                            Generation time depends on the model and resolution. VisionAI-Lite
+                            can generate a 30-second video in ~6 seconds, while VisionAI-Pro
+                            takes ~22.5 seconds for the same duration.
+                        </p>
+                        <h3>Can I use VisionAI for commercial projects?</h3>
+                        <p>
+                            Yes! The Pro and Enterprise plans include full commercial licensing,
+                            allowing you to use generated videos for any business purpose.
+                        </p>
+                        <h3>What formats can I export to?</h3>
+                        <p>
+                            VisionAI supports MP4, MOV, WebM, GIF, and individual frame sequences
+                            (PNG, JPEG).
+                        </p>
+                        <h3>Is there a free trial?</h3>
+                        <p>
+                            Yes, we offer a 7-day free trial on all plans. No credit card required.
+                        </p>
+                    </section>
+
+                    <!-- Support -->
+                    <section id="support">
+                        <h2>Support</h2>
+                        <p>
+                            Need help? We're here for you.
+                        </p>
+                        <ul>
+                            <li><strong>Email:</strong> <a href="mailto:support@visionai.com">support@visionai.com</a></li>
+                            <li><strong>Live Chat:</strong> Available 24/7 on our website</li>
+                            <li><strong>Community:</strong> Join our <a href="#">Discord community</a></li>
+                            <li><strong>Status Page:</strong> Check our <a href="#">system status</a></li>
+                        </ul>
+                        <p>
+                            For urgent issues, Enterprise customers have access to dedicated
+                            support with 24/7 priority response.
+                        </p>
+                        <p>
+                            <a href="contact.html" class="btn btn-primary">Contact Support</a>
+                        </p>
+                    </section>
+                </main>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-card" data-reveal>
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to <span class="gradient-text">Build</span> with VisionAI?</h2>
+                    <p class="cta-desc">
+                        Start creating stunning AI videos today. Sign up for free and experience
+                        the future of video generation.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg">
+                            Start Free Trial
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo" aria-label="Footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Vision<span>AI</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        VisionAI is the premier AI video generation platform for creators,
+                        marketers, and businesses. Transform your ideas into stunning videos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">🔗</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-desc">Stay updated with the latest features and releases.</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                    <p id="newsletterMessage" class="newsletter-message"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video">✕</button>
+            <div class="video-modal-body">
+                <video id="modalVideo" controls playsinline>
+                    <source src="" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Action completed successfully.</span>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="js/app.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/ai-demo.js" defer></script>
+
+    <!-- Page-specific JS -->
+    <script src="docs.js" defer></script>
+</body>
+</html>

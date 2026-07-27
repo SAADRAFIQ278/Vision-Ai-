@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
+        http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+
+    <!-- Homepage -->
+    <url>
+        <loc>https://visionai.com/</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>1.00</priority>
+    </url>
+
+    <!-- Main Pages -->
+    <url>
+        <loc>https://visionai.com/features.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.90</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/models.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/templates.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.80</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/gallery.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.75</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/pricing.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.85</priority>
+    </url>
+
+    <!-- Company Pages -->
+    <url>
+        <loc>https://visionai.com/about.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.60</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/blog.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>weekly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <!-- Support Pages -->
+    <url>
+        <loc>https://visionai.com/docs.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.70</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/faq.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.65</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/contact.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.60</priority>
+    </url>
+
+    <!-- Legal Pages -->
+    <url>
+        <loc>https://visionai.com/privacy.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/terms.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.30</priority>
+    </url>
+
+    <!-- Auth Pages (noindex, but included for completeness) -->
+    <!-- These are typically noindex, but we add them with low priority -->
+    <url>
+        <loc>https://visionai.com/login.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.10</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/signup.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.10</priority>
+    </url>
+
+    <url>
+        <loc>https://visionai.com/forgot-password.html</loc>
+        <lastmod>2026-01-15</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.05</priority>
+    </url>
+
+</urlset>

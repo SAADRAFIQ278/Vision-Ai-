@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>FAQ – VisionAI | Frequently Asked Questions</title>
+
+    <meta name="description" content="Find answers to frequently asked questions about VisionAI. Learn about our AI video generation platform, pricing, features, and more." />
+    <meta name="keywords" content="VisionAI FAQ, AI video questions, video generation help, VisionAI support, frequently asked questions" />
+    <meta name="author" content="VisionAI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://visionai.com/faq.html" />
+
+    <meta property="og:title" content="VisionAI FAQ – Frequently Asked Questions" />
+    <meta property="og:description" content="Find answers to frequently asked questions about VisionAI and our AI video generation platform." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://visionai.com/faq.html" />
+    <meta property="og:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="VisionAI FAQ" />
+    <meta name="twitter:description" content="Find answers to frequently asked questions about VisionAI." />
+    <meta name="twitter:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="faq.css" />
+</head>
+<body>
+
+    <!-- ===== LOADER ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-ring">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="loader-text">VisionAI</p>
+    </div>
+
+    <!-- ===== STICKY NAVBAR ===== -->
+    <header id="navbar" role="banner" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="VisionAI Home">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Vision<span>AI</span></span>
+            </a>
+
+            <nav class="nav-links" role="navigation" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="models.html">AI Models</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </header>
+
+    <!-- ===== FAQ HERO ===== -->
+    <section class="faq-hero" aria-label="FAQ hero">
+        <div class="container">
+            <span class="section-tag">FAQ</span>
+            <h1 class="section-title">Frequently <span class="gradient-text">Asked Questions</span></h1>
+            <p class="section-desc">
+                Find answers to the most common questions about VisionAI. If you can't find
+                what you're looking for, feel free to <a href="contact.html">contact our support team</a>.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== FAQ CATEGORIES ===== -->
+    <section class="faq-categories" aria-label="FAQ categories">
+        <div class="container">
+            <div class="faq-category-tabs" role="tablist">
+                <button class="faq-cat-btn active" data-category="all" role="tab" aria-selected="true">All Questions</button>
+                <button class="faq-cat-btn" data-category="general" role="tab" aria-selected="false">General</button>
+                <button class="faq-cat-btn" data-category="pricing" role="tab" aria-selected="false">Pricing</button>
+                <button class="faq-cat-btn" data-category="technical" role="tab" aria-selected="false">Technical</button>
+                <button class="faq-cat-btn" data-category="account" role="tab" aria-selected="false">Account</button>
+                <button class="faq-cat-btn" data-category="security" role="tab" aria-selected="false">Security</button>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FAQ CONTENT ===== -->
+    <section class="faq-content" aria-label="FAQ questions">
+        <div class="container">
+            <div class="faq-page-grid" id="faqPageGrid">
+                <!-- General Category -->
+                <div class="faq-category-group" data-category="general">
+                    <h3 class="faq-group-title">General</h3>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What is VisionAI?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>VisionAI is a cutting-edge AI video generation platform that turns text prompts into professional-quality videos using advanced artificial intelligence models. It's designed for creators, marketers, and businesses of all sizes.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="50">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How does VisionAI work?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Simply describe your vision in a text prompt, and VisionAI's AI models analyze your description to generate a fully-produced video with matching visuals, motion, and style. Our advanced models understand context, lighting, composition, and cinematic techniques.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="100">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Who is VisionAI for?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>VisionAI is designed for content creators, marketers, video producers, businesses, educators, and anyone who wants to create professional videos without the need for expensive equipment or specialized editing skills.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Pricing Category -->
+                <div class="faq-category-group" data-category="pricing">
+                    <h3 class="faq-group-title">Pricing</h3>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is there a free trial?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! We offer a 7-day free trial on all plans. No credit card is required to start your trial. You'll have full access to all features during the trial period.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="50">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What payment methods do you accept?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for Enterprise plans. Annual billing is also available with a 20% discount.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="100">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I cancel my subscription anytime?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. You can cancel your subscription at any time from your account settings. There are no cancellation fees. Your plan will remain active until the end of your current billing period.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="150">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is there a discount for annual billing?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! Annual billing saves you 20% compared to monthly billing. You can switch to annual billing at any time from your account settings.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Technical Category -->
+                <div class="faq-category-group" data-category="technical">
+                    <h3 class="faq-group-title">Technical</h3>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What video quality can I expect?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>VisionAI supports export up to 4K resolution with cinematic quality on the Pro plan, and 8K on the Enterprise plan. The Starter plan supports up to 720p. Quality also depends on the AI model you choose.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="50">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How long does it take to generate a video?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Generation time depends on the model and resolution. VisionAI-Lite can generate a 30-second video in ~6 seconds, VisionAI-Studio in ~12.5 seconds, and VisionAI-Pro in ~22.5 seconds.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="100">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>What formats can I export to?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>VisionAI supports MP4, MOV, WebM, GIF, and individual frame sequences in PNG or JPEG formats. You can choose the format that best suits your needs.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="150">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Does VisionAI have an API?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes! VisionAI offers a comprehensive REST API for developers. The Pro and Enterprise plans include API access with full documentation and support.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Account Category -->
+                <div class="faq-category-group" data-category="account">
+                    <h3 class="faq-group-title">Account</h3>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I create an account?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can create an account by visiting our <a href="signup.html">Sign Up page</a>. Simply enter your email address, create a password, and you're ready to start creating AI videos.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="50">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Can I change my plan later?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Yes, you can upgrade or downgrade your plan at any time from your account settings. Changes take effect at the start of your next billing cycle.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="100">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>How do I reset my password?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You can reset your password by visiting our <a href="forgot-password.html">Forgot Password page</a>. Enter your email address and we'll send you a password reset link.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Security Category -->
+                <div class="faq-category-group" data-category="security">
+                    <h3 class="faq-group-title">Security</h3>
+
+                    <div class="faq-item" data-reveal>
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Is my data secure with VisionAI?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>Absolutely. VisionAI uses bank-grade encryption for all data storage and transmission. We comply with GDPR, CCPA, and other privacy regulations. Your content is yours, and we never share it with third parties.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="50">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Who owns the videos I create?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>You own all videos you create with VisionAI. We do not claim any ownership or rights to your content. On the Pro and Enterprise plans, you also get full commercial licensing rights.</p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item" data-reveal data-delay="100">
+                        <button class="faq-question" aria-expanded="false">
+                            <span>Does VisionAI use my data for training?</span>
+                            <span class="faq-icon">+</span>
+                        </button>
+                        <div class="faq-answer">
+                            <p>No. We never use your content or data to train our AI models. Your privacy is our priority. Enterprise customers also have the option for private model deployment.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Still have questions? -->
+            <div class="faq-contact-cta" data-reveal>
+                <div class="faq-contact-box">
+                    <h3>Still have questions?</h3>
+                    <p>We're here to help. Reach out to our support team and we'll get back to you as soon as possible.</p>
+                    <div class="faq-contact-actions">
+                        <a href="contact.html" class="btn btn-primary">Contact Support</a>
+                        <a href="docs.html" class="btn btn-outline">Browse Documentation</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-card" data-reveal>
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to <span class="gradient-text">Get Started</span> with VisionAI?</h2>
+                    <p class="cta-desc">
+                        Join thousands of creators already using VisionAI to produce stunning
+                        AI videos. Start your free trial today.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg">
+                            Start Free Trial
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo" aria-label="Footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Vision<span>AI</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        VisionAI is the premier AI video generation platform for creators,
+                        marketers, and businesses. Transform your ideas into stunning videos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">🔗</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-desc">Stay updated with the latest features and releases.</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                    <p id="newsletterMessage" class="newsletter-message"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video">✕</button>
+            <div class="video-modal-body">
+                <video id="modalVideo" controls playsinline>
+                    <source src="" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Action completed successfully.</span>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="js/app.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/ai-demo.js" defer></script>
+
+    <!-- Page-specific JS -->
+    <script src="faq.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,242 @@
+# ============================================
+# VISIONAI - .HTACCESS
+# ============================================
+
+# Enable rewrite engine
+RewriteEngine On
+
+# ============================================
+# REDIRECTS & REWRITES
+# ============================================
+
+# Redirect to HTTPS (uncomment in production)
+# RewriteCond %{HTTPS} off
+# RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [R=301,L]
+
+# Remove .html extension from URLs
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^([^\.]+)$ $1.html [NC,L]
+
+# Redirect index.html to root
+RewriteCond %{THE_REQUEST} ^.*/index\.html
+RewriteRule ^(.*)index\.html$ /$1 [R=301,L]
+
+# Handle 404 errors
+ErrorDocument 404 /404.html
+
+# ============================================
+# CACHE HEADERS
+# ============================================
+
+<IfModule mod_expires.c>
+    ExpiresActive On
+    
+    # Default expiration
+    ExpiresDefault "access plus 1 month"
+    
+    # HTML files - 1 day
+    ExpiresByType text/html "access plus 1 day"
+    
+    # CSS & JavaScript - 1 year (use versioning)
+    ExpiresByType text/css "access plus 1 year"
+    ExpiresByType application/javascript "access plus 1 year"
+    ExpiresByType application/x-javascript "access plus 1 year"
+    
+    # Images - 1 year
+    ExpiresByType image/jpg "access plus 1 year"
+    ExpiresByType image/jpeg "access plus 1 year"
+    ExpiresByType image/png "access plus 1 year"
+    ExpiresByType image/gif "access plus 1 year"
+    ExpiresByType image/svg+xml "access plus 1 year"
+    ExpiresByType image/webp "access plus 1 year"
+    ExpiresByType image/avif "access plus 1 year"
+    ExpiresByType image/ico "access plus 1 year"
+    ExpiresByType image/x-icon "access plus 1 year"
+    
+    # Video & Audio - 1 year
+    ExpiresByType video/mp4 "access plus 1 year"
+    ExpiresByType video/webm "access plus 1 year"
+    ExpiresByType video/quicktime "access plus 1 year"
+    ExpiresByType audio/mpeg "access plus 1 year"
+    ExpiresByType audio/ogg "access plus 1 year"
+    
+    # Fonts - 1 year
+    ExpiresByType font/ttf "access plus 1 year"
+    ExpiresByType font/otf "access plus 1 year"
+    ExpiresByType font/woff "access plus 1 year"
+    ExpiresByType font/woff2 "access plus 1 year"
+    ExpiresByType application/font-woff "access plus 1 year"
+    ExpiresByType application/font-woff2 "access plus 1 year"
+    
+    # PDFs - 1 month
+    ExpiresByType application/pdf "access plus 1 month"
+    
+    # XML / RSS - 1 day
+    ExpiresByType application/xml "access plus 1 day"
+    ExpiresByType application/rss+xml "access plus 1 day"
+    ExpiresByType text/xml "access plus 1 day"
+</IfModule>
+
+# ============================================
+# COMPRESSION
+# ============================================
+
+<IfModule mod_deflate.c>
+    # Compress HTML, CSS, JavaScript, Text, XML and fonts
+    AddOutputFilterByType DEFLATE text/html text/plain text/xml text/css
+    AddOutputFilterByType DEFLATE application/javascript application/x-javascript
+    AddOutputFilterByType DEFLATE application/xml application/rss+xml
+    AddOutputFilterByType DEFLATE application/json
+    AddOutputFilterByType DEFLATE font/ttf font/otf font/woff font/woff2
+    AddOutputFilterByType DEFLATE image/svg+xml
+    AddOutputFilterByType DEFLATE application/font-woff application/font-woff2
+    
+    # Remove browser bugs (for older browsers)
+    BrowserMatch ^Mozilla/4 gzip-only-text/html
+    BrowserMatch ^Mozilla/4\.0[678] no-gzip
+    BrowserMatch \bMSIE !no-gzip !gzip-only-text/html
+    Header append Vary User-Agent
+</IfModule>
+
+# ============================================
+# SECURITY HEADERS
+# ============================================
+
+<IfModule mod_headers.c>
+    # XSS Protection
+    Header set X-XSS-Protection "1; mode=block"
+    
+    # Prevent MIME type sniffing
+    Header set X-Content-Type-Options "nosniff"
+    
+    # Frame options (prevent clickjacking)
+    Header set X-Frame-Options "SAMEORIGIN"
+    
+    # Content Security Policy (adjust as needed)
+    # Header set Content-Security-Policy "default-src 'self'; script-src 'self' 'unsafe-inline' https:; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; img-src 'self' data: https:; media-src 'self' https:; connect-src 'self' https:; frame-src 'self' https:;"
+    
+    # Referrer Policy
+    Header set Referrer-Policy "strict-origin-when-cross-origin"
+    
+    # Permissions Policy
+    Header set Permissions-Policy "geolocation=(), microphone=(), camera=(), payment=()"
+    
+    # HSTS (uncomment in production after testing)
+    # Header set Strict-Transport-Security "max-age=31536000; includeSubDomains; preload"
+</IfModule>
+
+# ============================================
+# BLOCK ACCESS TO SENSITIVE FILES
+# ============================================
+
+# Block access to .git files
+<FilesMatch "\.git">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to .env files
+<FilesMatch "\.env">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to .htaccess and .htpasswd
+<FilesMatch "^\.ht">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# Block access to configuration files
+<FilesMatch "\.(json|yml|yaml|xml|ini|conf)$">
+    Order allow,deny
+    Deny from all
+</FilesMatch>
+
+# ============================================
+# PREVENT DIRECT ACCESS TO ASSETS FOLDERS
+# ============================================
+
+# Block directory listing
+Options -Indexes
+
+# Prevent access to sensitive folders
+<IfModule mod_rewrite.c>
+    RewriteRule ^(assets/(images|videos|icons|fonts)/.*\.(php|phtml|php3|php4|php5|php7|phps|inc|pl|sh|sql|cgi|fcgi|js|html))$ - [F]
+</IfModule>
+
+# Allow access to only specific file types in assets
+<Directory "assets/">
+    <FilesMatch "\.(jpg|jpeg|png|gif|svg|webp|avif|ico|mp4|webm|mov|mp3|wav|ogg|ttf|otf|woff|woff2|css|js)$">
+        Order Allow,Deny
+        Allow from all
+    </FilesMatch>
+    <FilesMatch "\.(php|phtml|php3|php4|php5|php7|phps|inc|pl|sh|sql|cgi|fcgi|html|htm|json|xml|txt)$">
+        Order Deny,Allow
+        Deny from all
+    </FilesMatch>
+</Directory>
+
+# ============================================
+# CORS HEADERS (for fonts and assets)
+# ============================================
+
+<IfModule mod_headers.c>
+    <FilesMatch "\.(ttf|ttc|otf|eot|woff|woff2|font.css)$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+
+# ============================================
+# PERFORMANCE OPTIMIZATION
+# ============================================
+
+# Disable ETags (use cache headers instead)
+<IfModule mod_headers.c>
+    Header unset ETag
+</IfModule>
+FileETag None
+
+# Enable Keep-Alive
+<IfModule mod_headers.c>
+    Header set Connection keep-alive
+</IfModule>
+
+# ============================================
+# MIME TYPES
+# ============================================
+
+# Ensure proper MIME types for fonts
+AddType font/ttf .ttf
+AddType font/otf .otf
+AddType font/woff .woff
+AddType font/woff2 .woff2
+AddType application/font-woff .woff
+AddType application/font-woff2 .woff2
+
+# WebP images
+AddType image/webp .webp
+
+# AVIF images
+AddType image/avif .avif
+
+# WebM video
+AddType video/webm .webm
+
+# ============================================
+# REDIRECT FOR SPECIFIC PAGES (example)
+# ============================================
+
+# Redirect old about page if needed
+# Redirect 301 /about-us.html /about.html
+
+# ============================================
+# CUSTOM ERROR PAGES
+# ============================================
+
+ErrorDocument 400 /400.html
+ErrorDocument 401 /401.html
+ErrorDocument 403 /403.html
+ErrorDocument 404 /404.html
+ErrorDocument 500 /500.html

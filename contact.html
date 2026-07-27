@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Contact – VisionAI | Get in Touch</title>
+
+    <meta name="description" content="Contact the VisionAI team. We're here to help with any questions about our AI video generation platform, pricing, or support." />
+    <meta name="keywords" content="contact VisionAI, AI video support, VisionAI help, contact us, AI video platform" />
+    <meta name="author" content="VisionAI" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://visionai.com/contact.html" />
+
+    <meta property="og:title" content="Contact VisionAI – AI Video Generation Platform" />
+    <meta property="og:description" content="Get in touch with the VisionAI team. We're here to help with any questions." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://visionai.com/contact.html" />
+    <meta property="og:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Contact VisionAI" />
+    <meta name="twitter:description" content="Get in touch with the VisionAI team." />
+    <meta name="twitter:image" content="https://visionai.com/assets/images/og-image.jpg" />
+
+    <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
+    <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+
+    <!-- Global CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/responsive.css" />
+    <link rel="stylesheet" href="css/animations.css" />
+    <link rel="stylesheet" href="css/pages.css" />
+
+    <!-- Page-specific CSS -->
+    <link rel="stylesheet" href="contact.css" />
+</head>
+<body>
+
+    <!-- ===== LOADER ===== -->
+    <div id="loader" role="status" aria-label="Loading">
+        <div class="loader-ring">
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <p class="loader-text">VisionAI</p>
+    </div>
+
+    <!-- ===== STICKY NAVBAR ===== -->
+    <header id="navbar" role="banner" aria-label="Main navigation">
+        <div class="container nav-container">
+            <a href="index.html" class="logo" aria-label="VisionAI Home">
+                <span class="logo-icon">◆</span>
+                <span class="logo-text">Vision<span>AI</span></span>
+            </a>
+
+            <nav class="nav-links" role="navigation" aria-label="Primary navigation">
+                <ul>
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="features.html">Features</a></li>
+                    <li><a href="models.html">AI Models</a></li>
+                    <li><a href="templates.html">Templates</a></li>
+                    <li><a href="gallery.html">Gallery</a></li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="about.html">About</a></li>
+                    <li><a href="blog.html">Blog</a></li>
+                    <li><a href="docs.html">Docs</a></li>
+                </ul>
+            </nav>
+
+            <div class="nav-actions">
+                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </div>
+        </div>
+        <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+    </header>
+
+    <!-- ===== CONTACT HERO ===== -->
+    <section class="contact-hero" aria-label="Contact hero">
+        <div class="container">
+            <span class="section-tag">Contact</span>
+            <h1 class="section-title">Get in <span class="gradient-text">Touch</span></h1>
+            <p class="section-desc">
+                Have questions about VisionAI? We're here to help. Reach out to our team
+                and we'll get back to you as soon as possible.
+            </p>
+        </div>
+    </section>
+
+    <!-- ===== CONTACT LAYOUT ===== -->
+    <section class="contact-section" aria-label="Contact form and information">
+        <div class="container">
+            <div class="contact-layout">
+                <!-- ===== CONTACT FORM ===== -->
+                <div class="contact-form-wrapper" data-reveal>
+                    <h2>Send us a <span class="gradient-text">Message</span></h2>
+                    <p class="form-desc">
+                        Fill out the form below and our team will get back to you within 24 hours.
+                    </p>
+
+                    <form class="contact-form" id="contactForm" novalidate>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="contactName">Full Name <span class="required">*</span></label>
+                                <input type="text" id="contactName" name="name" placeholder="John Doe" required />
+                                <span class="error-message">Please enter your name.</span>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactEmail">Email Address <span class="required">*</span></label>
+                                <input type="email" id="contactEmail" name="email" placeholder="john@example.com" required />
+                                <span class="error-message">Please enter a valid email address.</span>
+                            </div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactSubject">Subject <span class="required">*</span></label>
+                            <select id="contactSubject" name="subject" required>
+                                <option value="">Select a subject...</option>
+                                <option value="general">General Inquiry</option>
+                                <option value="pricing">Pricing Question</option>
+                                <option value="technical">Technical Support</option>
+                                <option value="partnership">Partnership Opportunity</option>
+                                <option value="enterprise">Enterprise Solutions</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <span class="error-message">Please select a subject.</span>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="contactMessage">Message <span class="required">*</span></label>
+                            <textarea id="contactMessage" name="message" rows="5" placeholder="Tell us how we can help..." required></textarea>
+                            <span class="error-message">Please enter your message.</span>
+                        </div>
+
+                        <div class="form-group form-check">
+                            <input type="checkbox" id="contactConsent" name="consent" required />
+                            <label for="contactConsent">I agree to the <a href="privacy.html">Privacy Policy</a> and consent to being contacted.</label>
+                            <span class="error-message">You must agree to continue.</span>
+                        </div>
+
+                        <button type="submit" class="btn btn-primary btn-block btn-lg">
+                            Send Message
+                            <span class="btn-arrow">→</span>
+                        </button>
+                    </form>
+                </div>
+
+                <!-- ===== CONTACT INFORMATION ===== -->
+                <div class="contact-info-wrapper">
+                    <div class="contact-info-card" data-reveal data-delay="100">
+                        <span class="info-icon">📍</span>
+                        <h3 class="info-title">Visit Us</h3>
+                        <p class="info-detail">
+                            VisionAI Headquarters<br />
+                            123 Innovation Drive<br />
+                            San Francisco, CA 94105
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card" data-reveal data-delay="150">
+                        <span class="info-icon">📧</span>
+                        <h3 class="info-title">Email Us</h3>
+                        <p class="info-detail">
+                            <strong>General:</strong> <a href="mailto:hello@visionai.com">hello@visionai.com</a><br />
+                            <strong>Support:</strong> <a href="mailto:support@visionai.com">support@visionai.com</a><br />
+                            <strong>Sales:</strong> <a href="mailto:sales@visionai.com">sales@visionai.com</a>
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card" data-reveal data-delay="200">
+                        <span class="info-icon">📞</span>
+                        <h3 class="info-title">Call Us</h3>
+                        <p class="info-detail">
+                            <strong>US:</strong> +1 (800) 555-VISION<br />
+                            <strong>International:</strong> +1 (415) 555-0199<br />
+                            <span class="info-hours">Mon-Fri, 9am - 6pm PST</span>
+                        </p>
+                    </div>
+
+                    <div class="contact-info-card" data-reveal data-delay="250">
+                        <span class="info-icon">💬</span>
+                        <h3 class="info-title">Live Chat</h3>
+                        <p class="info-detail">
+                            Chat with our support team in real-time.<br />
+                            Available 24/7 for Pro and Enterprise customers.
+                        </p>
+                        <button class="btn btn-outline btn-sm" id="startChatBtn">Start Chat</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== MAP / LOCATION ===== -->
+    <section class="contact-map" aria-label="Office location">
+        <div class="container">
+            <div class="map-wrapper" data-reveal>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3153.0192963302477!2d-122.41941568468179!3d37.77492977975961!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x8085808c3f4f3b5b%3A0x8c8f8f8f8f8f8f8f!2sSan%20Francisco%2C%20CA!5e0!3m2!1sen!2sus!4v1700000000000"
+                    width="100%"
+                    height="400"
+                    style="border:0;"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade"
+                    title="VisionAI office location"
+                ></iframe>
+                <div class="map-overlay">
+                    <span class="map-marker">◆</span>
+                    <span class="map-label">VisionAI Headquarters</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
+    <section class="cta" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-card" data-reveal>
+                <div class="cta-content">
+                    <h2 class="cta-title">Ready to <span class="gradient-text">Create</span> with VisionAI?</h2>
+                    <p class="cta-desc">
+                        Join thousands of creators already using VisionAI to produce stunning
+                        AI videos. Start your free trial today.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg">
+                            Start Free Trial
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="faq.html" class="btn btn-outline btn-lg">View FAQ</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== FOOTER ===== -->
+    <footer class="footer" role="contentinfo" aria-label="Footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Vision<span>AI</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        VisionAI is the premier AI video generation platform for creators,
+                        marketers, and businesses. Transform your ideas into stunning videos.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter">🐦</a>
+                        <a href="#" aria-label="LinkedIn">🔗</a>
+                        <a href="#" aria-label="YouTube">📺</a>
+                        <a href="#" aria-label="GitHub">🐙</a>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-heading">Legal</h4>
+                    <ul>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                    </ul>
+                </div>
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-desc">Stay updated with the latest features and releases.</p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                    </form>
+                    <p id="newsletterMessage" class="newsletter-message"></p>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== BACK TO TOP ===== -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ===== VIDEO MODAL ===== -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video">✕</button>
+            <div class="video-modal-body">
+                <video id="modalVideo" controls playsinline>
+                    <source src="" type="video/mp4" />
+                    Your browser does not support the video tag.
+                </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TOAST ===== -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Action completed successfully.</span>
+    </div>
+
+    <!-- ===== SCRIPTS ===== -->
+    <script src="js/app.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/ai-demo.js" defer></script>
+
+    <!-- Page-specific JS -->
+    <script src="contact.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,33 @@
+# ============================================
+# VISIONAI - ROBOTS.TXT
+# ============================================
+
+User-agent: *
+Allow: /
+
+# Disallow admin and private areas
+Disallow: /admin/
+Disallow: /dashboard/
+Disallow: /api/
+Disallow: /auth/
+Disallow: /account/
+Disallow: /settings/
+Disallow: /profile/
+
+# Disallow private user content
+Disallow: /videos/
+Disallow: /uploads/
+Disallow: /tmp/
+
+# Disallow asset folders (images, CSS, JS are usually allowed but these are specific)
+Disallow: /assets/fonts/
+Disallow: /assets/icons/
+
+# Sitemap location
+Sitemap: https://visionai.com/sitemap.xml
+
+# Crawl delay for slower servers (optional)
+# Crawl-delay: 1
+
+# Host directive (optional)
+# Host: visionai.com

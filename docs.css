@@ -1,0 +1,404 @@
+/* ============================================
+   VISIONAI - DOCS PAGE STYLES
+   ============================================ */
+
+/* ---------- DOCS HERO ---------- */
+.docs-hero {
+    padding: 140px 0 60px;
+    background: var(--bg-primary);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.docs-hero::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 80%;
+    height: 100%;
+    background: radial-gradient(ellipse, rgba(59, 130, 246, 0.05), transparent 70%);
+    pointer-events: none;
+}
+
+.docs-hero .section-tag {
+    margin-bottom: 16px;
+}
+
+.docs-hero .section-title {
+    font-size: clamp(2.4rem, 5vw, 3.6rem);
+    margin-bottom: 16px;
+}
+
+.docs-hero .section-desc {
+    max-width: 640px;
+    margin: 0 auto;
+    font-size: 1.05rem;
+    color: var(--text-paragraph);
+    line-height: 1.8;
+}
+
+/* ---------- DOCS LAYOUT ---------- */
+.docs-layout-section {
+    padding: 40px 0 80px;
+    background: var(--bg-primary);
+}
+
+.docs-layout {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 48px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ---------- SIDEBAR ---------- */
+.docs-sidebar {
+    position: sticky;
+    top: 100px;
+    align-self: start;
+    max-height: calc(100vh - 120px);
+    overflow-y: auto;
+    padding-right: 8px;
+}
+
+.docs-sidebar::-webkit-scrollbar {
+    width: 4px;
+}
+
+.docs-sidebar::-webkit-scrollbar-track {
+    background: transparent;
+}
+
+.docs-sidebar::-webkit-scrollbar-thumb {
+    background: var(--border-medium);
+    border-radius: 4px;
+}
+
+.docs-sidebar .docs-nav {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.docs-sidebar .docs-nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.docs-sidebar .docs-nav ul li {
+    margin-bottom: 2px;
+}
+
+.docs-sidebar .docs-nav ul li a {
+    display: block;
+    padding: 10px 14px;
+    border-radius: var(--radius-sm);
+    color: var(--text-paragraph);
+    font-size: 0.9rem;
+    text-decoration: none;
+    transition: all var(--transition-fast);
+    border-left: 2px solid transparent;
+}
+
+.docs-sidebar .docs-nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-white);
+}
+
+.docs-sidebar .docs-nav ul li a.active {
+    background: rgba(124, 58, 237, 0.08);
+    color: var(--primary);
+    border-left-color: var(--primary);
+    font-weight: 500;
+}
+
+/* ---------- MAIN CONTENT ---------- */
+.docs-content {
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 44px 48px;
+    border: 1px solid var(--border-light);
+    min-width: 0;
+}
+
+.docs-content section {
+    margin-bottom: 48px;
+    scroll-margin-top: 100px;
+}
+
+.docs-content section:last-child {
+    margin-bottom: 0;
+}
+
+.docs-content h2 {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 16px;
+    letter-spacing: -0.02em;
+}
+
+.docs-content h3 {
+    font-size: 1.2rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-top: 28px;
+    margin-bottom: 12px;
+}
+
+.docs-content h4 {
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--text-white);
+    margin-top: 20px;
+    margin-bottom: 8px;
+}
+
+.docs-content p {
+    color: var(--text-paragraph);
+    line-height: 1.8;
+    margin-bottom: 16px;
+    font-size: 0.95rem;
+}
+
+.docs-content ul {
+    padding-left: 24px;
+    margin-bottom: 16px;
+}
+
+.docs-content ul li {
+    color: var(--text-paragraph);
+    line-height: 1.8;
+    margin-bottom: 6px;
+    font-size: 0.95rem;
+}
+
+.docs-content ul li strong {
+    color: var(--text-white);
+}
+
+.docs-content .docs-code {
+    background: var(--bg-primary);
+    border-radius: var(--radius-sm);
+    padding: 18px 22px;
+    margin: 16px 0 20px;
+    overflow-x: auto;
+    font-family: 'Courier New', 'Consolas', monospace;
+    font-size: 0.85rem;
+    color: var(--text-paragraph);
+    border: 1px solid var(--border-light);
+    line-height: 1.8;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.docs-content .docs-code .code-comment {
+    color: var(--text-muted);
+}
+
+.docs-content .docs-code code {
+    font-family: inherit;
+    background: transparent;
+    color: var(--text-paragraph);
+}
+
+.docs-content a:not(.btn) {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.docs-content a:not(.btn):hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+.docs-content .btn {
+    margin-top: 8px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 1024px) {
+    .docs-layout {
+        grid-template-columns: 1fr;
+        gap: 28px;
+    }
+
+    .docs-sidebar {
+        position: relative;
+        top: 0;
+        max-height: none;
+        overflow-y: visible;
+        padding-right: 0;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+        background: var(--bg-surface);
+        border-radius: var(--radius-lg);
+        padding: 16px 20px;
+        border: 1px solid var(--border-light);
+    }
+
+    .docs-sidebar .docs-nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 4px;
+    }
+
+    .docs-sidebar .docs-nav ul li {
+        margin-bottom: 0;
+    }
+
+    .docs-sidebar .docs-nav ul li a {
+        padding: 6px 14px;
+        font-size: 0.82rem;
+        border-radius: var(--radius-full);
+        border-left: none;
+        white-space: nowrap;
+    }
+
+    .docs-sidebar .docs-nav ul li a.active {
+        border-left: none;
+        background: var(--primary);
+        color: var(--text-white);
+    }
+
+    .docs-sidebar .docs-nav ul li a:hover {
+        background: rgba(255, 255, 255, 0.05);
+    }
+
+    .docs-sidebar .docs-nav ul li a.active:hover {
+        background: var(--primary);
+    }
+}
+
+@media (max-width: 768px) {
+    .docs-hero {
+        padding: 110px 0 40px;
+    }
+
+    .docs-hero .section-title {
+        font-size: clamp(2rem, 5vw, 2.6rem);
+    }
+
+    .docs-hero .section-desc {
+        font-size: 0.95rem;
+        padding: 0 12px;
+    }
+
+    .docs-layout-section {
+        padding: 20px 0 60px;
+    }
+
+    .docs-content {
+        padding: 28px 24px;
+        border-radius: var(--radius-md);
+    }
+
+    .docs-content h2 {
+        font-size: 1.4rem;
+    }
+
+    .docs-content h3 {
+        font-size: 1.1rem;
+    }
+
+    .docs-content p,
+    .docs-content ul li {
+        font-size: 0.9rem;
+    }
+
+    .docs-content .docs-code {
+        padding: 14px 16px;
+        font-size: 0.78rem;
+        border-radius: var(--radius-sm);
+    }
+
+    .docs-content section {
+        margin-bottom: 32px;
+        scroll-margin-top: 80px;
+    }
+
+    .docs-sidebar {
+        padding: 12px 16px;
+    }
+
+    .docs-sidebar .docs-nav ul {
+        gap: 4px;
+    }
+
+    .docs-sidebar .docs-nav ul li a {
+        padding: 4px 12px;
+        font-size: 0.75rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .docs-hero {
+        padding: 100px 0 32px;
+    }
+
+    .docs-hero .section-title {
+        font-size: 1.6rem;
+    }
+
+    .docs-content {
+        padding: 20px 16px;
+        border-radius: var(--radius-sm);
+    }
+
+    .docs-content h2 {
+        font-size: 1.2rem;
+    }
+
+    .docs-content h3 {
+        font-size: 1rem;
+    }
+
+    .docs-content h4 {
+        font-size: 0.9rem;
+    }
+
+    .docs-content p,
+    .docs-content ul li {
+        font-size: 0.85rem;
+        line-height: 1.7;
+    }
+
+    .docs-content .docs-code {
+        padding: 10px 12px;
+        font-size: 0.72rem;
+        line-height: 1.6;
+    }
+
+    .docs-content section {
+        margin-bottom: 24px;
+        scroll-margin-top: 70px;
+    }
+
+    .docs-sidebar {
+        padding: 10px 12px;
+        border-radius: var(--radius-sm);
+    }
+
+    .docs-sidebar .docs-nav ul li a {
+        padding: 3px 10px;
+        font-size: 0.7rem;
+    }
+
+    .docs-content .btn {
+        width: 100%;
+        justify-content: center;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .docs-sidebar .docs-nav ul li a {
+        transition: none !important;
+    }
+}

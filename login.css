@@ -1,0 +1,344 @@
+/* ============================================
+   VISIONAI - LOGIN PAGE STYLES
+   ============================================ */
+
+/* ---------- AUTH HERO (Shared with signup, forgot-password) ---------- */
+.auth-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 80px 24px;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.auth-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 30% 40%, rgba(124, 58, 237, 0.06), transparent 60%),
+                radial-gradient(ellipse at 70% 60%, rgba(59, 130, 246, 0.04), transparent 50%);
+    pointer-events: none;
+}
+
+/* ---------- AUTH CARD ---------- */
+.auth-card {
+    width: 100%;
+    max-width: 440px;
+    background: var(--bg-surface);
+    border-radius: var(--radius-lg);
+    padding: 44px 40px 40px;
+    border: 1px solid var(--border-light);
+    box-shadow: var(--shadow-lg);
+    position: relative;
+    z-index: 1;
+}
+
+/* Auth Logo */
+.auth-logo {
+    text-align: center;
+    margin-bottom: 28px;
+}
+
+.auth-logo .logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    text-decoration: none;
+}
+
+.auth-logo .logo-icon {
+    font-size: 1.6rem;
+    color: var(--primary);
+}
+
+.auth-logo .logo-text {
+    font-size: 1.3rem;
+    font-weight: 800;
+    color: var(--text-white);
+    letter-spacing: -0.5px;
+}
+
+.auth-logo .logo-text span {
+    color: var(--primary);
+}
+
+/* Auth Title */
+.auth-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    text-align: center;
+    color: var(--text-white);
+    margin-bottom: 8px;
+}
+
+.auth-desc {
+    text-align: center;
+    color: var(--text-paragraph);
+    font-size: 0.95rem;
+    margin-bottom: 28px;
+    line-height: 1.6;
+}
+
+/* ---------- AUTH FORM ---------- */
+.auth-form .form-group {
+    margin-bottom: 18px;
+}
+
+.auth-form .form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-white);
+    margin-bottom: 6px;
+}
+
+.auth-form .form-group label .required {
+    color: #EF4444;
+}
+
+.auth-form .form-group input,
+.auth-form .form-group select {
+    width: 100%;
+    padding: 12px 16px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    background: rgba(255, 255, 255, 0.04);
+    color: var(--text-white);
+    font-family: var(--font-family);
+    font-size: 0.95rem;
+    outline: none;
+    transition: border var(--transition-fast);
+}
+
+.auth-form .form-group input:focus,
+.auth-form .form-group select:focus {
+    border-color: var(--primary);
+    background: rgba(255, 255, 255, 0.06);
+}
+
+.auth-form .form-group input::placeholder,
+.auth-form .form-group select::placeholder {
+    color: var(--text-muted);
+}
+
+.auth-form .form-group .error-message {
+    font-size: 0.8rem;
+    color: #EF4444;
+    margin-top: 4px;
+    display: none;
+}
+
+.auth-form .form-group.error input,
+.auth-form .form-group.error select {
+    border-color: #EF4444;
+}
+
+.auth-form .form-group.error .error-message {
+    display: block;
+}
+
+/* Form Options (remember me / forgot password) */
+.auth-form .form-options {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 0.85rem;
+}
+
+.auth-form .form-options label {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    color: var(--text-paragraph);
+    cursor: pointer;
+}
+
+.auth-form .form-options label input[type="checkbox"] {
+    accent-color: var(--primary);
+    width: 16px;
+    height: 16px;
+    cursor: pointer;
+}
+
+.auth-form .form-options a {
+    color: var(--primary);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.auth-form .form-options a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* Submit Button */
+.auth-form .btn {
+    width: 100%;
+    justify-content: center;
+    margin-top: 4px;
+}
+
+/* ---------- DIVIDER ---------- */
+.auth-divider {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    margin: 24px 0;
+    color: var(--text-muted);
+    font-size: 0.8rem;
+}
+
+.auth-divider::before,
+.auth-divider::after {
+    content: '';
+    flex: 1;
+    height: 1px;
+    background: var(--border-light);
+}
+
+/* ---------- SOCIAL LOGIN ---------- */
+.social-login {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 20px;
+}
+
+.social-login .social-btn {
+    flex: 1;
+    padding: 10px;
+    border-radius: var(--radius-sm);
+    border: 1px solid var(--border-light);
+    background: transparent;
+    color: var(--text-paragraph);
+    font-family: var(--font-family);
+    font-size: 0.85rem;
+    cursor: pointer;
+    transition: all var(--transition-fast);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+}
+
+.social-login .social-btn:hover {
+    background: rgba(255, 255, 255, 0.05);
+    border-color: var(--border-medium);
+    color: var(--text-white);
+}
+
+.social-login .social-btn:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+}
+
+/* ---------- AUTH FOOTER ---------- */
+.auth-footer {
+    text-align: center;
+    margin-top: 4px;
+    font-size: 0.9rem;
+    color: var(--text-paragraph);
+}
+
+.auth-footer a {
+    color: var(--primary);
+    font-weight: 500;
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.auth-footer a:hover {
+    color: var(--primary-light);
+    text-decoration: underline;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 480px) {
+    .auth-card {
+        padding: 32px 24px 28px;
+        border-radius: var(--radius-md);
+    }
+
+    .auth-title {
+        font-size: 1.4rem;
+    }
+
+    .auth-desc {
+        font-size: 0.9rem;
+        margin-bottom: 20px;
+    }
+
+    .auth-form .form-group {
+        margin-bottom: 14px;
+    }
+
+    .auth-form .form-group input,
+    .auth-form .form-group select {
+        padding: 10px 14px;
+        font-size: 0.9rem;
+    }
+
+    .auth-form .form-options {
+        flex-direction: column;
+        gap: 10px;
+        align-items: flex-start;
+        font-size: 0.8rem;
+    }
+
+    .social-login {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .social-login .social-btn {
+        padding: 10px 14px;
+        font-size: 0.85rem;
+    }
+
+    .auth-divider {
+        margin: 18px 0;
+        font-size: 0.75rem;
+    }
+
+    .auth-footer {
+        font-size: 0.85rem;
+    }
+
+    .auth-logo {
+        margin-bottom: 20px;
+    }
+
+    .auth-logo .logo-text {
+        font-size: 1.1rem;
+    }
+
+    .auth-logo .logo-icon {
+        font-size: 1.3rem;
+    }
+}
+
+@media (max-width: 360px) {
+    .auth-card {
+        padding: 24px 16px 20px;
+    }
+
+    .auth-title {
+        font-size: 1.2rem;
+    }
+
+    .auth-form .form-group input,
+    .auth-form .form-group select {
+        font-size: 0.85rem;
+        padding: 8px 12px;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .auth-card {
+        transition: none !important;
+    }
+}

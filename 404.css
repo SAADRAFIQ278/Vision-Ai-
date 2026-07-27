@@ -1,0 +1,169 @@
+/* ============================================
+   VISIONAI - 404 PAGE STYLES
+   ============================================ */
+
+/* ---------- 404 HERO ---------- */
+.notfound-hero {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    padding: 80px 24px;
+    background: var(--bg-primary);
+    position: relative;
+    overflow: hidden;
+}
+
+.notfound-hero::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: radial-gradient(ellipse at 50% 50%, rgba(124, 58, 237, 0.06), transparent 60%);
+    pointer-events: none;
+}
+
+.notfound-content {
+    max-width: 600px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.notfound-content .notfound-code {
+    font-size: clamp(6rem, 15vw, 10rem);
+    font-weight: 900;
+    line-height: 1;
+    background: linear-gradient(135deg, var(--primary), var(--secondary), var(--accent));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    margin-bottom: 16px;
+    animation: float 4s ease-in-out infinite;
+}
+
+.notfound-content h1 {
+    font-size: clamp(1.6rem, 3vw, 2.4rem);
+    font-weight: 700;
+    color: var(--text-white);
+    margin-bottom: 12px;
+}
+
+.notfound-content p {
+    color: var(--text-paragraph);
+    font-size: clamp(1rem, 1.2vw, 1.15rem);
+    max-width: 480px;
+    margin: 0 auto 32px;
+    line-height: 1.7;
+}
+
+.notfound-actions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 14px;
+    margin-bottom: 32px;
+}
+
+.notfound-actions .btn {
+    min-width: 180px;
+    justify-content: center;
+}
+
+.notfound-links {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 8px 16px;
+    font-size: 0.9rem;
+}
+
+.notfound-links a {
+    color: var(--text-paragraph);
+    text-decoration: none;
+    transition: color var(--transition-fast);
+}
+
+.notfound-links a:hover {
+    color: var(--text-white);
+}
+
+.notfound-links .divider {
+    color: var(--text-muted);
+}
+
+/* ---------- ANIMATION ---------- */
+@keyframes float {
+    0%, 100% {
+        transform: translateY(0px);
+    }
+    50% {
+        transform: translateY(-12px);
+    }
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+    .notfound-hero {
+        padding: 60px 20px;
+    }
+
+    .notfound-content .notfound-code {
+        font-size: clamp(5rem, 12vw, 7rem);
+    }
+
+    .notfound-content h1 {
+        font-size: 1.6rem;
+    }
+
+    .notfound-content p {
+        font-size: 1rem;
+        padding: 0 8px;
+    }
+
+    .notfound-actions {
+        flex-direction: column;
+        align-items: center;
+        gap: 12px;
+    }
+
+    .notfound-actions .btn {
+        width: 100%;
+        max-width: 280px;
+    }
+
+    .notfound-links {
+        font-size: 0.8rem;
+        gap: 6px 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .notfound-hero {
+        padding: 40px 16px;
+    }
+
+    .notfound-content .notfound-code {
+        font-size: 4.5rem;
+    }
+
+    .notfound-content h1 {
+        font-size: 1.4rem;
+    }
+
+    .notfound-content p {
+        font-size: 0.9rem;
+    }
+
+    .notfound-links {
+        font-size: 0.75rem;
+        gap: 4px 10px;
+    }
+}
+
+/* ---------- REDUCED MOTION ---------- */
+@media (prefers-reduced-motion: reduce) {
+    .notfound-content .notfound-code {
+        animation: none !important;
+    }
+}
