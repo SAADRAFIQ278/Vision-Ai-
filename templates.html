@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Templates – VisionAI | AI Video Templates</title>
+    <title>Templates – VisionAI | Professional AI Video Templates</title>
 
     <meta name="description" content="Browse VisionAI's collection of professional AI video templates. Find the perfect template for your next video project." />
     <meta name="keywords" content="AI video templates, video templates, AI video, VisionAI templates, video creation" />
@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="templates.css" />
@@ -48,8 +47,14 @@
             <span></span>
             <span></span>
         </div>
-        <p class="loader-text">VisionAI</p>
+        <p class="loader-text">Vision<span>AI</span></p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- ===== STICKY NAVBAR ===== -->
     <header id="navbar" role="banner" aria-label="Main navigation">
@@ -74,8 +79,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -88,13 +93,19 @@
 
     <!-- ===== TEMPLATES HERO ===== -->
     <section class="templates-hero" aria-label="Templates hero">
+        <div class="hero-aurora"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
         <div class="container">
-            <span class="section-tag">Templates</span>
-            <h1 class="section-title">Professional <span class="gradient-text">Video Templates</span></h1>
-            <p class="section-desc">
-                Start with beautifully designed, fully customizable templates for any
-                video project. From corporate to creative, we've got you covered.
-            </p>
+            <div class="templates-hero-content">
+                <span class="section-tag">Templates</span>
+                <h1 class="section-title">Professional <span class="gradient-text">Video Templates</span></h1>
+                <p class="section-desc">
+                    Start with beautifully designed, fully customizable templates for any
+                    video project. From corporate to creative, we've got you covered.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -119,23 +130,32 @@
                 <!-- Template 1: Corporate Story -->
                 <div class="template-full-card" data-category="corporate" data-reveal data-delay="100">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&crop=center" alt="Corporate Story template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
                         </div>
-                        <span class="template-badge">Popular</span>
-                    </div>
-                    <div class="template-info">
-                        <h4 class="template-name">Corporate Story</h4>
-                        <p class="template-desc">Professional business storytelling template with elegant transitions and clean typography.</p>
-                        <div class="template-meta">
+                        <span class="template-badge popular">Popular</span>
+                        <div class="template-meta-tags">
                             <span>⏱ 30-60s</span>
                             <span>🎨 12 styles</span>
                             <span>📱 4K</span>
                         </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Corporate Story</h4>
+                        <p class="template-desc">Professional business storytelling template with elegant transitions and clean typography.</p>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Corporate Story">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -143,23 +163,32 @@
                 <!-- Template 2: Creative Reel -->
                 <div class="template-full-card" data-category="creative" data-reveal data-delay="150">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center" alt="Creative Reel template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
                         </div>
-                        <span class="template-badge">New</span>
-                    </div>
-                    <div class="template-info">
-                        <h4 class="template-name">Creative Reel</h4>
-                        <p class="template-desc">Dynamic and artistic video showcase with bold colors and energetic pacing.</p>
-                        <div class="template-meta">
+                        <span class="template-badge new">New</span>
+                        <div class="template-meta-tags">
                             <span>⏱ 15-45s</span>
                             <span>🎨 8 styles</span>
                             <span>📱 4K</span>
                         </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Creative Reel</h4>
+                        <p class="template-desc">Dynamic and artistic video showcase with bold colors and energetic pacing.</p>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Creative Reel">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -167,23 +196,32 @@
                 <!-- Template 3: Tech Launch -->
                 <div class="template-full-card" data-category="tech" data-reveal data-delay="200">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" alt="Tech Launch template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
                         </div>
-                        <span class="template-badge">Featured</span>
-                    </div>
-                    <div class="template-info">
-                        <h4 class="template-name">Tech Launch</h4>
-                        <p class="template-desc">Modern technology product launch video with futuristic visuals and smooth animations.</p>
-                        <div class="template-meta">
+                        <span class="template-badge featured">Featured</span>
+                        <div class="template-meta-tags">
                             <span>⏱ 20-50s</span>
                             <span>🎨 10 styles</span>
                             <span>📱 4K</span>
                         </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Tech Launch</h4>
+                        <p class="template-desc">Modern technology product launch video with futuristic visuals and smooth animations.</p>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Tech Launch">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -191,22 +229,31 @@
                 <!-- Template 4: Social Storm -->
                 <div class="template-full-card" data-category="social" data-reveal data-delay="100">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600&h=400&fit=crop&crop=center" alt="Social Storm template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1611162616475-46b635cb6868?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <div class="template-meta-tags">
+                            <span>⏱ 10-30s</span>
+                            <span>🎨 15 styles</span>
+                            <span>📱 1080p</span>
                         </div>
                     </div>
                     <div class="template-info">
                         <h4 class="template-name">Social Storm</h4>
                         <p class="template-desc">High-energy social media template optimized for engagement and viral content.</p>
-                        <div class="template-meta">
-                            <span>⏱ 10-30s</span>
-                            <span>🎨 15 styles</span>
-                            <span>📱 1080p</span>
-                        </div>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Social Storm">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -214,22 +261,31 @@
                 <!-- Template 5: Education Edge -->
                 <div class="template-full-card" data-category="education" data-reveal data-delay="150">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop&crop=center" alt="Education Edge template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <div class="template-meta-tags">
+                            <span>⏱ 30-90s</span>
+                            <span>🎨 8 styles</span>
+                            <span>📱 4K</span>
                         </div>
                     </div>
                     <div class="template-info">
                         <h4 class="template-name">Education Edge</h4>
                         <p class="template-desc">Clear and engaging educational video template with informative graphics and clean layout.</p>
-                        <div class="template-meta">
-                            <span>⏱ 30-90s</span>
-                            <span>🎨 8 styles</span>
-                            <span>📱 4K</span>
-                        </div>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Education Edge">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -237,23 +293,32 @@
                 <!-- Template 6: Brand Story -->
                 <div class="template-full-card" data-category="corporate" data-reveal data-delay="200">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center" alt="Brand Story template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
                         </div>
-                        <span class="template-badge">Popular</span>
-                    </div>
-                    <div class="template-info">
-                        <h4 class="template-name">Brand Story</h4>
-                        <p class="template-desc">Powerful brand storytelling template with cinematic visuals and emotional impact.</p>
-                        <div class="template-meta">
+                        <span class="template-badge popular">Popular</span>
+                        <div class="template-meta-tags">
                             <span>⏱ 45-90s</span>
                             <span>🎨 12 styles</span>
                             <span>📱 4K</span>
                         </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Brand Story</h4>
+                        <p class="template-desc">Powerful brand storytelling template with cinematic visuals and emotional impact.</p>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Brand Story">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -261,22 +326,31 @@
                 <!-- Template 7: Gaming Highlight -->
                 <div class="template-full-card" data-category="creative" data-reveal data-delay="100">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop&crop=center" alt="Gaming Highlight template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <div class="template-meta-tags">
+                            <span>⏱ 15-40s</span>
+                            <span>🎨 10 styles</span>
+                            <span>📱 1080p</span>
                         </div>
                     </div>
                     <div class="template-info">
                         <h4 class="template-name">Gaming Highlight</h4>
                         <p class="template-desc">Dynamic gaming content template with fast-paced editing and motion graphics.</p>
-                        <div class="template-meta">
-                            <span>⏱ 15-40s</span>
-                            <span>🎨 10 styles</span>
-                            <span>📱 1080p</span>
-                        </div>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Gaming Highlight">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -284,23 +358,32 @@
                 <!-- Template 8: Product Showcase -->
                 <div class="template-full-card" data-category="tech" data-reveal data-delay="150">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&h=400&fit=crop&crop=center" alt="Product Showcase template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
                         </div>
-                        <span class="template-badge">New</span>
-                    </div>
-                    <div class="template-info">
-                        <h4 class="template-name">Product Showcase</h4>
-                        <p class="template-desc">Sleek product presentation template with 3D transitions and spotlight effects.</p>
-                        <div class="template-meta">
+                        <span class="template-badge new">New</span>
+                        <div class="template-meta-tags">
                             <span>⏱ 20-60s</span>
                             <span>🎨 14 styles</span>
                             <span>📱 4K</span>
                         </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Product Showcase</h4>
+                        <p class="template-desc">Sleek product presentation template with 3D transitions and spotlight effects.</p>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Product Showcase">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -308,22 +391,31 @@
                 <!-- Template 9: Tutorial Master -->
                 <div class="template-full-card" data-category="education" data-reveal data-delay="200">
                     <div class="template-thumb">
-                        <img src="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop&crop=center" alt="Tutorial Master template" loading="lazy" />
-                        <div class="template-play">
-                            <span>▶</span>
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <div class="template-meta-tags">
+                            <span>⏱ 60-180s</span>
+                            <span>🎨 6 styles</span>
+                            <span>📱 4K</span>
                         </div>
                     </div>
                     <div class="template-info">
                         <h4 class="template-name">Tutorial Master</h4>
                         <p class="template-desc">Step-by-step tutorial template with clear annotations and visual guides.</p>
-                        <div class="template-meta">
-                            <span>⏱ 60-180s</span>
-                            <span>🎨 6 styles</span>
-                            <span>📱 4K</span>
-                        </div>
                         <div class="template-actions">
                             <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
-                            <button class="btn btn-outline btn-sm preview-btn" data-template="Tutorial Master">Preview</button>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
                         </div>
                     </div>
                 </div>
@@ -336,22 +428,24 @@
         </div>
     </section>
 
-    <!-- ===== TEMPLATES CTA ===== -->
+    <!-- ===== CTA ===== -->
     <section class="cta" aria-label="Call to action">
         <div class="container">
-            <div class="cta-card" data-reveal>
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
                 <div class="cta-content">
+                    <span class="cta-tag">🚀 Get Started</span>
                     <h2 class="cta-title">Create with <span class="gradient-text">Stunning Templates</span></h2>
                     <p class="cta-desc">
                         Start with a professional template and customize it with AI power.
                         Bring your vision to life in minutes.
                     </p>
                     <div class="cta-actions">
-                        <a href="signup.html" class="btn btn-primary btn-lg">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
                             Start Creating Free
                             <span class="btn-arrow">→</span>
                         </a>
-                        <a href="gallery.html" class="btn btn-outline btn-lg">View Gallery</a>
+                        <a href="gallery.html" class="btn btn-glass btn-lg">View Gallery</a>
                     </div>
                 </div>
             </div>
@@ -372,10 +466,11 @@
                         marketers, and businesses. Transform your ideas into stunning videos.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -389,18 +484,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Company</h4>
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="docs.html">Documentation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="api.html">API Reference</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
@@ -409,14 +505,21 @@
                     <h4 class="footer-heading">Newsletter</h4>
                     <p class="footer-desc">Stay updated with the latest features and releases.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
-                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">Subscribe</button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
                     </form>
-                    <p id="newsletterMessage" class="newsletter-message"></p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
@@ -438,6 +541,31 @@
                     <source src="" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== TEMPLATE PREVIEW MODAL ===== -->
+    <div id="templatePreviewModal" class="template-preview-modal" role="dialog" aria-modal="true" aria-label="Template preview">
+        <div class="template-preview-content">
+            <button class="template-preview-close" aria-label="Close preview">✕</button>
+            <div class="template-preview-body">
+                <div class="template-preview-video">
+                    <video controls playsinline>
+                        <source src="" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="template-preview-info">
+                    <h3 class="template-preview-title">Template Name</h3>
+                    <p class="template-preview-desc">Template description goes here.</p>
+                    <div class="template-preview-meta">
+                        <span>⏱ 30-60s</span>
+                        <span>🎨 12 styles</span>
+                        <span>📱 4K</span>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary">Use This Template</a>
+                </div>
             </div>
         </div>
     </div>

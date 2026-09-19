@@ -13,21 +13,33 @@ Disallow: /auth/
 Disallow: /account/
 Disallow: /settings/
 Disallow: /profile/
+Disallow: /team/
+Disallow: /billing/
 
 # Disallow private user content
 Disallow: /videos/
 Disallow: /uploads/
 Disallow: /tmp/
+Disallow: /previews/
+Disallow: /renders/
 
-# Disallow asset folders (images, CSS, JS are usually allowed but these are specific)
+# Disallow private asset folders
 Disallow: /assets/fonts/
 Disallow: /assets/icons/
+Disallow: /assets/videos/
+Disallow: /assets/images/
+Disallow: /assets/
+
+# Disallow staging and dev environments
+Disallow: /staging/
+Disallow: /dev/
+Disallow: /test/
 
 # Sitemap location
 Sitemap: https://visionai.com/sitemap.xml
 
+# Host directive
+Host: visionai.com
+
 # Crawl delay for slower servers (optional)
 # Crawl-delay: 1
-
-# Host directive (optional)
-# Host: visionai.com

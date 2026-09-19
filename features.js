@@ -6,36 +6,66 @@
     'use strict';
 
     // ============================================
-    // 1. FEATURE CARD INTERACTIVITY
+    // 1. DOM REFERENCES
+    // ============================================
+
+    const featureCards = document.querySelectorAll('.feature-detail-card');
+    const heroStats = document.querySelectorAll('.hero-stat-number');
+    const featureLinks = document.querySelectorAll('.feature-detail-card .feature-link');
+    const demoPlayBtn = document.querySelector('.feature-demo-video .demo-play-btn');
+    const demoVideoCard = document.querySelector('.feature-demo-video .demo-video-card');
+    const demoProgressFill = document.querySelector('.feature-demo-video .demo-progress-fill');
+    const modal = document.getElementById('videoModal');
+    const modalVideo = document.getElementById('modalVideo');
+    const modalClose = document.querySelector('.video-modal-close');
+
+    // ============================================
+    // 2. FEATURE CARD INTERACTIVITY
     // ============================================
 
     /**
-     * Add interactive hover effects to feature cards
-     * This enhances the CSS hover with additional JS effects
+     * Add interactive effects to feature cards
      */
     function initFeatureCards() {
-        const cards = document.querySelectorAll('.feature-detail-card');
-        if (cards.length === 0) return;
+        if (featureCards.length === 0) return;
 
-        cards.forEach(function(card) {
-            // Add mouse enter/leave events for additional effects
-            card.addEventListener('mouseenter', function() {
-                // Add a subtle glow effect via data attribute
-                this.dataset.hover = 'true';
+        featureCards.forEach(function(card) {
+            // 3D tilt effect on hover (desktop only)
+            card.addEventListener('mousemove', function(e) {
+                if (window.innerWidth < 768) return;
+                const rect = this.getBoundingClientRect();
+                const x = e.clientX - rect.left;
+                const y = e.clientY - rect.top;
+                const centerX = rect.width / 2;
+                const centerY = rect.height / 2;
+                const rotateX = (y - centerY) / 20;
+                const rotateY = (centerX - x) / 20;
+                this.style.transform =
+                    'perspective(600px) rotateX(' + rotateX + 'deg) rotateY(' + rotateY + 'deg) translateY(-4px)';
             });
 
             card.addEventListener('mouseleave', function() {
-                this.dataset.hover = 'false';
+                this.style.transform = '';
             });
 
-            // Accessibility: focus effect for keyboard navigation
+            // Accessibility: focus states
+            card.setAttribute('tabindex', '0');
             card.addEventListener('focusin', function() {
                 this.style.outline = '2px solid var(--primary)';
                 this.style.outlineOffset = '2px';
             });
-
             card.addEventListener('focusout', function() {
                 this.style.outline = 'none';
+            });
+
+            // Click on card to show a toast with feature info
+            card.addEventListener('click', function(e) {
+                // Don't trigger if clicking on a link
+                if (e.target.closest('.feature-link')) return;
+                const title = this.querySelector('.feature-title')?.textContent || 'Feature';
+                if (window.VisionAI && window.VisionAI.Toast) {
+                    window.VisionAI.Toast.info('🔍 ' + title + ' — Click "Learn More" for details.');
+                }
             });
         });
 
@@ -43,62 +73,37 @@
     }
 
     // ============================================
-    // 2. FEATURE FILTER (Optional)
+    // 3. FEATURE LINK INTERCEPT
     // ============================================
 
-    /**
-     * If we want to add category filtering to features
-     * Currently just a placeholder for future expansion
-     */
-    function initFeatureFilter() {
-        const filterContainer = document.querySelector('.features-filter');
-        if (!filterContainer) return;
+    function initFeatureLinks() {
+        if (featureLinks.length === 0) return;
 
-        const buttons = filterContainer.querySelectorAll('.filter-btn');
-        const cards = document.querySelectorAll('.feature-detail-card');
+        featureLinks.forEach(function(link) {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const card = this.closest('.feature-detail-card');
+                const title = card?.querySelector('.feature-title')?.textContent || 'Feature';
 
-        if (buttons.length === 0 || cards.length === 0) return;
+                if (window.VisionAI && window.VisionAI.Toast) {
+                    window.VisionAI.Toast.info('📖 Loading details for: ' + title);
+                }
 
-        buttons.forEach(function(btn) {
-            btn.addEventListener('click', function() {
-                // Remove active class from all buttons
-                buttons.forEach(function(b) {
-                    b.classList.remove('active');
-                });
-                this.classList.add('active');
+                // Simulate navigation
+                console.log('Navigating to feature:', title);
 
-                const filter = this.dataset.filter || 'all';
-
-                cards.forEach(function(card) {
-                    const categories = (card.dataset.categories || 'all').split(' ');
-                    const shouldShow = filter === 'all' || categories.includes(filter);
-
-                    if (shouldShow) {
-                        card.style.display = '';
-                        // Re-trigger reveal animation
-                        if (!card.classList.contains('revealed')) {
-                            card.classList.add('revealed');
-                        }
-                    } else {
-                        card.style.display = 'none';
-                    }
-                });
+                // In production, this would navigate to a feature detail page
+                // window.location.href = this.getAttribute('href');
             });
         });
-
-        console.log('Feature filter initialized.');
     }
 
     // ============================================
-    // 3. FEATURE COUNTER (Stats animation)
+    // 4. FEATURE STATS COUNTER
     // ============================================
 
-    /**
-     * Animate feature stats if present on the page
-     */
     function initFeatureStats() {
-        const stats = document.querySelectorAll('.feature-stat-number');
-        if (stats.length === 0) return;
+        if (heroStats.length === 0) return;
 
         let animated = false;
 
@@ -106,8 +111,9 @@
             if (animated) return;
             animated = true;
 
-            stats.forEach(function(stat) {
-                const target = parseInt(stat.getAttribute('data-count')) || 0;
+            heroStats.forEach(function(stat) {
+                const target = parseFloat(stat.getAttribute('data-count')) || 0;
+                const isDecimal = target % 1 !== 0;
                 const duration = 1500;
                 const startTime = performance.now();
 
@@ -115,21 +121,28 @@
                     const elapsed = currentTime - startTime;
                     const progress = Math.min(elapsed / duration, 1);
                     const eased = 1 - Math.pow(1 - progress, 3);
-                    const current = Math.floor(eased * target);
+                    const current = eased * target;
 
-                    stat.textContent = current;
+                    if (isDecimal) {
+                        stat.textContent = current.toFixed(1);
+                    } else {
+                        stat.textContent = Math.floor(current);
+                    }
 
                     if (progress < 1) {
                         requestAnimationFrame(update);
                     } else {
-                        stat.textContent = target;
+                        stat.textContent = isDecimal ? target.toFixed(1) : target;
+                        stat.classList.add('counter-pop');
+                        setTimeout(function() {
+                            stat.classList.remove('counter-pop');
+                        }, 500);
                     }
                 }
                 requestAnimationFrame(update);
             });
         }
 
-        // Use Intersection Observer
         const observer = new IntersectionObserver(function(entries) {
             entries.forEach(function(entry) {
                 if (entry.isIntersecting && !animated) {
@@ -139,81 +152,162 @@
             });
         }, { threshold: 0.3 });
 
-        const container = stats[0].closest('.feature-stats-container');
+        const container = document.querySelector('.features-hero-stats');
         if (container) {
             observer.observe(container);
-        } else {
-            observer.observe(stats[0]);
+        } else if (heroStats.length > 0) {
+            observer.observe(heroStats[0]);
         }
 
-        console.log('Feature stats animation initialized.');
+        // Fallback: start after 2 seconds if not triggered
+        setTimeout(function() {
+            if (!animated) {
+                animateStats();
+            }
+        }, 3000);
     }
 
     // ============================================
-    // 4. SMOOTH SCROLL TO FEATURE (from anchor links)
+    // 5. DEMO VIDEO PLAY
     // ============================================
 
-    function initFeatureScroll() {
-        const links = document.querySelectorAll('a[href^="#feature-"]');
-        if (links.length === 0) return;
+    function initDemoVideo() {
+        if (!demoPlayBtn || !demoVideoCard) return;
 
-        links.forEach(function(link) {
-            link.addEventListener('click', function(e) {
-                const targetId = this.getAttribute('href');
-                const target = document.querySelector(targetId);
-                if (!target) return;
+        function getDemoVideoSrc() {
+            const video = demoVideoCard.querySelector('.demo-video');
+            if (video) {
+                const source = video.querySelector('source');
+                if (source && source.src) return source.src;
+                if (video.src) return video.src;
+            }
+            return 'https://assets.mixkit.co/videos/preview/mixkit-technology-ai-...';
+        }
 
-                e.preventDefault();
+        demoPlayBtn.addEventListener('click', function(e) {
+            e.stopPropagation();
 
-                const navbarHeight = document.querySelector('#navbar') ?
-                    document.querySelector('#navbar').offsetHeight : 80;
+            // Open video modal
+            const src = getDemoVideoSrc();
+            if (modal && modalVideo) {
+                const source = modalVideo.querySelector('source');
+                if (source && src) {
+                    source.src = src;
+                    modalVideo.load();
+                }
+                modal.classList.add('open');
+                modalVideo.play().catch(function() {});
+                document.body.style.overflow = 'hidden';
 
-                const offsetTop = target.getBoundingClientRect().top +
-                    window.pageYOffset - navbarHeight - 20;
-
-                window.scrollTo({
-                    top: offsetTop,
-                    behavior: 'smooth'
-                });
-
-                // Highlight the target card briefly
-                target.style.transition = 'box-shadow 0.3s ease, border-color 0.3s ease';
-                target.style.boxShadow = '0 0 0 4px var(--primary), 0 8px 32px rgba(124, 58, 237, 0.3)';
-                target.style.borderColor = 'var(--primary)';
-
-                setTimeout(function() {
-                    target.style.boxShadow = '';
-                    target.style.borderColor = '';
-                }, 2000);
-            });
+                if (window.VisionAI && window.VisionAI.Toast) {
+                    window.VisionAI.Toast.info('▶️ Playing demo video');
+                }
+            }
         });
 
-        console.log('Feature scroll navigation initialized.');
+        // Click on the card to play
+        demoVideoCard.addEventListener('click', function(e) {
+            if (e.target.closest('.demo-play-btn')) return;
+            demoPlayBtn.click();
+        });
+
+        // Reset demo progress fill periodically
+        if (demoProgressFill) {
+            function resetProgress() {
+                demoProgressFill.style.animation = 'none';
+                void demoProgressFill.offsetHeight;
+                demoProgressFill.style.animation = 'demo-progress 4s ease-in-out infinite';
+            }
+            setInterval(resetProgress, 4000);
+        }
     }
 
     // ============================================
-    // 5. EXPOSE PUBLIC API
+    // 6. VIDEO MODAL (Global - reusing from index)
+    // ============================================
+
+    function initVideoModal() {
+        if (!modal || !modalClose) return;
+
+        modalClose.addEventListener('click', function() {
+            modal.classList.remove('open');
+            if (modalVideo) {
+                modalVideo.pause();
+                modalVideo.currentTime = 0;
+            }
+            document.body.style.overflow = '';
+        });
+
+        modal.addEventListener('click', function(e) {
+            if (e.target === modal) {
+                modal.classList.remove('open');
+                if (modalVideo) {
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                }
+                document.body.style.overflow = '';
+            }
+        });
+
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && modal && modal.classList.contains('open')) {
+                modal.classList.remove('open');
+                if (modalVideo) {
+                    modalVideo.pause();
+                    modalVideo.currentTime = 0;
+                }
+                document.body.style.overflow = '';
+            }
+        });
+    }
+
+    // ============================================
+    // 7. KEYBOARD SHORTCUTS
+    // ============================================
+
+    function initKeyboardShortcuts() {
+        document.addEventListener('keydown', function(e) {
+            // Press 'F' to focus first feature card
+            if ((e.key === 'f' || e.key === 'F') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                const firstCard = document.querySelector('.feature-detail-card');
+                if (firstCard) {
+                    e.preventDefault();
+                    firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstCard.focus();
+                    if (window.VisionAI && window.VisionAI.Toast) {
+                        window.VisionAI.Toast.info('🎯 Focused on Features');
+                    }
+                }
+            }
+        });
+    }
+
+    // ============================================
+    // 8. EXPOSE PUBLIC API
     // ============================================
 
     window.FeaturesPage = {
         initCards: initFeatureCards,
-        initFilter: initFeatureFilter,
+        initLinks: initFeatureLinks,
         initStats: initFeatureStats,
-        initScroll: initFeatureScroll,
+        initDemo: initDemoVideo,
+        initModal: initVideoModal,
+        initShortcuts: initKeyboardShortcuts,
         initAll: function() {
             initFeatureCards();
-            initFeatureFilter();
+            initFeatureLinks();
             initFeatureStats();
-            initFeatureScroll();
+            initDemoVideo();
+            initVideoModal();
+            initKeyboardShortcuts();
         }
     };
 
     // ============================================
-    // 6. INITIALIZE
+    // 9. INITIALIZE
     // ============================================
 
     function init() {
-        // Wait for DOM ready
         if (document.readyState === 'loading') {
             document.addEventListener('DOMContentLoaded', function() {
                 setTimeout(function() {

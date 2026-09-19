@@ -11,16 +11,45 @@
     overflow: hidden;
 }
 
-.faq-hero::before {
-    content: '';
+.faq-hero .hero-aurora {
     position: absolute;
-    top: -50%;
-    left: 50%;
-    transform: translateX(-50%);
-    width: 80%;
-    height: 100%;
-    background: radial-gradient(ellipse, rgba(6, 182, 212, 0.05), transparent 70%);
+    inset: 0;
+    z-index: 0;
+    background: radial-gradient(ellipse at 20% 50%, rgba(6, 182, 212, 0.06), transparent 50%),
+                radial-gradient(ellipse at 80% 30%, rgba(124, 58, 237, 0.04), transparent 40%);
+    animation: auroraMove 25s ease-in-out infinite;
+}
+
+.faq-hero .hero-blob {
+    position: absolute;
+    border-radius: 50%;
+    filter: blur(80px);
     pointer-events: none;
+    z-index: 0;
+    animation: blobFloat 20s ease-in-out infinite;
+}
+
+.faq-hero .hero-blob.blob-1 {
+    width: 400px;
+    height: 400px;
+    background: rgba(6, 182, 212, 0.06);
+    top: -100px;
+    right: -100px;
+    animation-delay: 0s;
+}
+
+.faq-hero .hero-blob.blob-2 {
+    width: 300px;
+    height: 300px;
+    background: rgba(124, 58, 237, 0.05);
+    bottom: -50px;
+    left: -50px;
+    animation-delay: -5s;
+}
+
+.faq-hero-content {
+    position: relative;
+    z-index: 1;
 }
 
 .faq-hero .section-tag {
@@ -59,8 +88,8 @@
     top: var(--navbar-height);
     z-index: 50;
     background: rgba(6, 8, 22, 0.92);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
     border-bottom: 1px solid var(--border-light);
 }
 
@@ -219,15 +248,25 @@
 }
 
 .faq-contact-box {
+    position: relative;
     background: var(--bg-surface);
     border-radius: var(--radius-lg);
     padding: 40px 44px;
     text-align: center;
     border: 1px solid var(--border-light);
-    background-image: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.04), transparent 60%);
+    overflow: hidden;
+}
+
+.faq-contact-glow {
+    position: absolute;
+    inset: -50%;
+    background: radial-gradient(circle at 50% 50%, rgba(124, 58, 237, 0.06), transparent 60%);
+    pointer-events: none;
 }
 
 .faq-contact-box h3 {
+    position: relative;
+    z-index: 1;
     font-size: 1.4rem;
     font-weight: 700;
     color: var(--text-white);
@@ -235,6 +274,8 @@
 }
 
 .faq-contact-box p {
+    position: relative;
+    z-index: 1;
     font-size: 1rem;
     color: var(--text-paragraph);
     line-height: 1.7;
@@ -243,6 +284,8 @@
 }
 
 .faq-contact-actions {
+    position: relative;
+    z-index: 1;
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -252,6 +295,11 @@
 .faq-contact-actions .btn {
     min-width: 160px;
     justify-content: center;
+    transition: all var(--transition-base);
+}
+
+.faq-contact-actions .btn:hover {
+    transform: translateY(-2px);
 }
 
 /* ---------- RESPONSIVE ---------- */
@@ -380,6 +428,12 @@
     .faq-contact-box p {
         font-size: 0.9rem;
     }
+
+    .faq-contact-actions .btn {
+        max-width: 100%;
+        font-size: 0.9rem;
+        padding: 12px 20px;
+    }
 }
 
 /* ---------- REDUCED MOTION ---------- */
@@ -393,6 +447,18 @@
     }
 
     .faq-page-grid .faq-item .faq-icon {
+        transition: none !important;
+    }
+
+    .faq-hero .hero-aurora {
+        animation: none !important;
+    }
+
+    .faq-hero .hero-blob {
+        animation: none !important;
+    }
+
+    .faq-contact-actions .btn {
         transition: none !important;
     }
 }

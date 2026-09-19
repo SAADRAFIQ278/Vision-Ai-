@@ -3,61 +3,54 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>VisionAI – AI Video Generator | Create Stunning Videos with AI</title>
+    <title>VisionAI – AI Video Generator | Create Cinematic Videos with AI</title>
 
-    <!-- Meta Tags -->
-    <meta name="description" content="VisionAI is a premium AI video generator that creates stunning, professional videos in seconds. Powered by advanced AI models." />
-    <meta name="keywords" content="AI video generator, video creation, AI video, artificial intelligence, video editing, VisionAI" />
+    <!-- Primary Meta Tags -->
+    <meta name="description" content="VisionAI is a premium AI video generator that creates stunning, cinematic videos from text prompts. Powered by advanced AI models." />
+    <meta name="keywords" content="AI video generator, cinematic video, text to video, AI video creation, artificial intelligence video, VisionAI" />
     <meta name="author" content="VisionAI" />
     <meta name="robots" content="index, follow" />
     <link rel="canonical" href="https://visionai.com/" />
 
-    <!-- Open Graph -->
-    <meta property="og:title" content="VisionAI – AI Video Generator" />
-    <meta property="og:description" content="Create stunning AI-generated videos in seconds. VisionAI brings your ideas to life." />
+    <!-- Open Graph / Social -->
+    <meta property="og:title" content="VisionAI – Cinematic AI Video Generator" />
+    <meta property="og:description" content="Create stunning AI-generated videos in seconds. VisionAI brings your ideas to life with cinematic quality." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://visionai.com/" />
     <meta property="og:image" content="https://visionai.com/assets/images/og-image.jpg" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
     <meta property="og:site_name" content="VisionAI" />
 
     <!-- Twitter Cards -->
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="twitter:title" content="VisionAI – AI Video Generator" />
-    <meta name="twitter:description" content="Create stunning AI-generated videos in seconds. VisionAI brings your ideas to life." />
+    <meta name="twitter:title" content="VisionAI – Cinematic AI Video Generator" />
+    <meta name="twitter:description" content="Create stunning AI-generated videos in seconds." />
     <meta name="twitter:image" content="https://visionai.com/assets/images/og-image.jpg" />
 
-    <!-- Favicon -->
+    <!-- Favicon & Icons -->
     <link rel="icon" type="image/png" href="assets/icons/favicon.png" />
     <link rel="apple-touch-icon" href="assets/icons/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.json" />
 
     <!-- Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet" />
 
-    <!-- External CSS (to be generated separately) -->
+    <!-- Global CSS -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
-    <!-- Page-specific CSS (to be generated separately) -->
+    <!-- Page-specific CSS -->
     <link rel="stylesheet" href="index.css" />
 </head>
 <body>
 
-    <!-- ===== LOADER ===== -->
-    <div id="loader" role="status" aria-label="Loading">
-        <div class="loader-ring">
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <p class="loader-text">VisionAI</p>
-    </div>
-
-    <!-- ===== STICKY NAVBAR ===== -->
+    <!-- ============================================================ -->
+    <!-- STICKY NAVBAR -->
+    <!-- ============================================================ -->
     <header id="navbar" role="banner" aria-label="Main navigation">
         <div class="container nav-container">
             <a href="index.html" class="logo" aria-label="VisionAI Home">
@@ -80,8 +73,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -89,661 +82,1467 @@
                 </button>
             </div>
         </div>
-
-        <!-- Scroll Progress Bar -->
         <div id="scroll-progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
     </header>
 
-    <!-- ===== HERO SECTION ===== -->
+    <!-- ============================================================ -->
+    <!-- HERO SECTION -->
+    <!-- ============================================================ -->
     <section id="hero" class="hero" aria-label="Hero">
+
         <!-- Background Video -->
         <div class="hero-video-wrapper">
-            <iframe
-            src="https://www.pexels.com/video/8386354/embed/"
-            autoplay
-            loop
-            muted
-            playsinline
-            allow="autoplay; encrypted-media"
-            allowfullscreen
-            loading="lazy"
-            title="AI Technology Background Video"
-            class="hero-video-iframe"
-            ></iframe>
+            <video
+                class="hero-video"
+                autoplay
+                muted
+                loop
+                playsinline
+                poster="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1920&h=1080&fit=crop&crop=center"
+                aria-label="AI technology background"
+                loading="lazy"
+            >
+                <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                Your browser does not support the video tag.
+            </video>
             <div class="hero-overlay"></div>
+            <div class="hero-gradient-overlay"></div>
         </div>
 
+        <!-- Floating Notification Cards -->
+        <div class="hero-floating">
+            <div class="floating-card glass-card float-1">
+                <span class="float-icon">🎬</span>
+                <span class="float-text">2.5M+ videos</span>
+                <span class="float-badge">↑ 12%</span>
+            </div>
+            <div class="floating-card glass-card float-2">
+                <span class="float-icon">⚡</span>
+                <span class="float-text">Rendering...</span>
+                <span class="float-badge processing">● Live</span>
+            </div>
+            <div class="floating-card glass-card float-3">
+                <span class="float-icon">🎨</span>
+                <span class="float-text">200+ styles</span>
+                <span class="float-badge">✨</span>
+            </div>
+            <div class="floating-card glass-card float-4">
+                <span class="float-icon">✅</span>
+                <span class="float-text">Video Ready</span>
+                <span class="float-badge success">✓</span>
+            </div>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="hero-scroll-indicator">
+            <span class="scroll-text">Scroll to explore</span>
+            <span class="scroll-line"></span>
+        </div>
+
+        <!-- ===== HERO CONTENT ===== -->
         <div class="container hero-content">
-            <div class="hero-badge">
-                <span class="badge-dot"></span>
-                Next-Gen AI Video Generation
-            </div>
-            <h1 class="hero-title">
-                Create Stunning
-                <span class="gradient-text">AI Videos</span>
-                in Seconds
-            </h1>
-            <p class="hero-desc">
-                VisionAI harnesses the power of advanced artificial intelligence to transform
-                your ideas into professional, cinematic videos. No editing skills required.
-            </p>
-            <div class="hero-actions">
-                <a href="signup.html" class="btn btn-primary btn-lg">
-                    Start Creating Free
-                    <span class="btn-arrow">→</span>
-                </a>
-                <a href="#demo" class="btn btn-outline btn-lg">
-                    <span class="play-icon">▶</span> Watch Demo
-                </a>
-            </div>
-            <div class="hero-stats">
-                <div class="stat-item">
-                    <span class="stat-number" data-count="150">0</span>
-                    <span class="stat-label">+ AI Models</span>
+            <div class="hero-grid">
+
+                <!-- Left Column -->
+                <div class="hero-text" data-parallax-speed="0.3">
+                    <div class="hero-badge">
+                        <span class="badge-dot"></span>
+                        <span>Next-Gen AI Video Generation</span>
+                        <span class="badge-new">v3.0</span>
+                    </div>
+
+                    <h1 class="hero-title">
+                        Create Cinematic
+                        <span class="gradient-text">AI Videos</span>
+                        in Seconds
+                    </h1>
+                    <div class="hero-title-glow"></div>
+
+                    <p class="hero-desc">
+                        VisionAI harnesses the power of advanced artificial intelligence to transform
+                        your ideas into professional, cinematic videos. No editing skills required.
+                        Just describe your vision and watch it come to life.
+                    </p>
+
+                    <div class="hero-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
+                            Start Creating Free
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <button class="btn btn-glass btn-lg" id="heroDemoBtn">
+                            <span class="play-icon">▶</span> Watch Demo
+                        </button>
+                    </div>
+
+                    <div class="hero-stats">
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="150">0</span>
+                            <span class="stat-label">AI Models</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="2.5">0</span>
+                            <span class="stat-label">M+ Videos</span>
+                        </div>
+                        <div class="stat-divider"></div>
+                        <div class="stat-item">
+                            <span class="stat-number" data-count="98">0</span>
+                            <span class="stat-label">% Satisfaction</span>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="2.5">0</span>
-                    <span class="stat-label">M+ Videos Generated</span>
+
+                <!-- Right Column: AI Studio Card -->
+                <div class="hero-ai-card glass-card" id="aiPromptCard" data-parallax-speed="0.5">
+                    <div class="ai-card-header">
+                        <span class="ai-card-icon">✨</span>
+                        <span class="ai-card-title">AI Studio</span>
+                        <span class="ai-card-status online">
+                            <span class="status-dot"></span> Live
+                        </span>
+                        <span class="ai-card-credits">⚡ 2,450 credits</span>
+                    </div>
+
+                    <div class="ai-card-body">
+                        <!-- Prompt Input -->
+                        <div class="ai-prompt-input">
+                            <textarea
+                                id="aiPromptInput"
+                                placeholder="Describe your video vision..."
+                                rows="3"
+                            >A futuristic cyberpunk city with neon lights, flying cars, and dramatic rain, cinematic 4k</textarea>
+                            <div class="ai-prompt-actions">
+                                <button class="ai-prompt-enhance" id="enhanceBtn" title="Enhance prompt with AI">
+                                    <span>✨</span> Enhance
+                                </button>
+                                <button class="ai-prompt-clear" id="clearPromptBtn" title="Clear prompt">✕</button>
+                            </div>
+                        </div>
+
+                        <!-- Controls -->
+                        <div class="ai-controls">
+                            <div class="ai-control-group">
+                                <label>Model</label>
+                                <select class="ai-select" id="aiModelSelect">
+                                    <option value="pro">VisionAI-Pro</option>
+                                    <option value="studio" selected>VisionAI-Studio</option>
+                                    <option value="lite">VisionAI-Lite</option>
+                                </select>
+                            </div>
+                            <div class="ai-control-group">
+                                <label>Duration</label>
+                                <select class="ai-select" id="aiDurationSelect">
+                                    <option value="15">15s</option>
+                                    <option value="30" selected>30s</option>
+                                    <option value="60">60s</option>
+                                    <option value="120">120s</option>
+                                </select>
+                            </div>
+                            <div class="ai-control-group">
+                                <label>Quality</label>
+                                <select class="ai-select" id="aiQualitySelect">
+                                    <option value="720p">720p</option>
+                                    <option value="1080p" selected>1080p</option>
+                                    <option value="4k">4K</option>
+                                    <option value="8k">8K</option>
+                                </select>
+                            </div>
+                            <div class="ai-control-group">
+                                <label>Aspect</label>
+                                <select class="ai-select" id="aiAspectSelect">
+                                    <option value="16:9" selected>16:9</option>
+                                    <option value="1:1">1:1</option>
+                                    <option value="9:16">9:16</option>
+                                    <option value="21:9">21:9</option>
+                                </select>
+                            </div>
+                            <div class="ai-control-group">
+                                <label>Style</label>
+                                <select class="ai-select" id="aiStyleSelect">
+                                    <option value="cinematic" selected>Cinematic</option>
+                                    <option value="cyberpunk">Cyberpunk</option>
+                                    <option value="vintage">Vintage Film</option>
+                                    <option value="anime">Anime</option>
+                                    <option value="realistic">Realistic</option>
+                                    <option value="abstract">Abstract</option>
+                                </select>
+                            </div>
+                            <div class="ai-control-group">
+                                <label>FPS</label>
+                                <select class="ai-select" id="aiFpsSelect">
+                                    <option value="24">24</option>
+                                    <option value="30" selected>30</option>
+                                    <option value="60">60</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <!-- Recent Prompts -->
+                        <div class="ai-recent" id="aiRecent">
+                            <span class="ai-recent-label">Recent:</span>
+                            <button class="ai-recent-tag">Cyberpunk city</button>
+                            <button class="ai-recent-tag">Nature documentary</button>
+                            <button class="ai-recent-tag">Product showcase</button>
+                        </div>
+
+                        <!-- Generate Row with Estimate -->
+                        <div class="ai-generate-row">
+                            <div class="ai-generate-left">
+                                <span class="ai-estimate-time" id="aiEstimateLabel">⏱ ~12s</span>
+                                <span class="ai-credits-cost">-2 credits</span>
+                            </div>
+                            <button class="btn btn-primary btn-lg btn-shine" id="aiGenerateBtn">
+                                <span class="btn-icon">⚡</span> Generate Video
+                            </button>
+                        </div>
+
+                        <!-- Circular Progress -->
+                        <div class="ai-progress" id="aiProgress">
+                            <div class="ai-progress-circular">
+                                <svg viewBox="0 0 120 120" class="ai-progress-svg">
+                                    <circle cx="60" cy="60" r="54" fill="none" stroke="var(--border-light)" stroke-width="6" />
+                                    <circle cx="60" cy="60" r="54" fill="none" stroke="url(#ai-grad)" stroke-width="6"
+                                        stroke-linecap="round" stroke-dasharray="339.292" stroke-dashoffset="339.292"
+                                        id="aiProgressCircle" />
+                                    <defs>
+                                        <linearGradient id="ai-grad" x1="0%" y1="0%" x2="100%" y2="0%">
+                                            <stop offset="0%" stop-color="var(--primary)" />
+                                            <stop offset="50%" stop-color="var(--secondary)" />
+                                            <stop offset="100%" stop-color="var(--accent)" />
+                                        </linearGradient>
+                                    </defs>
+                                </svg>
+                                <span class="ai-progress-percent" id="aiProgressPercent">0%</span>
+                            </div>
+                            <div class="ai-progress-details">
+                                <span class="status-text" id="progressStatusText">Analyzing your prompt...</span>
+                                <div class="ai-progress-steps" id="aiProgressSteps">
+                                    <span class="step" data-step="1">Analyzing</span>
+                                    <span class="step" data-step="2">Generating</span>
+                                    <span class="step" data-step="3">Rendering</span>
+                                    <span class="step" data-step="4">Finalizing</span>
+                                </div>
+                                <span class="estimate-value" id="aiEstimateTime">~12s remaining</span>
+                            </div>
+                        </div>
+
+                        <!-- Result -->
+                        <div class="ai-result" id="aiResult" style="display:none;">
+                            <div class="ai-result-header">
+                                <span class="ai-result-title">✅ Video Generated!</span>
+                                <button class="ai-result-close" id="aiResultClose">✕</button>
+                            </div>
+                            <div class="ai-result-video">
+                                <video id="generatedVideo" controls playsinline>
+                                    <source src="" type="video/mp4" />
+                                    Your browser does not support the video tag.
+                                </video>
+                                <div class="ai-result-overlay">
+                                    <span class="ai-result-badge">AI Generated</span>
+                                    <span class="ai-result-duration">00:30</span>
+                                </div>
+                            </div>
+                            <div class="ai-result-actions">
+                                <button class="btn btn-primary btn-sm">Download</button>
+                                <button class="btn btn-ghost btn-sm">Edit</button>
+                                <button class="btn btn-ghost btn-sm">Share</button>
+                                <button class="btn btn-ghost btn-sm">Export</button>
+                            </div>
+                        </div>
+
+                        <!-- Generation History -->
+                        <div class="ai-history" id="aiHistory" style="display:none;">
+                            <div class="ai-history-header">
+                                <span class="ai-history-title">📜 Generation History</span>
+                                <button class="ai-history-toggle">▼</button>
+                            </div>
+                            <div class="ai-history-list">
+                                <div class="history-item">
+                                    <span class="history-prompt">Cyberpunk city</span>
+                                    <span class="history-status completed">✓</span>
+                                    <span class="history-time">2 min ago</span>
+                                </div>
+                                <div class="history-item">
+                                    <span class="history-prompt">Nature documentary</span>
+                                    <span class="history-status completed">✓</span>
+                                    <span class="history-time">15 min ago</span>
+                                </div>
+                                <div class="history-item">
+                                    <span class="history-prompt">Product showcase</span>
+                                    <span class="history-status processing">⟳</span>
+                                    <span class="history-time">Processing...</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
                 </div>
-                <div class="stat-item">
-                    <span class="stat-number" data-count="98">0</span>
-                    <span class="stat-label">% Satisfaction</span>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- TRUSTED COMPANIES -->
+    <!-- ============================================================ -->
+    <section class="trusted" aria-label="Trusted by companies">
+        <div class="container">
+            <div class="trusted-inner">
+                <p class="trusted-label">Trusted by leading companies worldwide</p>
+                <div class="trusted-grid">
+                    <span class="trusted-logo">TechFlow</span>
+                    <span class="trusted-logo">NexGen</span>
+                    <span class="trusted-logo">Aurora</span>
+                    <span class="trusted-logo">Vivid</span>
+                    <span class="trusted-logo">OmniCore</span>
+                    <span class="trusted-logo">Lumina</span>
+                    <span class="trusted-logo">Strata</span>
+                    <span class="trusted-logo">Apex</span>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== AI STUDIO DEMO ===== -->
+    <!-- ============================================================ -->
+    <!-- AI STUDIO DEMO -->
+    <!-- ============================================================ -->
     <section id="demo" class="studio-demo" aria-label="AI Studio Demo">
         <div class="container">
             <div class="section-header">
-                <span class="section-tag">Demo</span>
-                <h2 class="section-title">Experience the <span class="gradient-text">AI Studio</span></h2>
+                <span class="section-tag">Experience</span>
+                <h2 class="section-title">The <span class="gradient-text">AI Studio</span></h2>
                 <p class="section-desc">
                     Watch how VisionAI transforms text prompts into breathtaking videos in real-time.
+                    Every video is unique, cinematic, and ready in seconds.
                 </p>
             </div>
+
             <div class="demo-wrapper">
-                <div class="demo-video-card">
+                <div class="demo-video-card glass-card">
                     <video
-                    class="demo-video"
-                    muted
-                    loop
-                    playsinline
-                    poster="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=675&fit=crop&crop=center"
-                    aria-label="AI Studio demo video"
+                        class="demo-video"
+                        muted
+                        loop
+                        playsinline
+                        poster="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=1200&h=675&fit=crop&crop=center"
+                        aria-label="AI Studio demo video"
+                        loading="lazy"
                     >
-                    <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
+                    <div class="demo-overlay">
+                        <button class="demo-play-btn" aria-label="Play demo video">
+                            <span class="play-icon-lg">▶</span>
+                        </button>
+                    </div>
+                    <div class="demo-controls">
+                        <div class="demo-prompt-wrapper">
+                            <span class="demo-prompt-label">Prompt</span>
+                            <span class="demo-prompt">"A futuristic city with flying cars, cyberpunk style, 4k"</span>
+                        </div>
+                        <div class="demo-status-wrapper">
+                            <span class="demo-status">◆ AI Generating...</span>
+                        </div>
+                    </div>
+                    <div class="demo-timeline">
+                        <div class="demo-timeline-fill" style="width: 0%;"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FEATURES SECTION (Asymmetrical Grid) -->
+    <!-- ============================================================ -->
+    <section class="features" aria-label="Features">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Features</span>
+                <h2 class="section-title">Built for <span class="gradient-text">Creators</span></h2>
+                <p class="section-desc">
+                    Everything you need to produce professional AI videos with unprecedented ease
+                    and cinematic quality.
+                </p>
+            </div>
+
+            <div class="features-grid">
+                <!-- Large Featured Card -->
+                <div class="feature-card featured" data-reveal data-delay="100">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">🎬</div>
+                    <span class="feature-badge">Popular</span>
+                    <h3 class="feature-title">Text-to-Video Generation</h3>
+                    <p class="feature-desc">
+                        Generate fully-produced, cinematic videos from simple text prompts using
+                        our most advanced AI models. Describe your vision, and VisionAI brings
+                        it to life with stunning visuals, motion, and style.
+                    </p>
+                    <div class="feature-stats-mini">
+                        <span>⚡ ~12s generation</span>
+                        <span>🎨 200+ styles</span>
+                    </div>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <!-- Medium Cards -->
+                <div class="feature-card medium" data-reveal data-delay="150">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">🎨</div>
+                    <h3 class="feature-title">AI Style Transfer</h3>
+                    <p class="feature-desc">
+                        Apply cinematic styles, artistic filters, and visual effects with a
+                        single click. Choose from 200+ professional styles.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card medium" data-reveal data-delay="200">
+                    <div class="feature-card-glow"></div>
+                    <div class="feature-icon">⚡</div>
+                    <h3 class="feature-title">Real-Time Rendering</h3>
+                    <p class="feature-desc">
+                        Experience lightning-fast video generation with our optimized AI
+                        rendering engine. Get results in seconds, not hours.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <!-- Small Cards -->
+                <div class="feature-card small" data-reveal data-delay="100">
+                    <div class="feature-icon">🎞️</div>
+                    <h3 class="feature-title">Smart AI Editing</h3>
+                    <p class="feature-desc">
+                        Intelligent AI-assisted editing tools that understand your creative vision.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card small" data-reveal data-delay="150">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Multi-Language</h3>
+                    <p class="feature-desc">
+                        Generate videos in over 50 languages with natural-sounding AI voiceovers.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card small" data-reveal data-delay="200">
+                    <div class="feature-icon">🔒</div>
+                    <h3 class="feature-title">Enterprise Security</h3>
+                    <p class="feature-desc">
+                        Bank-grade security with encrypted storage and private model deployment.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card small" data-reveal data-delay="250">
+                    <div class="feature-icon">🎵</div>
+                    <h3 class="feature-title">AI Music &amp; Sound</h3>
+                    <p class="feature-desc">
+                        Automatically generate background music and sound effects.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card small" data-reveal data-delay="300">
+                    <div class="feature-icon">📱</div>
+                    <h3 class="feature-title">Multi-Platform Export</h3>
+                    <p class="feature-desc">
+                        Export in any format up to 8K resolution.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <!-- Medium Cards Bottom Row -->
+                <div class="feature-card medium" data-reveal data-delay="150">
+                    <div class="feature-icon">🤖</div>
+                    <h3 class="feature-title">AI-Powered Analytics</h3>
+                    <p class="feature-desc">
+                        Get insights on video performance, engagement predictions, and AI
+                        recommendations to improve your content strategy.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+
+                <div class="feature-card medium" data-reveal data-delay="200">
+                    <div class="feature-icon">👥</div>
+                    <h3 class="feature-title">Collaborative Workspace</h3>
+                    <p class="feature-desc">
+                        Invite team members to collaborate on video projects. Share drafts,
+                        leave comments, and work together in real-time.
+                    </p>
+                    <a href="features.html" class="feature-link">Learn More →</a>
+                </div>
+            </div>
+
+            <div class="features-cta">
+                <a href="features.html" class="btn btn-outline">Explore All Features →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- DASHBOARD PREVIEW -->
+    <!-- ============================================================ -->
+    <section class="dashboard-preview" aria-label="Dashboard preview">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Dashboard</span>
+                <h2 class="section-title">Beautiful <span class="gradient-text">Dashboard</span></h2>
+                <p class="section-desc">
+                    Manage all your AI videos, projects, and settings from one intuitive,
+                    premium interface designed for creators.
+                </p>
+            </div>
+
+            <div class="dashboard-card glass-card" data-reveal>
+                <div class="dashboard-mockup">
+                    <!-- Header -->
+                    <div class="mockup-header">
+                        <div class="mockup-dots">
+                            <span class="mockup-dot red"></span>
+                            <span class="mockup-dot yellow"></span>
+                            <span class="mockup-dot green"></span>
+                        </div>
+                        <span class="mockup-title">VisionAI Studio — Dashboard</span>
+                        <div class="mockup-actions">
+                            <span class="mockup-credit">⚡ 2,450 credits</span>
+                            <span class="mockup-status-badge">● Online</span>
+                            <button class="mockup-btn">🔔</button>
+                            <button class="mockup-btn">⚙️</button>
+                        </div>
+                    </div>
+
+                    <!-- Body -->
+                    <div class="mockup-body">
+                        <!-- Sidebar -->
+                        <div class="mockup-sidebar">
+                            <div class="mockup-menu active">📊 Dashboard</div>
+                            <div class="mockup-menu">🎬 Projects</div>
+                            <div class="mockup-menu">🎨 Templates</div>
+                            <div class="mockup-menu">🧠 Models</div>
+                            <div class="mockup-menu">📈 Analytics</div>
+                            <div class="mockup-menu">⚙️ Settings</div>
+                        </div>
+
+                        <!-- Main Content -->
+                        <div class="mockup-content">
+                            <!-- Stats Row -->
+                            <div class="mockup-stats">
+                                <div class="mockup-stat">
+                                    <span class="stat-value">47</span>
+                                    <span class="stat-label">Videos</span>
+                                </div>
+                                <div class="mockup-stat">
+                                    <span class="stat-value">12</span>
+                                    <span class="stat-label">Projects</span>
+                                </div>
+                                <div class="mockup-stat">
+                                    <span class="stat-value">2.4K</span>
+                                    <span class="stat-label">Credits</span>
+                                </div>
+                                <div class="mockup-stat">
+                                    <span class="stat-value">98%</span>
+                                    <span class="stat-label">GPU Usage</span>
+                                </div>
+                                <div class="mockup-stat">
+                                    <span class="stat-value">64%</span>
+                                    <span class="stat-label">Storage</span>
+                                </div>
+                            </div>
+
+                            <!-- Two Column Layout -->
+                            <div class="mockup-two-col">
+                                <!-- Left: Render Queue -->
+                                <div class="mockup-queue">
+                                    <div class="queue-header">
+                                        <span class="queue-title">Render Queue</span>
+                                        <span class="queue-badge">2 processing</span>
+                                    </div>
+                                    <div class="queue-item">
+                                        <div class="queue-info">
+                                            <span class="queue-name">Cyberpunk City</span>
+                                            <span class="queue-status processing">Rendering</span>
+                                        </div>
+                                        <div class="queue-progress">
+                                            <div class="queue-progress-bar">
+                                                <div class="queue-progress-fill" style="width: 67%;"></div>
+                                            </div>
+                                            <span class="queue-percent">67%</span>
+                                        </div>
+                                        <span class="queue-time">~8s remaining</span>
+                                    </div>
+                                    <div class="queue-item">
+                                        <div class="queue-info">
+                                            <span class="queue-name">Nature Documentary</span>
+                                            <span class="queue-status queued">Queued</span>
+                                        </div>
+                                        <div class="queue-progress">
+                                            <div class="queue-progress-bar">
+                                                <div class="queue-progress-fill" style="width: 0%;"></div>
+                                            </div>
+                                            <span class="queue-percent">—</span>
+                                        </div>
+                                        <span class="queue-time">Waiting</span>
+                                    </div>
+                                    <div class="queue-item">
+                                        <div class="queue-info">
+                                            <span class="queue-name">Product Showcase</span>
+                                            <span class="queue-status completed">✓ Complete</span>
+                                        </div>
+                                        <div class="queue-progress">
+                                            <div class="queue-progress-bar">
+                                                <div class="queue-progress-fill" style="width: 100%;"></div>
+                                            </div>
+                                            <span class="queue-percent">100%</span>
+                                        </div>
+                                        <span class="queue-time">2 min ago</span>
+                                    </div>
+                                </div>
+
+                                <!-- Right: Analytics Chart -->
+                                <div class="mockup-chart">
+                                    <div class="chart-header">
+                                        <span class="chart-title">📈 Video Performance</span>
+                                        <span class="chart-period">Last 7 days</span>
+                                    </div>
+                                    <div class="chart-bars">
+                                        <div class="chart-bar" style="height: 40%;"></div>
+                                        <div class="chart-bar" style="height: 65%;"></div>
+                                        <div class="chart-bar" style="height: 45%;"></div>
+                                        <div class="chart-bar" style="height: 80%;"></div>
+                                        <div class="chart-bar" style="height: 55%;"></div>
+                                        <div class="chart-bar" style="height: 90%;"></div>
+                                        <div class="chart-bar" style="height: 70%;"></div>
+                                    </div>
+                                    <div class="chart-labels">
+                                        <span>Mon</span>
+                                        <span>Tue</span>
+                                        <span>Wed</span>
+                                        <span>Thu</span>
+                                        <span>Fri</span>
+                                        <span>Sat</span>
+                                        <span>Sun</span>
+                                    </div>
+                                    <div class="chart-stats">
+                                        <span>📊 Total: 1,247 views</span>
+                                        <span>📈 +23% this week</span>
+                                    </div>
+                                    <div class="chart-donut">
+                                        <span class="donut-label">GPU Activity</span>
+                                        <div class="donut-ring">
+                                            <svg viewBox="0 0 80 80" class="donut-svg">
+                                                <circle cx="40" cy="40" r="32" fill="none" stroke="var(--border-light)" stroke-width="6" />
+                                                <circle cx="40" cy="40" r="32" fill="none" stroke="var(--success)" stroke-width="6"
+                                                    stroke-dasharray="201" stroke-dashoffset="40" stroke-linecap="round" />
+                                            </svg>
+                                            <span class="donut-value">82%</span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Recent Projects -->
+                            <div class="mockup-recent">
+                                <div class="recent-header">
+                                    <span class="recent-title">📁 Recent Projects</span>
+                                    <button class="btn btn-ghost btn-sm">View All</button>
+                                </div>
+                                <div class="recent-grid">
+                                    <div class="recent-item">
+                                        <span class="recent-name">Cyberpunk City</span>
+                                        <span class="recent-date">Today, 2:30 PM</span>
+                                        <span class="recent-status">Rendered</span>
+                                    </div>
+                                    <div class="recent-item">
+                                        <span class="recent-name">Nature Documentary</span>
+                                        <span class="recent-date">Today, 1:15 PM</span>
+                                        <span class="recent-status processing">Processing</span>
+                                    </div>
+                                    <div class="recent-item">
+                                        <span class="recent-name">Product Showcase</span>
+                                        <span class="recent-date">Yesterday, 4:00 PM</span>
+                                        <span class="recent-status completed">✓ Complete</span>
+                                    </div>
+                                    <div class="recent-item">
+                                        <span class="recent-name">Brand Story</span>
+                                        <span class="recent-date">Yesterday, 10:30 AM</span>
+                                        <span class="recent-status completed">✓ Complete</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Footer -->
+                    <div class="mockup-footer">
+                        <button class="btn btn-primary btn-sm">+ New Project</button>
+                        <button class="btn btn-ghost btn-sm">Export All</button>
+                        <button class="btn btn-ghost btn-sm">Settings</button>
+                        <button class="btn btn-ghost btn-sm">Download History</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- AI MODELS SECTION -->
+    <!-- ============================================================ -->
+    <section class="models" aria-label="AI Models">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Models</span>
+                <h2 class="section-title">Advanced <span class="gradient-text">AI Models</span></h2>
+                <p class="section-desc">
+                    Powered by state-of-the-art AI models for superior video generation.
+                    Choose the perfect engine for your creative needs.
+                </p>
+            </div>
+
+            <div class="models-grid">
+                <div class="model-card" data-reveal data-delay="100">
+                    <div class="model-card-glow"></div>
+                    <span class="model-badge flagship">Flagship</span>
+                    <div class="model-icon">🧠</div>
+                    <h3 class="model-name">VisionAI-Pro</h3>
+                    <p class="model-desc">
+                        Premium model for cinematic quality videos with advanced motion synthesis,
+                        dynamic lighting, and photorealistic detail.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Speed</span>
+                            <span class="spec-value">~45s / min</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Quality</span>
+                            <span class="spec-value">★★★★★</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Resolution</span>
+                            <span class="spec-value">8K</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">GPU Usage</span>
+                            <span class="spec-value">High</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Cinematic</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Performance</span>
+                            <span class="spec-value">98%</span>
+                        </div>
+                    </div>
+                    <a href="models.html" class="btn btn-outline btn-block">Learn More</a>
+                </div>
+
+                <div class="model-card featured" data-reveal data-delay="150">
+                    <div class="model-card-glow"></div>
+                    <span class="model-badge popular">Most Popular</span>
+                    <div class="model-icon">🎯</div>
+                    <h3 class="model-name">VisionAI-Studio</h3>
+                    <p class="model-desc">
+                        The perfect balance of quality and speed. Ideal for creative professionals
+                        who need high-quality videos with fast turnaround times.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Speed</span>
+                            <span class="spec-value">~25s / min</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Quality</span>
+                            <span class="spec-value">★★★★</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Resolution</span>
+                            <span class="spec-value">4K</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">GPU Usage</span>
+                            <span class="spec-value">Medium</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Professional</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Performance</span>
+                            <span class="spec-value">95%</span>
+                        </div>
+                    </div>
+                    <a href="models.html" class="btn btn-primary btn-block btn-shine">Learn More</a>
+                </div>
+
+                <div class="model-card" data-reveal data-delay="200">
+                    <div class="model-card-glow"></div>
+                    <span class="model-badge fast">Fast</span>
+                    <div class="model-icon">⚡</div>
+                    <h3 class="model-name">VisionAI-Lite</h3>
+                    <p class="model-desc">
+                        Lightning-fast generation for social media content, drafts, and rapid
+                        prototyping. Great for high-volume content creators.
+                    </p>
+                    <div class="model-specs">
+                        <div class="spec-item">
+                            <span class="spec-label">Speed</span>
+                            <span class="spec-value">~12s / min</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Quality</span>
+                            <span class="spec-value">★★★</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Resolution</span>
+                            <span class="spec-value">1080p</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">GPU Usage</span>
+                            <span class="spec-value">Low</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Best For</span>
+                            <span class="spec-value">Social Media</span>
+                        </div>
+                        <div class="spec-item">
+                            <span class="spec-label">Performance</span>
+                            <span class="spec-value">90%</span>
+                        </div>
+                    </div>
+                    <a href="models.html" class="btn btn-outline btn-block">Learn More</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- TEMPLATES SECTION -->
+    <!-- ============================================================ -->
+    <section class="templates" aria-label="AI Templates">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Templates</span>
+                <h2 class="section-title">Professional <span class="gradient-text">Templates</span></h2>
+                <p class="section-desc">
+                    Start with beautifully designed templates for any use case. Customize with AI
+                    power and create stunning videos in minutes.
+                </p>
+            </div>
+
+            <div class="templates-grid">
+                <div class="template-card" data-reveal data-delay="100">
+                    <div class="template-thumb">
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <span class="template-badge popular">Popular</span>
+                        <div class="template-meta-tags">
+                            <span>⏱ 30-60s</span>
+                            <span>🎨 12 styles</span>
+                            <span>📱 4K</span>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Corporate Story</h4>
+                        <p class="template-desc">Professional business storytelling with elegant transitions.</p>
+                        <div class="template-actions">
+                            <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-reveal data-delay="150">
+                    <div class="template-thumb">
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <span class="template-badge new">New</span>
+                        <div class="template-meta-tags">
+                            <span>⏱ 15-45s</span>
+                            <span>🎨 8 styles</span>
+                            <span>📱 4K</span>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Creative Reel</h4>
+                        <p class="template-desc">Dynamic artistic showcase with bold colors and energy.</p>
+                        <div class="template-actions">
+                            <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="template-card" data-reveal data-delay="200">
+                    <div class="template-thumb">
+                        <video
+                            class="template-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="template-overlay">
+                            <button class="template-play-btn" aria-label="Preview template">▶</button>
+                        </div>
+                        <span class="template-badge featured">Featured</span>
+                        <div class="template-meta-tags">
+                            <span>⏱ 20-50s</span>
+                            <span>🎨 10 styles</span>
+                            <span>📱 4K</span>
+                        </div>
+                    </div>
+                    <div class="template-info">
+                        <h4 class="template-name">Tech Launch</h4>
+                        <p class="template-desc">Modern tech product launch with futuristic visuals.</p>
+                        <div class="template-actions">
+                            <a href="signup.html" class="btn btn-primary btn-sm">Use Template</a>
+                            <button class="btn btn-ghost btn-sm template-preview-btn">Preview</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="templates-cta">
+                <a href="templates.html" class="btn btn-primary">Explore All Templates →</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- PRICING SECTION -->
+    <!-- ============================================================ -->
+    <section class="pricing" aria-label="Pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Pricing</span>
+                <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
+                <p class="section-desc">
+                    Flexible pricing designed to fit your needs. Start creating stunning AI videos
+                    with the plan that works best for you.
+                </p>
+            </div>
+
+            <div class="pricing-grid">
+                <div class="pricing-card" data-reveal data-delay="100">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Starter</h4>
+                        <p class="pricing-desc">For individual creators</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount">19</span>
+                        <span class="period">/mo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>50 video generations / mo</li>
+                        <li>720p export</li>
+                        <li>10 templates</li>
+                        <li>Basic AI models</li>
+                        <li>Community support</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-ghost btn-block">Get Started</a>
+                </div>
+
+                <div class="pricing-card featured" data-reveal data-delay="150">
+                    <div class="pricing-badge">Most Popular</div>
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Pro</h4>
+                        <p class="pricing-desc">For professional creators</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount">49</span>
+                        <span class="period">/mo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>500 video generations / mo</li>
+                        <li>4K export</li>
+                        <li>All templates</li>
+                        <li>All AI models</li>
+                        <li>Priority support</li>
+                        <li>Commercial license</li>
+                    </ul>
+                    <a href="signup.html" class="btn btn-primary btn-block btn-shine">Get Started</a>
+                </div>
+
+                <div class="pricing-card" data-reveal data-delay="200">
+                    <div class="pricing-header">
+                        <h4 class="pricing-name">Enterprise</h4>
+                        <p class="pricing-desc">For large teams &amp; orgs</p>
+                    </div>
+                    <div class="pricing-price">
+                        <span class="currency">$</span>
+                        <span class="amount">99</span>
+                        <span class="period">/mo</span>
+                    </div>
+                    <ul class="pricing-features">
+                        <li>Unlimited generations</li>
+                        <li>8K export</li>
+                        <li>Custom templates</li>
+                        <li>Private model deployment</li>
+                        <li>24/7 dedicated support</li>
+                        <li>SSO &amp; enterprise security</li>
+                    </ul>
+                    <a href="contact.html" class="btn btn-ghost btn-block">Contact Sales</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- TESTIMONIALS SECTION (Redesigned) -->
+    <!-- ============================================================ -->
+    <section class="testimonials" aria-label="Testimonials">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Testimonials</span>
+                <h2 class="section-title">What <span class="gradient-text">Creators Say</span></h2>
+                <p class="section-desc">
+                    Join thousands of satisfied creators using VisionAI to produce professional
+                    AI videos that captivate audiences.
+                </p>
+            </div>
+
+            <div class="testimonial-slider" role="region" aria-label="Testimonial carousel">
+                <div class="testimonial-track" id="testimonialTrack">
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-author">
+                                <div class="author-avatar">JD</div>
+                                <div class="author-info">
+                                    <span class="author-name">Jane Doe</span>
+                                    <span class="author-role">Content Creator</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-verified">
+                                <span class="verified-badge">✓</span>
+                                <span class="verified-label">Verified</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "VisionAI has completely transformed my content workflow. I can now produce
+                            high-quality videos in minutes instead of days. The AI models are incredible."
+                        </p>
+                        <div class="testimonial-footer">
+                            <span class="author-company">@ TechFlow</span>
+                            <span class="company-logo">⚡</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-author">
+                                <div class="author-avatar">MS</div>
+                                <div class="author-info">
+                                    <span class="author-name">Mark Smith</span>
+                                    <span class="author-role">Video Producer</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-verified">
+                                <span class="verified-badge">✓</span>
+                                <span class="verified-label">Verified</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "The AI models are incredibly sophisticated. The videos look like they were
+                            produced by a professional studio. VisionAI is a game-changer for our agency."
+                        </p>
+                        <div class="testimonial-footer">
+                            <span class="author-company">@ Aurora Studios</span>
+                            <span class="company-logo">🎨</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-author">
+                                <div class="author-avatar">AL</div>
+                                <div class="author-info">
+                                    <span class="author-name">Anna Liu</span>
+                                    <span class="author-role">Marketing Director</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-verified">
+                                <span class="verified-badge">✓</span>
+                                <span class="verified-label">Verified</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "VisionAI is the future of video creation. The templates and AI models save
+                            me hours of work every single day. I can't imagine going back."
+                        </p>
+                        <div class="testimonial-footer">
+                            <span class="author-company">@ OmniCore</span>
+                            <span class="company-logo">🚀</span>
+                        </div>
+                    </div>
+
+                    <div class="testimonial-card glass-card">
+                        <div class="testimonial-header">
+                            <div class="testimonial-author">
+                                <div class="author-avatar">TR</div>
+                                <div class="author-info">
+                                    <span class="author-name">Tom Reynolds</span>
+                                    <span class="author-role">Creative Director</span>
+                                </div>
+                            </div>
+                            <div class="testimonial-verified">
+                                <span class="verified-badge">✓</span>
+                                <span class="verified-label">Verified</span>
+                            </div>
+                        </div>
+                        <div class="testimonial-rating">★★★★★</div>
+                        <p class="testimonial-text">
+                            "The quality of AI-generated videos from VisionAI is unmatched. Our clients
+                            are always impressed with the cinematic feel and professional production value."
+                        </p>
+                        <div class="testimonial-footer">
+                            <span class="author-company">@ Vivid Media</span>
+                            <span class="company-logo">🎬</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="slider-controls">
+                    <button class="slider-btn prev" aria-label="Previous testimonial">‹</button>
+                    <div class="slider-dots" id="sliderDots"></div>
+                    <button class="slider-btn next" aria-label="Next testimonial">›</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- FAQ SECTION -->
+    <!-- ============================================================ -->
+    <section class="faq" aria-label="Frequently asked questions">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">FAQ</span>
+                <h2 class="section-title">Frequently <span class="gradient-text">Asked Questions</span></h2>
+                <p class="section-desc">
+                    Find answers to the most common questions about VisionAI.
+                </p>
+            </div>
+
+            <div class="faq-grid" id="faqContainer">
+                <div class="faq-item" data-reveal>
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What is VisionAI?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>VisionAI is a cutting-edge AI video generation platform that turns text prompts into professional-quality videos using advanced artificial intelligence models.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="50">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>How does the AI video generation work?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Simply describe your vision in a text prompt, and VisionAI's AI models analyze your description to generate a fully-produced video with matching visuals, motion, and style.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="100">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What quality can I expect?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>VisionAI supports export up to 4K resolution with cinematic quality. The Pro and Enterprise plans offer 8K export and advanced rendering options.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="150">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Can I use VisionAI for commercial projects?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! The Pro and Enterprise plans include full commercial licensing, allowing you to use generated videos for any business or commercial purpose.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="200">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>Is there a free trial?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>Yes! We offer a 7-day free trial on all plans. No credit card required. Start creating AI videos today.</p>
+                    </div>
+                </div>
+
+                <div class="faq-item" data-reveal data-delay="250">
+                    <button class="faq-question" aria-expanded="false">
+                        <span>What makes VisionAI different?</span>
+                        <span class="faq-icon">+</span>
+                    </button>
+                    <div class="faq-answer">
+                        <p>VisionAI combines state-of-the-art AI models with an intuitive interface, offering superior cinematic quality, real-time rendering, and a comprehensive suite of creative tools.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="faq-cta">
+                <p>Still have questions? <a href="faq.html">Visit our FAQ page</a> or <a href="contact.html">contact support</a>.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- CTA SECTION -->
+    <!-- ============================================================ -->
+    <section class="cta" aria-label="Call to action">
+        <div class="container">
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
+                <div class="cta-content">
+                    <span class="cta-tag">🚀 Get Started</span>
+                    <h2 class="cta-title">
+                        Ready to Create <span class="gradient-text">Stunning AI Videos</span>?
+                    </h2>
+                    <p class="cta-desc">
+                        Join thousands of creators using VisionAI to bring their ideas to life.
+                        Start your free trial today. No credit card required.
+                    </p>
+                    <div class="cta-actions">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
+                            Start Free Trial
+                            <span class="btn-arrow">→</span>
+                        </a>
+                        <a href="contact.html" class="btn btn-glass btn-lg">Contact Sales</a>
+                    </div>
+                    <div class="cta-trust">
+                        <span>✓ No credit card required</span>
+                        <span>✓ 7-day free trial</span>
+                        <span>✓ Cancel anytime</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ============================================================ -->
+    <!-- MEGA FOOTER -->
+    <!-- ============================================================ -->
+    <footer class="footer" role="contentinfo" aria-label="Footer">
+        <div class="container">
+            <div class="footer-grid">
+                <!-- Brand -->
+                <div class="footer-brand">
+                    <a href="index.html" class="logo">
+                        <span class="logo-icon">◆</span>
+                        <span class="logo-text">Vision<span>AI</span></span>
+                    </a>
+                    <p class="footer-desc">
+                        VisionAI is the premier AI video generation platform for creators,
+                        marketers, and businesses. Transform your ideas into stunning videos
+                        with the power of artificial intelligence.
+                    </p>
+                    <div class="footer-social">
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
+                    </div>
+                </div>
+
+                <!-- Product -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Product</h4>
+                    <ul>
+                        <li><a href="features.html">Features</a></li>
+                        <li><a href="models.html">AI Models</a></li>
+                        <li><a href="templates.html">Templates</a></li>
+                        <li><a href="pricing.html">Pricing</a></li>
+                        <li><a href="gallery.html">Gallery</a></li>
+                        <li><a href="changelog.html">Changelog</a></li>
+                    </ul>
+                </div>
+
+                <!-- Developers -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Developers</h4>
+                    <ul>
+                        <li><a href="docs.html#api">API Docs</a></li>
+                        <li><a href="docs.html#authentication">Authentication</a></li>
+                        <li><a href="docs.html#webhooks">Webhooks</a></li>
+                        <li><a href="github.html">GitHub</a></li>
+                        <li><a href="community.html">Community</a></li>
+                        <li><a href="status.html">System Status</a></li>
+                    </ul>
+                </div>
+
+                <!-- Resources -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Resources</h4>
+                    <ul>
+                        <li><a href="docs.html">Documentation</a></li>
+                        <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="tutorials.html">Tutorials</a></li>
+                        <li><a href="api.html">API Reference</a></li>
+                        <li><a href="careers.html">Careers</a></li>
+                    </ul>
+                </div>
+
+                <!-- Company -->
+                <div class="footer-links">
+                    <h4 class="footer-heading">Company</h4>
+                    <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                        <li><a href="privacy.html">Privacy Policy</a></li>
+                        <li><a href="terms.html">Terms of Service</a></li>
+                        <li><a href="cookies.html">Cookie Policy</a></li>
+                        <li><a href="press.html">Press Kit</a></li>
+                    </ul>
+                </div>
+
+                <!-- Newsletter -->
+                <div class="footer-newsletter">
+                    <h4 class="footer-heading">Newsletter</h4>
+                    <p class="footer-desc">
+                        Stay updated with the latest features, releases, and AI video insights.
+                    </p>
+                    <form class="newsletter-form" id="newsletterForm" novalidate>
+                        <div class="newsletter-input-group">
+                            <input
+                                type="email"
+                                placeholder="Enter your email"
+                                aria-label="Email address"
+                                required
+                            />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">
+                                Subscribe
+                            </button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
+                    </form>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
+                <div class="footer-bottom-links">
+                    <a href="privacy.html">Privacy</a>
+                    <a href="terms.html">Terms</a>
+                    <a href="contact.html">Contact</a>
+                    <a href="cookies.html">Cookies</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ============================================================ -->
+    <!-- BACK TO TOP -->
+    <!-- ============================================================ -->
+    <button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
+
+    <!-- ============================================================ -->
+    <!-- VIDEO MODAL -->
+    <!-- ============================================================ -->
+    <div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
+        <div class="video-modal-content">
+            <button class="video-modal-close" aria-label="Close video">✕</button>
+            <div class="video-modal-body">
+                <video id="modalVideo" controls playsinline>
+                    <source src="" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
-                <div class="demo-overlay">
-                    <button class="demo-play-btn" aria-label="Play demo video">
-                        <span class="play-icon-lg">▶</span>
-                    </button>
-                </div>
-                <div class="demo-controls">
-                    <span class="demo-prompt">"A futuristic city with flying cars, cyberpunk style, 4k"</span>
-                    <span class="demo-status">◆ AI Generating...</span>
-                </div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- ===== TRUSTED COMPANIES ===== -->
-<section class="trusted" aria-label="Trusted by companies">
-    <div class="container">
-        <p class="trusted-label">Trusted by leading companies worldwide</p>
-        <div class="trusted-grid">
-            <span class="trusted-logo">TechFlow</span>
-            <span class="trusted-logo">NexGen</span>
-            <span class="trusted-logo">Aurora</span>
-            <span class="trusted-logo">Vivid</span>
-            <span class="trusted-logo">OmniCore</span>
-            <span class="trusted-logo">Lumina</span>
-        </div>
-    </div>
-</section>
-
-<!-- ===== FEATURES ===== -->
-<section class="features" aria-label="Features">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Features</span>
-            <h2 class="section-title">Built for <span class="gradient-text">Creators</span></h2>
-            <p class="section-desc">
-                Everything you need to produce professional AI videos with unprecedented ease.
-            </p>
-        </div>
-        <div class="features-grid">
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">🎬</div>
-                <h3 class="feature-title">Text-to-Video</h3>
-                <p class="feature-desc">Generate fully-produced videos from simple text prompts using our advanced AI models.</p>
-                <a href="features.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">🎨</div>
-                <h3 class="feature-title">Style Transfer</h3>
-                <p class="feature-desc">Apply cinematic styles, artistic filters, and visual effects with a single click.</p>
-                <a href="features.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">⚡</div>
-                <h3 class="feature-title">Real-Time Rendering</h3>
-                <p class="feature-desc">Experience lightning-fast video generation with our optimized AI rendering engine.</p>
-                <a href="features.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">🎞️</div>
-                <h3 class="feature-title">Smart Editing</h3>
-                <p class="feature-desc">Intelligent AI-assisted editing tools that understand your creative vision.</p>
-                <a href="features.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">🌐</div>
-                <h3 class="feature-title">Multi-Language</h3>
-                <p class="feature-desc">Generate videos in over 50 languages with natural-sounding AI voiceovers.</p>
-                <a href="features.html" class="feature-link">Learn More →</a>
-            </div>
-            <div class="feature-card" data-reveal>
-                <div class="feature-icon">🔒</div>
-                <h3 class="feature-title">Enterprise Security</h3>
-                <p class="feature-desc">Bank-grade security with encrypted storage and private model deployment.</p>
-                <a href="features.html" class="feature-link">Learn More →</a>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== HOW IT WORKS ===== -->
-<section class="how-it-works" aria-label="How it works">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Process</span>
-            <h2 class="section-title">How <span class="gradient-text">It Works</span></h2>
-            <p class="section-desc">
-                Create professional AI videos in three simple steps.
-            </p>
-        </div>
-        <div class="steps-grid">
-            <div class="step-card" data-reveal>
-                <div class="step-number">01</div>
-                <div class="step-icon">✍️</div>
-                <h3 class="step-title">Write Your Prompt</h3>
-                <p class="step-desc">Describe your vision in words. Be as specific or creative as you like.</p>
-            </div>
-            <div class="step-arrow">→</div>
-            <div class="step-card" data-reveal>
-                <div class="step-number">02</div>
-                <div class="step-icon">⚙️</div>
-                <h3 class="step-title">AI Generates</h3>
-                <p class="step-desc">Our AI models interpret your prompt and generate a stunning video.</p>
-            </div>
-            <div class="step-arrow">→</div>
-            <div class="step-card" data-reveal>
-                <div class="step-number">03</div>
-                <div class="step-icon">🚀</div>
-                <h3 class="step-title">Export & Share</h3>
-                <p class="step-desc">Download your video in 4K or share directly to social platforms.</p>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== AI TEMPLATES ===== -->
-<section class="templates" aria-label="AI Templates">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Templates</span>
-            <h2 class="section-title">Professional <span class="gradient-text">Templates</span></h2>
-            <p class="section-desc">
-                Start with beautifully designed templates for any use case.
-            </p>
-        </div>
-        <div class="templates-grid">
-            <div class="template-card" data-reveal>
-                <div class="template-thumb">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&crop=center" alt="Business template" loading="lazy" />
-                    <span class="template-badge">Popular</span>
+    <!-- ============================================================ -->
+    <!-- TEMPLATE PREVIEW MODAL -->
+    <!-- ============================================================ -->
+    <div id="templatePreviewModal" class="template-preview-modal" role="dialog" aria-modal="true" aria-label="Template preview">
+        <div class="template-preview-content">
+            <button class="template-preview-close" aria-label="Close preview">✕</button>
+            <div class="template-preview-body">
+                <div class="template-preview-video">
+                    <video controls playsinline>
+                        <source src="" type="video/mp4" />
+                        Your browser does not support the video tag.
+                    </video>
                 </div>
-                <div class="template-info">
-                    <h4 class="template-name">Corporate Story</h4>
-                    <p class="template-desc">Professional business storytelling template.</p>
-                    <a href="templates.html" class="template-link">View Template →</a>
-                </div>
-            </div>
-            <div class="template-card" data-reveal>
-                <div class="template-thumb">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center" alt="Creative template" loading="lazy" />
-                    <span class="template-badge">New</span>
-                </div>
-                <div class="template-info">
-                    <h4 class="template-name">Creative Reel</h4>
-                    <p class="template-desc">Dynamic and artistic video showcase.</p>
-                    <a href="templates.html" class="template-link">View Template →</a>
-                </div>
-            </div>
-            <div class="template-card" data-reveal>
-                <div class="template-thumb">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" alt="Tech template" loading="lazy" />
-                </div>
-                <div class="template-info">
-                    <h4 class="template-name">Tech Launch</h4>
-                    <p class="template-desc">Modern technology product launch video.</p>
-                    <a href="templates.html" class="template-link">View Template →</a>
-                </div>
-            </div>
-        </div>
-        <div class="templates-cta">
-            <a href="templates.html" class="btn btn-primary">Explore All Templates →</a>
-        </div>
-    </div>
-</section>
-
-<!-- ===== DASHBOARD PREVIEW ===== -->
-<section class="dashboard-preview" aria-label="Dashboard preview">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Dashboard</span>
-            <h2 class="section-title">Beautiful <span class="gradient-text">Dashboard</span></h2>
-            <p class="section-desc">
-                Manage all your AI videos, projects, and settings from one intuitive interface.
-            </p>
-        </div>
-        <div class="dashboard-card" data-reveal>
-            <div class="dashboard-mockup">
-                <div class="mockup-header">
-                    <span class="mockup-dot red"></span>
-                    <span class="mockup-dot yellow"></span>
-                    <span class="mockup-dot green"></span>
-                    <span class="mockup-title">VisionAI Studio</span>
-                </div>
-                <div class="mockup-body">
-                    <div class="mockup-sidebar">
-                        <span class="mockup-menu active">Projects</span>
-                        <span class="mockup-menu">Templates</span>
-                        <span class="mockup-menu">Models</span>
-                        <span class="mockup-menu">Settings</span>
+                <div class="template-preview-info">
+                    <h3 class="template-preview-title">Template Name</h3>
+                    <p class="template-preview-desc">Template description goes here.</p>
+                    <div class="template-preview-meta">
+                        <span>⏱ 30-60s</span>
+                        <span>🎨 12 styles</span>
+                        <span>📱 4K</span>
                     </div>
-                    <div class="mockup-content">
-                        <div class="mockup-project">
-                            <div class="mockup-thumb"></div>
-                            <div class="mockup-info">
-                                <span class="mockup-name">Cyberpunk City</span>
-                                <span class="mockup-status">Rendered</span>
-                            </div>
-                        </div>
-                        <div class="mockup-project">
-                            <div class="mockup-thumb"></div>
-                            <div class="mockup-info">
-                                <span class="mockup-name">Nature Documentary</span>
-                                <span class="mockup-status">Processing</span>
-                            </div>
-                        </div>
-                        <div class="mockup-project">
-                            <div class="mockup-thumb"></div>
-                            <div class="mockup-info">
-                                <span class="mockup-name">Product Showcase</span>
-                                <span class="mockup-status">Ready</span>
-                            </div>
-                        </div>
-                    </div>
+                    <a href="signup.html" class="btn btn-primary">Use This Template</a>
                 </div>
             </div>
         </div>
     </div>
-</section>
 
-<!-- ===== AI MODELS ===== -->
-<section class="models" aria-label="AI Models">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Models</span>
-            <h2 class="section-title">Advanced <span class="gradient-text">AI Models</span></h2>
-            <p class="section-desc">
-                Powered by state-of-the-art AI models for superior video generation.
-            </p>
-        </div>
-        <div class="models-grid">
-            <div class="model-card" data-reveal>
-                <div class="model-icon">🧠</div>
-                <h4 class="model-name">VisionAI-Pro</h4>
-                <p class="model-desc">Premium model for cinematic quality videos with advanced motion synthesis.</p>
-                <span class="model-badge">Flagship</span>
-                <a href="models.html" class="model-link">Learn More →</a>
-            </div>
-            <div class="model-card" data-reveal>
-                <div class="model-icon">🎯</div>
-                <h4 class="model-name">VisionAI-Studio</h4>
-                <p class="model-desc">Balanced model for creative projects with fast rendering and high quality.</p>
-                <span class="model-badge">Popular</span>
-                <a href="models.html" class="model-link">Learn More →</a>
-            </div>
-            <div class="model-card" data-reveal>
-                <div class="model-icon">⚡</div>
-                <h4 class="model-name">VisionAI-Lite</h4>
-                <p class="model-desc">Lightweight model for quick drafts, social content, and rapid prototyping.</p>
-                <span class="model-badge">Fast</span>
-                <a href="models.html" class="model-link">Learn More →</a>
-            </div>
-        </div>
+    <!-- ============================================================ -->
+    <!-- TOAST -->
+    <!-- ============================================================ -->
+    <div id="toast" class="toast" role="alert" aria-live="polite">
+        <span class="toast-icon">✓</span>
+        <span class="toast-message">Action completed successfully.</span>
     </div>
-</section>
 
-<!-- ===== PRICING ===== -->
-<section class="pricing" aria-label="Pricing">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Pricing</span>
-            <h2 class="section-title">Choose Your <span class="gradient-text">Plan</span></h2>
-            <p class="section-desc">
-                Flexible pricing for creators, teams, and enterprises.
-            </p>
-        </div>
-        <div class="pricing-grid">
-            <div class="pricing-card" data-reveal>
-                <div class="pricing-header">
-                    <h4 class="pricing-name">Starter</h4>
-                    <p class="pricing-desc">For individual creators</p>
-                </div>
-                <div class="pricing-price">
-                    <span class="currency">$</span>
-                    <span class="amount">19</span>
-                    <span class="period">/mo</span>
-                </div>
-                <ul class="pricing-features">
-                    <li>50 video generations / mo</li>
-                    <li>720p export</li>
-                    <li>10 templates</li>
-                    <li>Basic AI models</li>
-                    <li>Community support</li>
-                </ul>
-                <a href="signup.html" class="btn btn-outline btn-block">Get Started</a>
-            </div>
-            <div class="pricing-card featured" data-reveal>
-                <div class="pricing-badge">Most Popular</div>
-                <div class="pricing-header">
-                    <h4 class="pricing-name">Pro</h4>
-                    <p class="pricing-desc">For professional creators</p>
-                </div>
-                <div class="pricing-price">
-                    <span class="currency">$</span>
-                    <span class="amount">49</span>
-                    <span class="period">/mo</span>
-                </div>
-                <ul class="pricing-features">
-                    <li>500 video generations / mo</li>
-                    <li>4K export</li>
-                    <li>All templates</li>
-                    <li>All AI models</li>
-                    <li>Priority support</li>
-                    <li>Commercial license</li>
-                </ul>
-                <a href="signup.html" class="btn btn-primary btn-block">Get Started</a>
-            </div>
-            <div class="pricing-card" data-reveal>
-                <div class="pricing-header">
-                    <h4 class="pricing-name">Enterprise</h4>
-                    <p class="pricing-desc">For large teams & orgs</p>
-                </div>
-                <div class="pricing-price">
-                    <span class="currency">$</span>
-                    <span class="amount">99</span>
-                    <span class="period">/mo</span>
-                </div>
-                <ul class="pricing-features">
-                    <li>Unlimited generations</li>
-                    <li>8K export</li>
-                    <li>Custom templates</li>
-                    <li>Private model deployment</li>
-                    <li>24/7 dedicated support</li>
-                    <li>SSO & enterprise security</li>
-                </ul>
-                <a href="contact.html" class="btn btn-outline btn-block">Contact Sales</a>
-            </div>
-        </div>
-    </div>
-</section>
+    <!-- ============================================================ -->
+    <!-- SCRIPTS -->
+    <!-- ============================================================ -->
+    <script src="js/app.js" defer></script>
+    <script src="js/navbar.js" defer></script>
+    <script src="js/slider.js" defer></script>
+    <script src="js/forms.js" defer></script>
+    <script src="js/animations.js" defer></script>
+    <script src="js/ai-demo.js" defer></script>
 
-<!-- ===== TESTIMONIALS ===== -->
-<section class="testimonials" aria-label="Testimonials">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">Testimonials</span>
-            <h2 class="section-title">What <span class="gradient-text">Creators Say</span></h2>
-            <p class="section-desc">
-                Join thousands of satisfied creators using VisionAI.
-            </p>
-        </div>
-        <div class="testimonial-slider" role="region" aria-label="Testimonial carousel">
-            <div class="testimonial-track" id="testimonialTrack">
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "VisionAI has completely transformed my content workflow. I can now produce high-quality videos in minutes instead of days."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">JD</div>
-                        <div class="author-info">
-                            <span class="author-name">Jane Doe</span>
-                            <span class="author-role">Content Creator</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "The AI models are incredibly sophisticated. The videos look like they were produced by a professional studio."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">MS</div>
-                        <div class="author-info">
-                            <span class="author-name">Mark Smith</span>
-                            <span class="author-role">Video Producer</span>
-                        </div>
-                    </div>
-                </div>
-                <div class="testimonial-card">
-                    <div class="testimonial-stars">★★★★★</div>
-                    <p class="testimonial-text">
-                        "VisionAI is the future of video creation. The templates and AI models save me hours of work every single day."
-                    </p>
-                    <div class="testimonial-author">
-                        <div class="author-avatar">AL</div>
-                        <div class="author-info">
-                            <span class="author-name">Anna Liu</span>
-                            <span class="author-role">Marketing Director</span>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="slider-controls">
-                <button class="slider-btn prev" aria-label="Previous testimonial">‹</button>
-                <div class="slider-dots" id="sliderDots"></div>
-                <button class="slider-btn next" aria-label="Next testimonial">›</button>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== FAQ ===== -->
-<section class="faq" aria-label="Frequently asked questions">
-    <div class="container">
-        <div class="section-header">
-            <span class="section-tag">FAQ</span>
-            <h2 class="section-title">Frequently <span class="gradient-text">Asked Questions</span></h2>
-            <p class="section-desc">
-                Find answers to the most common questions about VisionAI.
-            </p>
-        </div>
-        <div class="faq-grid" id="faqContainer">
-            <div class="faq-item" data-reveal>
-                <button class="faq-question" aria-expanded="false">
-                    <span>What is VisionAI?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>VisionAI is a cutting-edge AI video generation platform that turns text prompts into professional-quality videos using advanced artificial intelligence models.</p>
-                </div>
-            </div>
-            <div class="faq-item" data-reveal>
-                <button class="faq-question" aria-expanded="false">
-                    <span>How does the AI video generation work?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Simply describe your vision in a text prompt, and VisionAI's AI models analyze your description to generate a fully-produced video with matching visuals, motion, and style.</p>
-                </div>
-            </div>
-            <div class="faq-item" data-reveal>
-                <button class="faq-question" aria-expanded="false">
-                    <span>What quality can I expect?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>VisionAI supports export up to 4K resolution with cinematic quality. The Pro and Enterprise plans offer 8K export and advanced rendering options.</p>
-                </div>
-            </div>
-            <div class="faq-item" data-reveal>
-                <button class="faq-question" aria-expanded="false">
-                    <span>Can I use VisionAI for commercial projects?</span>
-                    <span class="faq-icon">+</span>
-                </button>
-                <div class="faq-answer">
-                    <p>Yes! The Pro and Enterprise plans include full commercial licensing, allowing you to use generated videos for any business or commercial purpose.</p>
-                </div>
-            </div>
-        </div>
-        <div class="faq-cta">
-            <p>Still have questions? <a href="faq.html">Visit our FAQ page</a> or <a href="contact.html">contact support</a>.</p>
-        </div>
-    </div>
-</section>
-
-<!-- ===== CTA ===== -->
-<section class="cta" aria-label="Call to action">
-    <div class="container">
-        <div class="cta-card" data-reveal>
-            <div class="cta-content">
-                <h2 class="cta-title">Ready to Create <span class="gradient-text">Stunning AI Videos</span>?</h2>
-                <p class="cta-desc">
-                    Join thousands of creators using VisionAI to bring their ideas to life.
-                    Start your free trial today.
-                </p>
-                <div class="cta-actions">
-                    <a href="signup.html" class="btn btn-primary btn-lg">
-                        Start Free Trial
-                        <span class="btn-arrow">→</span>
-                    </a>
-                    <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
-                </div>
-            </div>
-        </div>
-    </div>
-</section>
-
-<!-- ===== FOOTER ===== -->
-<footer class="footer" role="contentinfo" aria-label="Footer">
-    <div class="container">
-        <div class="footer-grid">
-            <div class="footer-brand">
-                <a href="index.html" class="logo">
-                    <span class="logo-icon">◆</span>
-                    <span class="logo-text">Vision<span>AI</span></span>
-                </a>
-                <p class="footer-desc">
-                    VisionAI is the premier AI video generation platform for creators,
-                    marketers, and businesses. Transform your ideas into stunning videos.
-                </p>
-                <div class="footer-social">
-                    <a href="#" aria-label="Twitter">🐦</a>
-                    <a href="#" aria-label="LinkedIn">🔗</a>
-                    <a href="#" aria-label="YouTube">📺</a>
-                    <a href="#" aria-label="GitHub">🐙</a>
-                </div>
-            </div>
-            <div class="footer-links">
-                <h4 class="footer-heading">Product</h4>
-                <ul>
-                    <li><a href="features.html">Features</a></li>
-                    <li><a href="models.html">AI Models</a></li>
-                    <li><a href="templates.html">Templates</a></li>
-                    <li><a href="pricing.html">Pricing</a></li>
-                    <li><a href="gallery.html">Gallery</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4 class="footer-heading">Company</h4>
-                <ul>
-                    <li><a href="about.html">About</a></li>
-                    <li><a href="blog.html">Blog</a></li>
-                    <li><a href="contact.html">Contact</a></li>
-                    <li><a href="docs.html">Documentation</a></li>
-                    <li><a href="faq.html">FAQ</a></li>
-                </ul>
-            </div>
-            <div class="footer-links">
-                <h4 class="footer-heading">Legal</h4>
-                <ul>
-                    <li><a href="privacy.html">Privacy Policy</a></li>
-                    <li><a href="terms.html">Terms of Service</a></li>
-                </ul>
-            </div>
-            <div class="footer-newsletter">
-                <h4 class="footer-heading">Newsletter</h4>
-                <p class="footer-desc">Stay updated with the latest features and releases.</p>
-                <form class="newsletter-form" id="newsletterForm" novalidate>
-                    <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                    <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
-                </form>
-                <p id="newsletterMessage" class="newsletter-message"></p>
-            </div>
-        </div>
-        <div class="footer-bottom">
-            <p>&copy; 2026 VisionAI. All rights reserved.</p>
-            <div class="footer-bottom-links">
-                <a href="privacy.html">Privacy</a>
-                <a href="terms.html">Terms</a>
-                <a href="contact.html">Contact</a>
-            </div>
-        </div>
-    </div>
-</footer>
-
-<!-- ===== BACK TO TOP ===== -->
-<button id="backToTop" class="back-to-top" aria-label="Back to top" title="Back to top">↑</button>
-
-<!-- ===== VIDEO MODAL ===== -->
-<div id="videoModal" class="video-modal" role="dialog" aria-modal="true" aria-label="Video player">
-    <div class="video-modal-content">
-        <button class="video-modal-close" aria-label="Close video">✕</button>
-        <div class="video-modal-body">
-            <video id="modalVideo" controls playsinline>
-                <source src="" type="video/mp4" />
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </div>
-</div>
-
-<!-- ===== TOAST NOTIFICATION ===== -->
-<div id="toast" class="toast" role="alert" aria-live="polite">
-    <span class="toast-icon">✓</span>
-    <span class="toast-message">Action completed successfully.</span>
-</div>
-
-<!-- ===== SCRIPTS ===== -->
-<!-- Page-specific JS (to be generated separately) -->
-<script src="index.js" defer></script>
-
-<!-- Global JS (to be generated separately) -->
-<script src="js/app.js" defer></script>
-<script src="js/navbar.js" defer></script>
-<script src="js/slider.js" defer></script>
-<script src="js/forms.js" defer></script>
-<script src="js/animations.js" defer></script>
-<script src="js/ai-demo.js" defer></script>
+    <!-- Page-specific JS -->
+    <script src="index.js" defer></script>
 
 </body>
 </html>

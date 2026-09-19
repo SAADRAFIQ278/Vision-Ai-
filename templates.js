@@ -13,7 +13,14 @@
     const filterBtns = document.querySelectorAll('.filter-btn');
     const templateCards = document.querySelectorAll('.template-full-card');
     const loadMoreBtn = document.getElementById('loadMoreBtn');
-    const previewBtns = document.querySelectorAll('.preview-btn');
+    const previewBtns = document.querySelectorAll('.template-preview-btn');
+    const previewModal = document.getElementById('templatePreviewModal');
+    const previewClose = document.querySelector('.template-preview-close');
+    const previewTitle = document.querySelector('.template-preview-title');
+    const previewDesc = document.querySelector('.template-preview-desc');
+    const previewMeta = document.querySelector('.template-preview-meta');
+    const previewVideo = document.querySelector('.template-preview-video video');
+    const previewUseBtn = document.querySelector('.template-preview-info .btn');
 
     // ============================================
     // 2. TEMPLATE FILTER
@@ -39,14 +46,13 @@
 
         // Show/hide cards based on category
         let visibleCards = [];
-        templateCards.forEach(function(card, index) {
+        templateCards.forEach(function(card) {
             const cardCategory = card.dataset.category || 'all';
             const shouldShow = category === 'all' || cardCategory === category;
 
             if (shouldShow) {
                 visibleCards.push(card);
                 card.style.display = '';
-                // Reset position for animation
                 card.style.opacity = '0';
                 card.style.transform = 'translateY(20px)';
             } else {
@@ -145,176 +151,146 @@
         document.dispatchEvent(new CustomEvent('templates-loaded-more', {
             detail: { visible: visibleCount, total: allCards.length }
         }));
+
+        // Show toast
+        if (window.VisionAI && window.VisionAI.Toast) {
+            window.VisionAI.Toast.success('Loaded ' + toLoad + ' more templates!');
+        }
     }
 
     // ============================================
     // 3. TEMPLATE PREVIEW
     // ============================================
 
+    let currentTemplateName = '';
+
     /**
-     * Create and show template preview overlay
+     * Open template preview modal
      */
-    function showTemplatePreview(templateName) {
-        // Check if overlay already exists
-        let overlay = document.querySelector('.template-preview-overlay');
-        if (!overlay) {
-            overlay = document.createElement('div');
-            overlay.className = 'template-preview-overlay';
-            overlay.setAttribute('role', 'dialog');
-            overlay.setAttribute('aria-modal', 'true');
-            overlay.setAttribute('aria-label', 'Template Preview');
+    function openTemplatePreview(card) {
+        if (!card) return;
 
-            overlay.innerHTML = `
-                <div class="preview-content">
-                    <div class="preview-header">
-                        <span class="preview-title">${templateName}</span>
-                        <button class="preview-close" aria-label="Close preview">✕</button>
-                    </div>
-                    <div class="preview-body">
-                        <div class="preview-placeholder">
-                            <span class="placeholder-icon">🎬</span>
-                            <p>Preview video for <strong>${templateName}</strong></p>
-                            <p style="font-size:0.85rem;color:var(--text-muted);margin-top:8px;">
-                                This is a placeholder. In production, a video preview would play here.
-                            </p>
-                        </div>
-                    </div>
-                    <div class="preview-footer">
-                        <button class="btn btn-outline preview-close-btn">Close</button>
-                        <a href="signup.html" class="btn btn-primary">Use This Template</a>
-                    </div>
-                </div>
-            `;
+        const name = card.querySelector('.template-name')?.textContent || 'Template';
+        const desc = card.querySelector('.template-desc')?.textContent || '';
+        const video = card.querySelector('.template-thumb .template-video');
+        const metaTags = card.querySelectorAll('.template-meta-tags span');
+        const badge = card.querySelector('.template-badge');
 
-            document.body.appendChild(overlay);
-        } else {
-            // Update title
-            const titleEl = overlay.querySelector('.preview-title');
-            if (titleEl) titleEl.textContent = templateName;
+        currentTemplateName = name;
 
-            const placeholderText = overlay.querySelector('.preview-placeholder p');
-            if (placeholderText) {
-                placeholderText.innerHTML = 'Preview video for <strong>' + templateName + '</strong>';
+        // Update modal content
+        if (previewTitle) previewTitle.textContent = name;
+
+        if (previewDesc) {
+            previewDesc.textContent = desc || 'Professional AI video template for your next project.';
+        }
+
+        // Update meta tags
+        if (previewMeta) {
+            previewMeta.innerHTML = '';
+            metaTags.forEach(function(tag) {
+                const span = document.createElement('span');
+                span.textContent = tag.textContent;
+                previewMeta.appendChild(span);
+            });
+            // Add default meta if none exist
+            if (metaTags.length === 0) {
+                const defaultMeta = ['⏱ 30-60s', '🎨 12 styles', '📱 4K'];
+                defaultMeta.forEach(function(text) {
+                    const span = document.createElement('span');
+                    span.textContent = text;
+                    previewMeta.appendChild(span);
+                });
             }
         }
 
-        // Open overlay
-        overlay.classList.add('open');
-        document.body.style.overflow = 'hidden';
+        // Update video
+        if (previewVideo && video) {
+            const source = video.querySelector('source');
+            if (source) {
+                const videoSource = previewVideo.querySelector('source');
+                if (videoSource) {
+                    videoSource.src = source.src;
+                    previewVideo.load();
+                }
+            }
+            // Set poster
+            if (video.poster) {
+                previewVideo.poster = video.poster;
+            }
+        }
 
-        // Focus management
-        const closeBtn = overlay.querySelector('.preview-close');
-        if (closeBtn) {
+        // Update use button link
+        if (previewUseBtn) {
+            previewUseBtn.href = 'signup.html?template=' + encodeURIComponent(name);
+        }
+
+        // Open modal
+        if (previewModal) {
+            previewModal.classList.add('open');
+            document.body.style.overflow = 'hidden';
+
+            // Focus close button
             setTimeout(function() {
-                closeBtn.focus();
+                if (previewClose) previewClose.focus();
             }, 100);
         }
 
-        // Close handlers
-        const closeHandlers = overlay.querySelectorAll('.preview-close, .preview-close-btn');
-        closeHandlers.forEach(function(btn) {
-            btn.addEventListener('click', closeTemplatePreview);
-        });
-
-        // Click outside to close
-        overlay.addEventListener('click', function(e) {
-            if (e.target === overlay) {
-                closeTemplatePreview();
-            }
-        });
-
-        // Escape key
-        document.addEventListener('keydown', handlePreviewEscape);
+        // Dispatch event
+        document.dispatchEvent(new CustomEvent('template-preview-open', {
+            detail: { name: name }
+        }));
     }
 
     /**
-     * Close template preview
+     * Close template preview modal
      */
     function closeTemplatePreview() {
-        const overlay = document.querySelector('.template-preview-overlay');
-        if (overlay) {
-            overlay.classList.remove('open');
+        if (previewModal) {
+            previewModal.classList.remove('open');
             document.body.style.overflow = '';
+
+            // Pause video
+            if (previewVideo) {
+                previewVideo.pause();
+                previewVideo.currentTime = 0;
+            }
         }
-        document.removeEventListener('keydown', handlePreviewEscape);
-    }
 
-    /**
-     * Handle escape key for preview
-     */
-    function handlePreviewEscape(e) {
-        if (e.key === 'Escape') {
-            closeTemplatePreview();
-        }
+        // Dispatch event
+        document.dispatchEvent(new CustomEvent('template-preview-close'));
     }
 
     // ============================================
-    // 4. TEMPLATE SEARCH (Optional)
+    // 4. TEMPLATE CARD INTERACTIVITY
     // ============================================
 
-    /**
-     * Simple search functionality for templates
-     */
-    function initTemplateSearch() {
-        const searchInput = document.querySelector('.template-search-input');
-        if (!searchInput) return;
-
-        let searchTimeout;
-
-        searchInput.addEventListener('input', function() {
-            clearTimeout(searchTimeout);
-            const query = this.value.toLowerCase().trim();
-
-            searchTimeout = setTimeout(function() {
-                templateCards.forEach(function(card) {
-                    const name = card.querySelector('.template-name')?.textContent?.toLowerCase() || '';
-                    const desc = card.querySelector('.template-desc')?.textContent?.toLowerCase() || '';
-                    const matches = !query || name.includes(query) || desc.includes(query);
-
-                    if (matches) {
-                        card.style.display = '';
-                        card.style.opacity = '1';
-                        card.style.transform = 'translateY(0)';
-                    } else {
-                        card.style.display = 'none';
-                        card.style.opacity = '0';
-                    }
-                });
-
-                // Hide load more if searching
-                if (loadMoreBtn) {
-                    loadMoreBtn.style.display = query ? 'none' : '';
-                }
-            }, 300);
-        });
-    }
-
-    // ============================================
-    // 5. TEMPLATE CARD INTERACTIVITY
-    // ============================================
-
-    /**
-     * Add interactive effects to template cards
-     */
     function initTemplateCards() {
         templateCards.forEach(function(card) {
-            // Click on thumbnail play button
-            const playBtn = card.querySelector('.template-play');
+            // Click on card preview button
+            const previewBtn = card.querySelector('.template-preview-btn');
+            if (previewBtn) {
+                previewBtn.addEventListener('click', function(e) {
+                    e.stopPropagation();
+                    openTemplatePreview(card);
+                });
+            }
+
+            // Click on play button in thumbnail
+            const playBtn = card.querySelector('.template-thumb .template-play-btn');
             if (playBtn) {
                 playBtn.addEventListener('click', function(e) {
                     e.stopPropagation();
-                    const name = card.querySelector('.template-name')?.textContent || 'Template';
-                    showTemplatePreview(name);
+                    openTemplatePreview(card);
                 });
             }
 
-            // Click on preview button
-            const previewBtn = card.querySelector('.preview-btn');
-            if (previewBtn) {
-                previewBtn.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    const name = this.dataset.template || 'Template';
-                    showTemplatePreview(name);
+            // Click on the thumbnail itself (but not on buttons)
+            const thumb = card.querySelector('.template-thumb');
+            if (thumb) {
+                thumb.addEventListener('click', function(e) {
+                    if (e.target.closest('.template-play-btn') || e.target.closest('.template-badge')) return;
+                    openTemplatePreview(card);
                 });
             }
 
@@ -323,74 +299,237 @@
             card.addEventListener('keydown', function(e) {
                 if (e.key === 'Enter' || e.key === ' ') {
                     e.preventDefault();
-                    const name = this.querySelector('.template-name')?.textContent || 'Template';
-                    showTemplatePreview(name);
+                    openTemplatePreview(this);
                 }
             });
+
+            // Hover effect: pause/play video
+            const video = card.querySelector('.template-thumb .template-video');
+            if (video) {
+                card.addEventListener('mouseenter', function() {
+                    if (video.paused) {
+                        video.play().catch(function() {});
+                    }
+                });
+                card.addEventListener('mouseleave', function() {
+                    if (!video.paused) {
+                        video.pause();
+                        video.currentTime = 0;
+                    }
+                });
+            }
         });
+
+        console.log('Template cards initialized.');
     }
 
     // ============================================
-    // 6. ANIMATE TEMPLATES ON SCROLL
+    // 5. PREVIEW MODAL CONTROLS
     // ============================================
 
-    /**
-     * Re-trigger reveal animations for filtered templates
-     */
-    function reTriggerReveal() {
-        const revealedElements = document.querySelectorAll('.template-full-card.revealed');
-        revealedElements.forEach(function(el) {
-            // Check if it's still in the filtered view
-            if (el.style.display !== 'none') {
-                // Add a small animation class
-                el.classList.remove('revealed');
-                setTimeout(function() {
-                    el.classList.add('revealed');
-                }, 50);
+    function initPreviewModal() {
+        // Close button
+        if (previewClose) {
+            previewClose.addEventListener('click', closeTemplatePreview);
+        }
+
+        // Click outside to close
+        if (previewModal) {
+            previewModal.addEventListener('click', function(e) {
+                if (e.target === this) {
+                    closeTemplatePreview();
+                }
+            });
+        }
+
+        // Escape key
+        document.addEventListener('keydown', function(e) {
+            if (e.key === 'Escape' && previewModal && previewModal.classList.contains('open')) {
+                closeTemplatePreview();
+            }
+        });
+
+        // Keyboard: arrow keys to navigate templates (if preview is open)
+        document.addEventListener('keydown', function(e) {
+            if (!previewModal || !previewModal.classList.contains('open')) return;
+
+            if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+                e.preventDefault();
+                const currentCards = Array.from(templateCards).filter(function(card) {
+                    const category = card.dataset.category || 'all';
+                    return activeFilter === 'all' || category === activeFilter;
+                });
+
+                const currentIndex = currentCards.findIndex(function(card) {
+                    const name = card.querySelector('.template-name')?.textContent || '';
+                    return name === currentTemplateName;
+                });
+
+                let newIndex;
+                if (e.key === 'ArrowLeft') {
+                    newIndex = currentIndex > 0 ? currentIndex - 1 : currentCards.length - 1;
+                } else {
+                    newIndex = currentIndex < currentCards.length - 1 ? currentIndex + 1 : 0;
+                }
+
+                if (currentCards[newIndex]) {
+                    openTemplatePreview(currentCards[newIndex]);
+                }
+            }
+        });
+
+        console.log('Preview modal initialized.');
+    }
+
+    // ============================================
+    // 6. TEMPLATE SEARCH
+    // ============================================
+
+    function initTemplateSearch() {
+        const searchInput = document.querySelector('.template-search-input');
+        if (!searchInput) return;
+
+        let searchTimeout;
+
+        searchInput.addEventListener('input', function() {
+            clearTimeout(searchTimeout);
+            const query = this.value.trim().toLowerCase();
+
+            searchTimeout = setTimeout(function() {
+                let visibleCards = [];
+                templateCards.forEach(function(card) {
+                    const name = card.querySelector('.template-name')?.textContent?.toLowerCase() || '';
+                    const desc = card.querySelector('.template-desc')?.textContent?.toLowerCase() || '';
+                    const category = card.dataset.category || '';
+                    const matches = !query ||
+                        name.includes(query) ||
+                        desc.includes(query) ||
+                        category.includes(query);
+
+                    if (matches) {
+                        visibleCards.push(card);
+                        card.style.display = '';
+                        card.style.opacity = '1';
+                        card.style.transform = 'translateY(0)';
+                    } else {
+                        card.style.display = 'none';
+                        card.style.opacity = '0';
+                        card.style.transform = '';
+                    }
+                });
+
+                // Hide load more if searching
+                if (loadMoreBtn) {
+                    loadMoreBtn.style.display = query ? 'none' : '';
+                }
+
+                // Show no results message
+                let noResults = document.querySelector('.templates-no-results');
+                if (visibleCards.length === 0 && query) {
+                    if (!noResults) {
+                        noResults = document.createElement('div');
+                        noResults.className = 'templates-no-results';
+                        noResults.style.cssText = `
+                            grid-column: 1 / -1;
+                            text-align: center;
+                            padding: 60px 20px;
+                            color: var(--text-paragraph);
+                        `;
+                        noResults.innerHTML = `
+                            <span style="font-size:3rem;display:block;margin-bottom:12px;">🔍</span>
+                            <p style="font-size:1.1rem;color:var(--text-white);">No templates found</p>
+                            <p style="font-size:0.9rem;">Try adjusting your search terms</p>
+                        `;
+                        templatesGrid.appendChild(noResults);
+                    }
+                    noResults.style.display = 'block';
+                } else {
+                    if (noResults) {
+                        noResults.style.display = 'none';
+                    }
+                }
+            }, 300);
+        });
+
+        console.log('Template search initialized.');
+    }
+
+    // ============================================
+    // 7. KEYBOARD SHORTCUTS
+    // ============================================
+
+    function initKeyboardShortcuts() {
+        document.addEventListener('keydown', function(e) {
+            // Press 'T' to focus first template
+            if ((e.key === 't' || e.key === 'T') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                const firstCard = document.querySelector('.template-full-card');
+                if (firstCard) {
+                    e.preventDefault();
+                    firstCard.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstCard.focus();
+                    if (window.VisionAI && window.VisionAI.Toast) {
+                        window.VisionAI.Toast.info('🎯 Focused on Templates');
+                    }
+                }
+            }
+
+            // Press 'F' to focus filter
+            if ((e.key === 'f' || e.key === 'F') && !e.ctrlKey && !e.metaKey && !e.altKey) {
+                const firstFilter = document.querySelector('.filter-btn');
+                if (firstFilter) {
+                    e.preventDefault();
+                    firstFilter.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                    firstFilter.focus();
+                }
             }
         });
     }
 
     // ============================================
-    // 7. EXPOSE PUBLIC API
+    // 8. TEMPLATE CARD STATS ANIMATION
+    // ============================================
+
+    function initCardStats() {
+        // Add subtle entrance animation to cards when they come into view
+        if ('IntersectionObserver' in window) {
+            const observer = new IntersectionObserver(function(entries) {
+                entries.forEach(function(entry) {
+                    if (entry.isIntersecting) {
+                        const card = entry.target;
+                        if (!card.classList.contains('revealed')) {
+                            card.classList.add('revealed');
+                        }
+                        observer.unobserve(card);
+                    }
+                });
+            }, { threshold: 0.1, rootMargin: '50px' });
+
+            templateCards.forEach(function(card) {
+                observer.observe(card);
+            });
+        }
+    }
+
+    // ============================================
+    // 9. EXPOSE PUBLIC API
     // ============================================
 
     window.TemplatesPage = {
         filter: filterTemplates,
         loadMore: loadMoreTemplates,
-        preview: showTemplatePreview,
+        openPreview: openTemplatePreview,
         closePreview: closeTemplatePreview,
-        search: initTemplateSearch,
         initCards: initTemplateCards,
+        initPreview: initPreviewModal,
+        initSearch: initTemplateSearch,
+        initShortcuts: initKeyboardShortcuts,
+        initStats: initCardStats,
         initAll: function() {
-            // Initialize filter buttons
-            filterBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    const category = this.dataset.filter || 'all';
-                    filterTemplates(category);
-                    // Scroll to top of grid with offset
-                    const grid = document.querySelector('.templates-grid');
-                    if (grid) {
-                        const navbarHeight = document.querySelector('#navbar')?.offsetHeight || 80;
-                        const offset = grid.getBoundingClientRect().top + window.pageYOffset - navbarHeight - 20;
-                        window.scrollTo({
-                            top: offset,
-                            behavior: 'smooth'
-                        });
-                    }
-                });
-            });
-
-            // Load more button
-            if (loadMoreBtn) {
-                loadMoreBtn.addEventListener('click', loadMoreTemplates);
-            }
-
-            // Initialize card interactions
             initTemplateCards();
-
-            // Initialize search
+            initPreviewModal();
             initTemplateSearch();
+            initKeyboardShortcuts();
+            initCardStats();
 
             // Set initial visible count
             const allVisible = Array.from(templateCards).filter(function(card) {
@@ -406,7 +545,7 @@
     };
 
     // ============================================
-    // 8. INITIALIZE
+    // 10. INITIALIZE
     // ============================================
 
     function init() {

@@ -19,7 +19,7 @@
     transform: translateX(-50%);
     width: 80%;
     height: 100%;
-    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.05), transparent 70%);
+    background: radial-gradient(ellipse, rgba(124, 58, 237, 0.06), transparent 70%);
     pointer-events: none;
 }
 
@@ -49,13 +49,14 @@
 .story-grid {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 48px;
+    gap: 56px;
     align-items: center;
     max-width: 1100px;
     margin: 0 auto;
 }
 
-.story-grid .story-image {
+.story-image {
+    position: relative;
     border-radius: var(--radius-lg);
     overflow: hidden;
     background: var(--bg-surface);
@@ -63,37 +64,109 @@
     box-shadow: var(--shadow-sm);
 }
 
-.story-grid .story-image img {
+.story-image img {
     width: 100%;
     height: 100%;
     object-fit: cover;
     aspect-ratio: 4 / 3;
     display: block;
+    transition: transform var(--transition-slow);
 }
 
-.story-grid .story-content h3 {
+.story-image:hover img {
+    transform: scale(1.02);
+}
+
+.story-image-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 16px 20px;
+    background: linear-gradient(to top, rgba(6, 8, 22, 0.7), transparent);
+}
+
+.story-year {
+    display: inline-block;
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: var(--text-white);
+    background: rgba(124, 58, 237, 0.7);
+    backdrop-filter: blur(4px);
+    -webkit-backdrop-filter: blur(4px);
+    padding: 4px 16px;
+    border-radius: var(--radius-full);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.story-content {
+    padding: 8px 0;
+}
+
+.story-tag {
+    display: inline-block;
+    font-size: 0.65rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--accent);
+    background: rgba(6, 182, 212, 0.10);
+    padding: 4px 14px;
+    border-radius: var(--radius-full);
+    margin-bottom: 12px;
+}
+
+.story-content h3 {
     font-size: 1.8rem;
     font-weight: 700;
     color: var(--text-white);
     margin-bottom: 16px;
 }
 
-.story-grid .story-content h3 .gradient-text {
+.story-content h3 .gradient-text {
     background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
 }
 
-.story-grid .story-content p {
+.story-content p {
     color: var(--text-paragraph);
     line-height: 1.8;
     margin-bottom: 16px;
     font-size: 0.95rem;
 }
 
-.story-grid .story-content p:last-child {
-    margin-bottom: 0;
+.story-content p:last-of-type {
+    margin-bottom: 24px;
+}
+
+.story-milestones {
+    display: flex;
+    gap: 32px;
+    padding-top: 20px;
+    border-top: 1px solid var(--border-light);
+}
+
+.milestone {
+    display: flex;
+    flex-direction: column;
+}
+
+.milestone-number {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-white);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+}
+
+.milestone-label {
+    font-size: 0.75rem;
+    color: var(--text-paragraph);
+    margin-top: 2px;
 }
 
 /* ---------- VALUES ---------- */
@@ -116,6 +189,24 @@
     padding: 32px 28px 28px;
     border: 1px solid var(--border-light);
     transition: all var(--transition-base);
+    position: relative;
+    overflow: hidden;
+}
+
+.value-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--accent));
+    opacity: 0;
+    transition: opacity var(--transition-base);
+}
+
+.value-card:hover::before {
+    opacity: 1;
 }
 
 .value-card:hover {
@@ -128,6 +219,11 @@
     font-size: 2.4rem;
     margin-bottom: 12px;
     display: block;
+    transition: transform var(--transition-base);
+}
+
+.value-card:hover .value-icon {
+    transform: scale(1.1) rotate(-4deg);
 }
 
 .value-card .value-title {
@@ -222,7 +318,13 @@
     font-size: 1.6rem;
     font-weight: 600;
     color: var(--text-white);
-    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.3);
+    box-shadow: 0 4px 16px rgba(124, 58, 237, 0.25);
+    transition: transform var(--transition-base);
+}
+
+.team-card:hover .team-avatar {
+    transform: scale(1.05);
+    box-shadow: 0 6px 24px rgba(124, 58, 237, 0.35);
 }
 
 .team-card .team-name {
@@ -245,8 +347,18 @@
         gap: 32px;
     }
 
-    .story-grid .story-image {
+    .story-image {
         order: -1;
+        max-width: 600px;
+        margin: 0 auto;
+    }
+
+    .story-content {
+        text-align: center;
+    }
+
+    .story-milestones {
+        justify-content: center;
     }
 
     .stats-grid {
@@ -273,12 +385,25 @@
         padding: 40px 0 60px;
     }
 
-    .story-grid .story-content h3 {
+    .story-grid {
+        gap: 24px;
+    }
+
+    .story-content h3 {
         font-size: 1.5rem;
     }
 
-    .story-grid .story-content p {
+    .story-content p {
         font-size: 0.9rem;
+    }
+
+    .story-milestones {
+        gap: 20px;
+        flex-wrap: wrap;
+    }
+
+    .milestone-number {
+        font-size: 1.2rem;
     }
 
     .about-values {
@@ -352,8 +477,14 @@
         font-size: 1.6rem;
     }
 
-    .story-grid .story-content h3 {
+    .story-content h3 {
         font-size: 1.3rem;
+    }
+
+    .story-milestones {
+        flex-direction: column;
+        gap: 12px;
+        align-items: center;
     }
 
     .stats-grid {
@@ -421,6 +552,18 @@
         transform: none !important;
     }
 
+    .value-card .value-icon {
+        transition: none !important;
+    }
+
+    .value-card:hover .value-icon {
+        transform: none !important;
+    }
+
+    .value-card::before {
+        transition: none !important;
+    }
+
     .team-card {
         transform: none !important;
         transition: none !important;
@@ -430,7 +573,11 @@
         transform: none !important;
     }
 
-    .stat-box .stat-number {
+    .team-card .team-avatar {
+        transition: none !important;
+    }
+
+    .story-image img {
         transition: none !important;
     }
 }

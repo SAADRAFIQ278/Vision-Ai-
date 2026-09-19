@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="faq.css" />
@@ -48,8 +47,14 @@
             <span></span>
             <span></span>
         </div>
-        <p class="loader-text">VisionAI</p>
+        <p class="loader-text">Vision<span>AI</span></p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- ===== STICKY NAVBAR ===== -->
     <header id="navbar" role="banner" aria-label="Main navigation">
@@ -74,8 +79,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -88,13 +93,19 @@
 
     <!-- ===== FAQ HERO ===== -->
     <section class="faq-hero" aria-label="FAQ hero">
+        <div class="hero-aurora"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
         <div class="container">
-            <span class="section-tag">FAQ</span>
-            <h1 class="section-title">Frequently <span class="gradient-text">Asked Questions</span></h1>
-            <p class="section-desc">
-                Find answers to the most common questions about VisionAI. If you can't find
-                what you're looking for, feel free to <a href="contact.html">contact our support team</a>.
-            </p>
+            <div class="faq-hero-content">
+                <span class="section-tag">FAQ</span>
+                <h1 class="section-title">Frequently <span class="gradient-text">Asked Questions</span></h1>
+                <p class="section-desc">
+                    Find answers to the most common questions about VisionAI. If you can't find
+                    what you're looking for, feel free to <a href="contact.html">contact our support team</a>.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -120,7 +131,7 @@
                 <div class="faq-category-group" data-category="general">
                     <h3 class="faq-group-title">General</h3>
 
-                    <div class="faq-item" data-reveal>
+                    <div class="faq-item glass-card" data-reveal>
                         <button class="faq-question" aria-expanded="false">
                             <span>What is VisionAI?</span>
                             <span class="faq-icon">+</span>
@@ -130,7 +141,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="50">
+                    <div class="faq-item glass-card" data-reveal data-delay="50">
                         <button class="faq-question" aria-expanded="false">
                             <span>How does VisionAI work?</span>
                             <span class="faq-icon">+</span>
@@ -140,7 +151,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="100">
+                    <div class="faq-item glass-card" data-reveal data-delay="100">
                         <button class="faq-question" aria-expanded="false">
                             <span>Who is VisionAI for?</span>
                             <span class="faq-icon">+</span>
@@ -155,7 +166,7 @@
                 <div class="faq-category-group" data-category="pricing">
                     <h3 class="faq-group-title">Pricing</h3>
 
-                    <div class="faq-item" data-reveal>
+                    <div class="faq-item glass-card" data-reveal>
                         <button class="faq-question" aria-expanded="false">
                             <span>Is there a free trial?</span>
                             <span class="faq-icon">+</span>
@@ -165,7 +176,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="50">
+                    <div class="faq-item glass-card" data-reveal data-delay="50">
                         <button class="faq-question" aria-expanded="false">
                             <span>What payment methods do you accept?</span>
                             <span class="faq-icon">+</span>
@@ -175,7 +186,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="100">
+                    <div class="faq-item glass-card" data-reveal data-delay="100">
                         <button class="faq-question" aria-expanded="false">
                             <span>Can I cancel my subscription anytime?</span>
                             <span class="faq-icon">+</span>
@@ -185,7 +196,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="150">
+                    <div class="faq-item glass-card" data-reveal data-delay="150">
                         <button class="faq-question" aria-expanded="false">
                             <span>Is there a discount for annual billing?</span>
                             <span class="faq-icon">+</span>
@@ -200,7 +211,7 @@
                 <div class="faq-category-group" data-category="technical">
                     <h3 class="faq-group-title">Technical</h3>
 
-                    <div class="faq-item" data-reveal>
+                    <div class="faq-item glass-card" data-reveal>
                         <button class="faq-question" aria-expanded="false">
                             <span>What video quality can I expect?</span>
                             <span class="faq-icon">+</span>
@@ -210,7 +221,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="50">
+                    <div class="faq-item glass-card" data-reveal data-delay="50">
                         <button class="faq-question" aria-expanded="false">
                             <span>How long does it take to generate a video?</span>
                             <span class="faq-icon">+</span>
@@ -220,7 +231,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="100">
+                    <div class="faq-item glass-card" data-reveal data-delay="100">
                         <button class="faq-question" aria-expanded="false">
                             <span>What formats can I export to?</span>
                             <span class="faq-icon">+</span>
@@ -230,7 +241,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="150">
+                    <div class="faq-item glass-card" data-reveal data-delay="150">
                         <button class="faq-question" aria-expanded="false">
                             <span>Does VisionAI have an API?</span>
                             <span class="faq-icon">+</span>
@@ -245,7 +256,7 @@
                 <div class="faq-category-group" data-category="account">
                     <h3 class="faq-group-title">Account</h3>
 
-                    <div class="faq-item" data-reveal>
+                    <div class="faq-item glass-card" data-reveal>
                         <button class="faq-question" aria-expanded="false">
                             <span>How do I create an account?</span>
                             <span class="faq-icon">+</span>
@@ -255,7 +266,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="50">
+                    <div class="faq-item glass-card" data-reveal data-delay="50">
                         <button class="faq-question" aria-expanded="false">
                             <span>Can I change my plan later?</span>
                             <span class="faq-icon">+</span>
@@ -265,7 +276,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="100">
+                    <div class="faq-item glass-card" data-reveal data-delay="100">
                         <button class="faq-question" aria-expanded="false">
                             <span>How do I reset my password?</span>
                             <span class="faq-icon">+</span>
@@ -280,7 +291,7 @@
                 <div class="faq-category-group" data-category="security">
                     <h3 class="faq-group-title">Security</h3>
 
-                    <div class="faq-item" data-reveal>
+                    <div class="faq-item glass-card" data-reveal>
                         <button class="faq-question" aria-expanded="false">
                             <span>Is my data secure with VisionAI?</span>
                             <span class="faq-icon">+</span>
@@ -290,7 +301,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="50">
+                    <div class="faq-item glass-card" data-reveal data-delay="50">
                         <button class="faq-question" aria-expanded="false">
                             <span>Who owns the videos I create?</span>
                             <span class="faq-icon">+</span>
@@ -300,7 +311,7 @@
                         </div>
                     </div>
 
-                    <div class="faq-item" data-reveal data-delay="100">
+                    <div class="faq-item glass-card" data-reveal data-delay="100">
                         <button class="faq-question" aria-expanded="false">
                             <span>Does VisionAI use my data for training?</span>
                             <span class="faq-icon">+</span>
@@ -314,12 +325,13 @@
 
             <!-- Still have questions? -->
             <div class="faq-contact-cta" data-reveal>
-                <div class="faq-contact-box">
+                <div class="faq-contact-box glass-card">
+                    <div class="faq-contact-glow"></div>
                     <h3>Still have questions?</h3>
                     <p>We're here to help. Reach out to our support team and we'll get back to you as soon as possible.</p>
                     <div class="faq-contact-actions">
                         <a href="contact.html" class="btn btn-primary">Contact Support</a>
-                        <a href="docs.html" class="btn btn-outline">Browse Documentation</a>
+                        <a href="docs.html" class="btn btn-ghost">Browse Documentation</a>
                     </div>
                 </div>
             </div>
@@ -329,19 +341,21 @@
     <!-- ===== CTA ===== -->
     <section class="cta" aria-label="Call to action">
         <div class="container">
-            <div class="cta-card" data-reveal>
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
                 <div class="cta-content">
+                    <span class="cta-tag">🚀 Get Started</span>
                     <h2 class="cta-title">Ready to <span class="gradient-text">Get Started</span> with VisionAI?</h2>
                     <p class="cta-desc">
                         Join thousands of creators already using VisionAI to produce stunning
                         AI videos. Start your free trial today.
                     </p>
                     <div class="cta-actions">
-                        <a href="signup.html" class="btn btn-primary btn-lg">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
                             Start Free Trial
                             <span class="btn-arrow">→</span>
                         </a>
-                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+                        <a href="contact.html" class="btn btn-glass btn-lg">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -362,10 +376,11 @@
                         marketers, and businesses. Transform your ideas into stunning videos.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -379,18 +394,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Company</h4>
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="docs.html">Documentation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="api.html">API Reference</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
@@ -399,14 +415,21 @@
                     <h4 class="footer-heading">Newsletter</h4>
                     <p class="footer-desc">Stay updated with the latest features and releases.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
-                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">Subscribe</button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
                     </form>
-                    <p id="newsletterMessage" class="newsletter-message"></p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>

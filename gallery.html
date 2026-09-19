@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="gallery.css" />
@@ -48,8 +47,14 @@
             <span></span>
             <span></span>
         </div>
-        <p class="loader-text">VisionAI</p>
+        <p class="loader-text">Vision<span>AI</span></p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- ===== STICKY NAVBAR ===== -->
     <header id="navbar" role="banner" aria-label="Main navigation">
@@ -74,8 +79,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -88,13 +93,19 @@
 
     <!-- ===== GALLERY HERO ===== -->
     <section class="gallery-hero" aria-label="Gallery hero">
+        <div class="hero-aurora"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
         <div class="container">
-            <span class="section-tag">Gallery</span>
-            <h1 class="section-title">AI Video <span class="gradient-text">Showcase</span></h1>
-            <p class="section-desc">
-                Explore a curated collection of stunning AI-generated videos created with VisionAI.
-                See the power of our technology in action.
-            </p>
+            <div class="gallery-hero-content">
+                <span class="section-tag">Gallery</span>
+                <h1 class="section-title">AI Video <span class="gradient-text">Showcase</span></h1>
+                <p class="section-desc">
+                    Explore a curated collection of stunning AI-generated videos created with VisionAI.
+                    See the power of our technology in action.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -118,7 +129,7 @@
             <div class="gallery-grid" id="galleryGrid">
                 <!-- Gallery Item 1 -->
                 <div class="gallery-item" data-category="cinematic" data-reveal data-delay="100">
-                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&h=400&fit=crop&crop=center" alt="Cinematic landscape" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=600&h=400&fit=crop&crop=center" alt="Cinematic horizon video" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Cinematic Horizon</span>
@@ -130,7 +141,7 @@
 
                 <!-- Gallery Item 2 -->
                 <div class="gallery-item" data-category="corporate" data-reveal data-delay="150">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center" alt="Corporate video" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center" alt="Corporate brand story" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Brand Story</span>
@@ -142,7 +153,7 @@
 
                 <!-- Gallery Item 3 -->
                 <div class="gallery-item" data-category="creative" data-reveal data-delay="200">
-                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center" alt="Creative video" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=400&fit=crop&crop=center" alt="Creative fusion video" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Creative Fusion</span>
@@ -154,7 +165,7 @@
 
                 <!-- Gallery Item 4 -->
                 <div class="gallery-item" data-category="tech" data-reveal data-delay="100">
-                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" alt="Tech video" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=400&fit=crop&crop=center" alt="Tech vision video" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Tech Vision</span>
@@ -166,7 +177,7 @@
 
                 <!-- Gallery Item 5 -->
                 <div class="gallery-item" data-category="nature" data-reveal data-delay="150">
-                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop&crop=center" alt="Nature video" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600&h=400&fit=crop&crop=center" alt="Nature beauty video" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Nature's Beauty</span>
@@ -178,7 +189,7 @@
 
                 <!-- Gallery Item 6 -->
                 <div class="gallery-item" data-category="cinematic" data-reveal data-delay="200">
-                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=400&fit=crop&crop=center" alt="Cinematic night" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1519681393784-d120267933ba?w=600&h=400&fit=crop&crop=center" alt="Night lights cinematic" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Night Lights</span>
@@ -190,7 +201,7 @@
 
                 <!-- Gallery Item 7 -->
                 <div class="gallery-item" data-category="corporate" data-reveal data-delay="100">
-                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&crop=center" alt="Corporate video" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=400&fit=crop&crop=center" alt="Business growth video" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Business Growth</span>
@@ -202,7 +213,7 @@
 
                 <!-- Gallery Item 8 -->
                 <div class="gallery-item" data-category="creative" data-reveal data-delay="150">
-                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop&crop=center" alt="Creative gaming" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1542751371-adc38448a05e?w=600&h=400&fit=crop&crop=center" alt="Gaming world creative" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Gaming World</span>
@@ -214,7 +225,7 @@
 
                 <!-- Gallery Item 9 -->
                 <div class="gallery-item" data-category="tech" data-reveal data-delay="200">
-                    <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&h=400&fit=crop&crop=center" alt="Tech product" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&h=400&fit=crop&crop=center" alt="Product launch tech" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Product Launch</span>
@@ -226,7 +237,7 @@
 
                 <!-- Gallery Item 10 -->
                 <div class="gallery-item" data-category="nature" data-reveal data-delay="100">
-                    <img src="https://images.unsplash.com/photo-1470071459604-7b7ec45d0b6f?w=600&h=400&fit=crop&crop=center" alt="Nature landscape" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1470071459604-7b7ec45d0b6f?w=600&h=400&fit=crop&crop=center" alt="Forest dreams nature" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Forest Dreams</span>
@@ -238,7 +249,7 @@
 
                 <!-- Gallery Item 11 -->
                 <div class="gallery-item" data-category="cinematic" data-reveal data-delay="150">
-                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&crop=center" alt="Cinematic city" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1504384308090-c894fdcc538d?w=600&h=400&fit=crop&crop=center" alt="City lights cinematic" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">City Lights</span>
@@ -250,7 +261,7 @@
 
                 <!-- Gallery Item 12 -->
                 <div class="gallery-item" data-category="corporate" data-reveal data-delay="200">
-                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center" alt="Corporate meeting" loading="lazy" />
+                    <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=400&fit=crop&crop=center" alt="Team success corporate" loading="lazy" />
                     <div class="gallery-overlay">
                         <div class="gallery-info">
                             <span class="gallery-title">Team Success</span>
@@ -268,22 +279,24 @@
         </div>
     </section>
 
-    <!-- ===== GALLERY CTA ===== -->
+    <!-- ===== CTA ===== -->
     <section class="cta" aria-label="Call to action">
         <div class="container">
-            <div class="cta-card" data-reveal>
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
                 <div class="cta-content">
+                    <span class="cta-tag">🚀 Get Started</span>
                     <h2 class="cta-title">Create Your Own <span class="gradient-text">AI Masterpiece</span></h2>
                     <p class="cta-desc">
                         Join thousands of creators already using VisionAI to produce stunning videos.
                         Start your free trial today.
                     </p>
                     <div class="cta-actions">
-                        <a href="signup.html" class="btn btn-primary btn-lg">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
                             Start Creating Free
                             <span class="btn-arrow">→</span>
                         </a>
-                        <a href="templates.html" class="btn btn-outline btn-lg">Browse Templates</a>
+                        <a href="templates.html" class="btn btn-glass btn-lg">Browse Templates</a>
                     </div>
                 </div>
             </div>
@@ -304,10 +317,11 @@
                         marketers, and businesses. Transform your ideas into stunning videos.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -321,18 +335,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Company</h4>
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="docs.html">Documentation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="api.html">API Reference</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
@@ -341,14 +356,21 @@
                     <h4 class="footer-heading">Newsletter</h4>
                     <p class="footer-desc">Stay updated with the latest features and releases.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
-                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">Subscribe</button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
                     </form>
-                    <p id="newsletterMessage" class="newsletter-message"></p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
@@ -370,6 +392,22 @@
                     <source src="" type="video/mp4" />
                     Your browser does not support the video tag.
                 </video>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== GALLERY LIGHTBOX ===== -->
+    <div id="galleryLightbox" class="gallery-lightbox" role="dialog" aria-modal="true" aria-label="Image preview">
+        <div class="lightbox-content">
+            <button class="lightbox-close" aria-label="Close lightbox">✕</button>
+            <button class="lightbox-nav prev" aria-label="Previous">‹</button>
+            <button class="lightbox-nav next" aria-label="Next">›</button>
+            <div class="lightbox-body">
+                <img src="" alt="Gallery image" />
+            </div>
+            <div class="lightbox-footer">
+                <span class="lightbox-title"></span>
+                <span class="lightbox-tag"></span>
             </div>
         </div>
     </div>

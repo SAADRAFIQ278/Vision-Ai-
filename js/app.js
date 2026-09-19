@@ -162,20 +162,21 @@
     }
 
     // ============================================
-    // 2. THEME / COLOR MODE
+    // 2. THEME / COLOR MODE (Dark only - premium)
     // ============================================
 
     const ThemeManager = {
         current: 'dark',
         init: function() {
             // VisionAI uses dark theme exclusively as per design spec
-            // But we provide a way to toggle if needed
+            // But we provide a way to toggle if needed (hidden feature)
             const saved = localStorage.getItem('visionai-theme');
-            if (saved) {
-                this.current = saved;
-                this.applyTheme(saved);
+            if (saved && saved === 'light') {
+                this.current = 'light';
+                this.applyTheme('light');
+            } else {
+                this.applyTheme('dark');
             }
-            // Listen for system preference changes
             this.listenForSystemChanges();
         },
         applyTheme: function(theme) {
@@ -199,7 +200,6 @@
             const darkModeMedia = window.matchMedia('(prefers-color-scheme: dark)');
             if (darkModeMedia) {
                 darkModeMedia.addEventListener('change', function(e) {
-                    // Only apply if user hasn't manually set a preference
                     if (!localStorage.getItem('visionai-theme')) {
                         ThemeManager.applyTheme(e.matches ? 'dark' : 'light');
                     }
@@ -218,7 +218,6 @@
     const PerformanceMonitor = {
         marks: {},
         init: function() {
-            // Mark initial load time
             this.mark('app-init');
         },
         mark: function(name) {
@@ -250,7 +249,7 @@
     };
 
     // ============================================
-    // 4. RESIZE OBSERVER (for responsive adjustments)
+    // 4. RESIZE OBSERVER
     // ============================================
 
     const ResizeManager = {
@@ -258,7 +257,6 @@
         init: function() {
             this.debouncedResize = debounce(this.handleResize.bind(this), 150);
             window.addEventListener('resize', this.debouncedResize);
-            // Also observe the body for size changes
             if (window.ResizeObserver) {
                 this.observer = new ResizeObserver(this.debouncedResize);
                 this.observer.observe(document.body);
@@ -299,7 +297,7 @@
     };
 
     // ============================================
-    // 5. INTERSECTION OBSERVER (Unified)
+    // 5. INTERSECTION OBSERVER
     // ============================================
 
     const IntersectionManager = {
@@ -314,16 +312,13 @@
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         const el = entry.target;
-                        // Check if it has data-reveal attribute
                         if (el.hasAttribute('data-reveal')) {
                             el.classList.add('revealed');
                         }
-                        // Also handle any custom reveal logic
                         const event = new CustomEvent('element-revealed', {
                             detail: { element: el }
                         });
                         el.dispatchEvent(event);
-                        // Optionally unobserve after reveal
                         if (el.dataset.revealOnce !== 'false') {
                             observer.unobserve(el);
                         }
@@ -341,7 +336,6 @@
                 entries.forEach(function(entry) {
                     if (entry.isIntersecting) {
                         const el = entry.target;
-                        // Lazy load images
                         if (el.tagName === 'IMG') {
                             const src = el.dataset.src || el.src;
                             if (el.dataset.src) {
@@ -349,11 +343,9 @@
                             }
                             el.loading = 'lazy';
                         }
-                        // Lazy load background images
                         if (el.dataset.bg) {
                             el.style.backgroundImage = 'url(' + el.dataset.bg + ')';
                         }
-                        // Lazy load videos
                         if (el.tagName === 'VIDEO' && el.dataset.src) {
                             const source = el.querySelector('source');
                             if (source) {
@@ -372,7 +364,6 @@
         },
         observeReveal: function(el) {
             if (this.revealObserver && el) {
-                // Check if already visible
                 const rect = el.getBoundingClientRect();
                 const winHeight = window.innerHeight || document.documentElement.clientHeight;
                 if (rect.top < winHeight - 80) {
@@ -389,22 +380,18 @@
         },
         observeAll: function(context) {
             const ctx = context || document;
-            // Data-reveal elements
             const revealEls = ctx.querySelectorAll('[data-reveal]');
             revealEls.forEach(function(el) {
                 IntersectionManager.observeReveal(el);
             });
-            // Lazy images
             const lazyImages = ctx.querySelectorAll('img[loading="lazy"], img[data-src]');
             lazyImages.forEach(function(img) {
                 IntersectionManager.observeLazy(img);
             });
-            // Lazy videos
             const lazyVideos = ctx.querySelectorAll('video[data-src]');
             lazyVideos.forEach(function(video) {
                 IntersectionManager.observeLazy(video);
             });
-            // Lazy backgrounds
             const lazyBg = ctx.querySelectorAll('[data-bg]');
             lazyBg.forEach(function(el) {
                 IntersectionManager.observeLazy(el);
@@ -413,28 +400,32 @@
     };
 
     // ============================================
-    // 6. KEYBOARD NAVIGATION HELPERS
+    // 6. KEYBOARD NAVIGATION
     // ============================================
 
     const KeyboardManager = {
         init: function() {
-            // Handle Escape key for modals
+            // Global Escape handler for modals
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Escape') {
-                    // Close any open modal
+                    // Close video modal
                     const openModal = document.querySelector('.video-modal.open');
                     if (openModal) {
                         const closeBtn = openModal.querySelector('.video-modal-close');
-                        if (closeBtn) {
-                            closeBtn.click();
-                        }
+                        if (closeBtn) closeBtn.click();
+                    }
+                    // Close template preview modal
+                    const previewModal = document.querySelector('.template-preview-modal.open');
+                    if (previewModal) {
+                        const closeBtn = previewModal.querySelector('.template-preview-close');
+                        if (closeBtn) closeBtn.click();
                     }
                 }
             });
-            // Handle Tab key for focus management
+
+            // Focus management for Tab key
             document.addEventListener('keydown', function(e) {
                 if (e.key === 'Tab') {
-                    // Update focus state for any focusable elements
                     document.querySelectorAll('a, button, input, select, textarea, [tabindex]:not([tabindex="-1"])').forEach(function(el) {
                         if (el === document.activeElement) {
                             el.classList.add('focus-visible');
@@ -448,7 +439,7 @@
     };
 
     // ============================================
-    // 7. TOAST SYSTEM (Global)
+    // 7. TOAST SYSTEM
     // ============================================
 
     const ToastSystem = {
@@ -457,7 +448,6 @@
         init: function() {
             this.toast = document.getElementById('toast');
             if (!this.toast) {
-                // Create toast if not present
                 this.toast = createElement('div', {
                     id: 'toast',
                     class: 'toast',
@@ -532,25 +522,22 @@
         init: function() {
             this.loader = document.getElementById('loader');
             if (this.loader) {
-                // Auto-hide after page load
                 window.addEventListener('load', function() {
                     setTimeout(function() {
                         LoaderManager.hide();
-                    }, 400);
+                    }, 500);
                 });
             }
         },
         show: function() {
             if (this.loader) {
-                this.loader.style.opacity = '1';
-                this.loader.style.visibility = 'visible';
+                this.loader.classList.remove('hidden');
             }
             return this;
         },
         hide: function() {
             if (this.loader) {
-                this.loader.style.opacity = '0';
-                this.loader.style.visibility = 'hidden';
+                this.loader.classList.add('hidden');
             }
             return this;
         },
@@ -566,7 +553,7 @@
     };
 
     // ============================================
-    // 9. SCROLL LOCK / UNLOCK
+    // 9. SCROLL LOCK
     // ============================================
 
     const ScrollLock = {
@@ -618,10 +605,126 @@
     };
 
     // ============================================
-    // 11. EXPOSE GLOBALS
+    // 11. CURSOR GLOW
     // ============================================
 
-    // Expose utilities globally
+    const CursorGlow = {
+        element: null,
+        init: function() {
+            this.element = document.getElementById('cursorGlow');
+            if (!this.element) return;
+
+            // Only enable on desktop
+            if (window.innerWidth < 1025) {
+                this.element.style.display = 'none';
+                return;
+            }
+
+            document.addEventListener('mousemove', function(e) {
+                const x = e.clientX;
+                const y = e.clientY;
+                CursorGlow.element.style.left = x + 'px';
+                CursorGlow.element.style.top = y + 'px';
+            });
+
+            document.addEventListener('mouseleave', function() {
+                CursorGlow.element.style.opacity = '0';
+            });
+
+            document.addEventListener('mouseenter', function() {
+                CursorGlow.element.style.opacity = '1';
+            });
+        }
+    };
+
+    // ============================================
+    // 12. SKELETON LOADER
+    // ============================================
+
+    const SkeletonLoader = {
+        init: function() {
+            // Add skeleton loading for images that are being lazy loaded
+            const images = document.querySelectorAll('img[loading="lazy"]');
+            images.forEach(function(img) {
+                // Add skeleton class before load
+                img.classList.add('skeleton');
+                img.addEventListener('load', function() {
+                    this.classList.remove('skeleton');
+                });
+                img.addEventListener('error', function() {
+                    this.classList.remove('skeleton');
+                });
+            });
+        }
+    };
+
+    // ============================================
+    // 13. PARALLAX EFFECT
+    // ============================================
+
+    const ParallaxManager = {
+        elements: [],
+        init: function() {
+            this.elements = document.querySelectorAll('[data-parallax-speed]');
+            if (this.elements.length === 0) return;
+
+            this.throttledUpdate = throttle(this.update.bind(this), 10);
+            window.addEventListener('scroll', this.throttledUpdate, { passive: true });
+            this.update();
+        },
+        update: function() {
+            const scrollY = window.scrollY;
+            this.elements.forEach(function(el) {
+                const speed = parseFloat(el.getAttribute('data-parallax-speed')) || 0.3;
+                const rect = el.getBoundingClientRect();
+                const viewportHeight = window.innerHeight;
+
+                // Only animate if element is in or near viewport
+                if (rect.top < viewportHeight + 200 && rect.bottom > -200) {
+                    const offset = (rect.top - viewportHeight / 2) * speed;
+                    el.style.transform = 'translateY(' + offset + 'px)';
+                }
+            });
+        },
+        destroy: function() {
+            window.removeEventListener('scroll', this.throttledUpdate);
+        }
+    };
+
+    // ============================================
+    // 14. RIPPLE EFFECT (Global)
+    // ============================================
+
+    const RippleManager = {
+        init: function() {
+            document.addEventListener('click', function(e) {
+                const btn = e.target.closest('.btn, .faq-question, .template-play-btn, .demo-play-btn');
+                if (btn) {
+                    RippleManager.createRipple(e, btn);
+                }
+            });
+        },
+        createRipple: function(e, element) {
+            const ripple = document.createElement('span');
+            ripple.className = 'ripple-effect';
+            const rect = element.getBoundingClientRect();
+            const size = Math.max(rect.width, rect.height);
+            ripple.style.width = ripple.style.height = size + 'px';
+            ripple.style.left = (e.clientX - rect.left - size / 2) + 'px';
+            ripple.style.top = (e.clientY - rect.top - size / 2) + 'px';
+            element.style.position = 'relative';
+            element.style.overflow = 'hidden';
+            element.appendChild(ripple);
+            setTimeout(function() {
+                ripple.remove();
+            }, 700);
+        }
+    };
+
+    // ============================================
+    // 15. EXPOSE GLOBALS
+    // ============================================
+
     window.VisionAI = {
         // Utilities
         debounce: debounce,
@@ -649,20 +752,22 @@
         Loader: LoaderManager,
         ScrollLock: ScrollLock,
         Network: NetworkStatus,
+        Cursor: CursorGlow,
+        Skeleton: SkeletonLoader,
+        Parallax: ParallaxManager,
+        Ripple: RippleManager,
 
         // Version
-        version: '1.0.0'
+        version: '3.0.0'
     };
 
     // ============================================
-    // 12. INITIALIZE
+    // 16. INITIALIZE
     // ============================================
 
     function init() {
-        // Mark start
         PerformanceMonitor.mark('init-start');
 
-        // Initialize managers
         ThemeManager.init();
         ResizeManager.init();
         IntersectionManager.init();
@@ -670,29 +775,31 @@
         ToastSystem.init();
         LoaderManager.init();
         NetworkStatus.init();
+        CursorGlow.init();
+        SkeletonLoader.init();
+        ParallaxManager.init();
+        RippleManager.init();
 
         // Observe all reveal elements
         IntersectionManager.observeAll();
 
-        // Mark init complete
         PerformanceMonitor.mark('init-end');
         PerformanceMonitor.logMeasure('Total Init', 'init-start', 'init-end');
 
-        console.log('VisionAI v1.0.0 initialized successfully.');
-        console.log('🌙 Dark theme, glassmorphism, premium UI ready.');
+        console.log('VisionAI v3.0.0 initialized successfully.');
+        console.log('🌙 Premium dark theme • Glassmorphism • AI Video Generator');
+        console.log('🚀 Ready to create cinematic AI videos.');
+        console.log('✨ Features: Parallax • Ripple • Cursor Glow • Scroll Reveal');
     }
 
-    // Run on DOM ready
     if (document.readyState === 'loading') {
         document.addEventListener('DOMContentLoaded', init);
     } else {
         init();
     }
 
-    // Also run on full load for any post-load tasks
     window.addEventListener('load', function() {
         PerformanceMonitor.mark('full-load');
-        // Any additional post-load tasks
         console.log('VisionAI fully loaded.');
     });
 

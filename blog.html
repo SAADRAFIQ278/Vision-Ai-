@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="blog.css" />
@@ -48,8 +47,14 @@
             <span></span>
             <span></span>
         </div>
-        <p class="loader-text">VisionAI</p>
+        <p class="loader-text">Vision<span>AI</span></p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- ===== STICKY NAVBAR ===== -->
     <header id="navbar" role="banner" aria-label="Main navigation">
@@ -74,8 +79,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -88,13 +93,19 @@
 
     <!-- ===== BLOG HERO ===== -->
     <section class="blog-hero" aria-label="Blog hero">
+        <div class="hero-aurora"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
         <div class="container">
-            <span class="section-tag">Blog</span>
-            <h1 class="section-title">AI Video <span class="gradient-text">Insights</span></h1>
-            <p class="section-desc">
-                Stay ahead of the curve with the latest news, tutorials, and insights
-                about AI video generation from the VisionAI team.
-            </p>
+            <div class="blog-hero-content">
+                <span class="section-tag">Blog</span>
+                <h1 class="section-title">AI Video <span class="gradient-text">Insights</span></h1>
+                <p class="section-desc">
+                    Stay ahead of the curve with the latest news, tutorials, and insights
+                    about AI video generation from the VisionAI team.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -105,22 +116,24 @@
                 <!-- ===== MAIN CONTENT ===== -->
                 <div class="blog-main">
                     <!-- Featured Post -->
-                    <article class="blog-post featured" data-reveal>
+                    <article class="blog-post featured glass-card" data-reveal>
                         <div class="post-thumb">
                             <img src="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop&crop=center" alt="Featured blog post" loading="lazy" />
                             <span class="post-category featured-cat">Featured</span>
+                            <span class="post-read-badge">8 min read</span>
                         </div>
                         <div class="post-content">
                             <div class="post-meta">
                                 <span class="post-date">January 15, 2026</span>
-                                <span class="post-read-time">8 min read</span>
+                                <span class="post-author">By VisionAI Team</span>
                             </div>
                             <h2 class="post-title">
                                 The Future of AI Video Generation: 2026 Trends and Beyond
                             </h2>
                             <p class="post-excerpt">
                                 Explore the groundbreaking trends shaping the AI video industry in 2026.
-                                From real-time generation to hyper-personalized content, discover what's next.
+                                From real-time generation to hyper-personalized content, discover what's next
+                                for creators and businesses alike.
                             </p>
                             <a href="blog-post.html" class="post-link">Read More →</a>
                         </div>
@@ -129,7 +142,7 @@
                     <!-- Blog Grid -->
                     <div class="blog-grid">
                         <!-- Post 1 -->
-                        <article class="blog-card" data-reveal data-delay="100">
+                        <article class="blog-card glass-card" data-reveal data-delay="100">
                             <div class="blog-thumb">
                                 <img src="https://images.unsplash.com/photo-1550751827-4bd374c3f58b?w=600&h=350&fit=crop&crop=center" alt="Blog post" loading="lazy" />
                                 <span class="post-category">Tutorial</span>
@@ -141,14 +154,15 @@
                                 </div>
                                 <h3 class="blog-title">How to Create Cinematic Videos with VisionAI</h3>
                                 <p class="blog-excerpt">
-                                    A step-by-step guide to producing Hollywood-quality videos using VisionAI's advanced features.
+                                    A step-by-step guide to producing Hollywood-quality videos using VisionAI's advanced
+                                    features and AI models.
                                 </p>
                                 <a href="blog-post.html" class="blog-link">Read More →</a>
                             </div>
                         </article>
 
                         <!-- Post 2 -->
-                        <article class="blog-card" data-reveal data-delay="150">
+                        <article class="blog-card glass-card" data-reveal data-delay="150">
                             <div class="blog-thumb">
                                 <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?w=600&h=350&fit=crop&crop=center" alt="Blog post" loading="lazy" />
                                 <span class="post-category">Technology</span>
@@ -160,14 +174,15 @@
                                 </div>
                                 <h3 class="blog-title">Understanding AI Video Models: A Deep Dive</h3>
                                 <p class="blog-excerpt">
-                                    Learn about the different AI models powering VisionAI and how they transform text into stunning visuals.
+                                    Learn about the different AI models powering VisionAI and how they transform text
+                                    into stunning, cinematic visuals.
                                 </p>
                                 <a href="blog-post.html" class="blog-link">Read More →</a>
                             </div>
                         </article>
 
                         <!-- Post 3 -->
-                        <article class="blog-card" data-reveal data-delay="200">
+                        <article class="blog-card glass-card" data-reveal data-delay="200">
                             <div class="blog-thumb">
                                 <img src="https://images.unsplash.com/photo-1498050108023-c5249f4df085?w=600&h=350&fit=crop&crop=center" alt="Blog post" loading="lazy" />
                                 <span class="post-category">Business</span>
@@ -179,14 +194,15 @@
                                 </div>
                                 <h3 class="blog-title">AI Video Marketing: How to Grow Your Brand</h3>
                                 <p class="blog-excerpt">
-                                    Discover how businesses are leveraging AI-generated videos to boost engagement and drive conversions.
+                                    Discover how businesses are leveraging AI-generated videos to boost engagement,
+                                    drive conversions, and build brand authority.
                                 </p>
                                 <a href="blog-post.html" class="blog-link">Read More →</a>
                             </div>
                         </article>
 
                         <!-- Post 4 -->
-                        <article class="blog-card" data-reveal data-delay="100">
+                        <article class="blog-card glass-card" data-reveal data-delay="100">
                             <div class="blog-thumb">
                                 <img src="https://images.unsplash.com/photo-1509062522246-3755977927d7?w=600&h=350&fit=crop&crop=center" alt="Blog post" loading="lazy" />
                                 <span class="post-category">Tutorial</span>
@@ -198,14 +214,15 @@
                                 </div>
                                 <h3 class="blog-title">Creating Educational Videos with AI</h3>
                                 <p class="blog-excerpt">
-                                    Learn how to create engaging educational content using VisionAI's powerful AI video generation tools.
+                                    Learn how to create engaging educational content using VisionAI's powerful
+                                    AI video generation tools and templates.
                                 </p>
                                 <a href="blog-post.html" class="blog-link">Read More →</a>
                             </div>
                         </article>
 
                         <!-- Post 5 -->
-                        <article class="blog-card" data-reveal data-delay="150">
+                        <article class="blog-card glass-card" data-reveal data-delay="150">
                             <div class="blog-thumb">
                                 <img src="https://images.unsplash.com/photo-1556761175-5973dc0f32e7?w=600&h=350&fit=crop&crop=center" alt="Blog post" loading="lazy" />
                                 <span class="post-category">Technology</span>
@@ -217,14 +234,15 @@
                                 </div>
                                 <h3 class="blog-title">The Evolution of AI in Video Production</h3>
                                 <p class="blog-excerpt">
-                                    Explore the journey of AI video technology from its early days to the cutting-edge solutions of today.
+                                    Explore the journey of AI video technology from its early days to the
+                                    cutting-edge solutions of today.
                                 </p>
                                 <a href="blog-post.html" class="blog-link">Read More →</a>
                             </div>
                         </article>
 
                         <!-- Post 6 -->
-                        <article class="blog-card" data-reveal data-delay="200">
+                        <article class="blog-card glass-card" data-reveal data-delay="200">
                             <div class="blog-thumb">
                                 <img src="https://images.unsplash.com/photo-1557838923-2985c318be48?w=600&h=350&fit=crop&crop=center" alt="Blog post" loading="lazy" />
                                 <span class="post-category">Product</span>
@@ -236,7 +254,8 @@
                                 </div>
                                 <h3 class="blog-title">VisionAI 2.0: What's New and Improved</h3>
                                 <p class="blog-excerpt">
-                                    Discover the exciting new features and improvements in the latest version of VisionAI.
+                                    Discover the exciting new features and improvements in the latest version
+                                    of VisionAI, including enhanced AI models and new templates.
                                 </p>
                                 <a href="blog-post.html" class="blog-link">Read More →</a>
                             </div>
@@ -260,7 +279,7 @@
                 <!-- ===== SIDEBAR ===== -->
                 <aside class="blog-sidebar" aria-label="Blog sidebar">
                     <!-- Search -->
-                    <div class="sidebar-widget search-widget" data-reveal>
+                    <div class="sidebar-widget search-widget glass-card" data-reveal>
                         <h4 class="widget-title">Search</h4>
                         <form class="search-form" id="blogSearchForm">
                             <input type="text" placeholder="Search articles..." aria-label="Search blog" />
@@ -269,7 +288,7 @@
                     </div>
 
                     <!-- Categories -->
-                    <div class="sidebar-widget categories-widget" data-reveal data-delay="100">
+                    <div class="sidebar-widget categories-widget glass-card" data-reveal data-delay="100">
                         <h4 class="widget-title">Categories</h4>
                         <ul class="categories-list">
                             <li><a href="#">Tutorials <span class="cat-count">(12)</span></a></li>
@@ -282,7 +301,7 @@
                     </div>
 
                     <!-- Recent Posts -->
-                    <div class="sidebar-widget recent-widget" data-reveal data-delay="200">
+                    <div class="sidebar-widget recent-widget glass-card" data-reveal data-delay="200">
                         <h4 class="widget-title">Recent Posts</h4>
                         <ul class="recent-list">
                             <li>
@@ -333,7 +352,7 @@
                     </div>
 
                     <!-- Newsletter (sidebar) -->
-                    <div class="sidebar-widget newsletter-widget" data-reveal data-delay="300">
+                    <div class="sidebar-widget newsletter-widget glass-card" data-reveal data-delay="300">
                         <h4 class="widget-title">Newsletter</h4>
                         <p class="widget-desc">Get the latest AI video insights delivered to your inbox.</p>
                         <form class="sidebar-newsletter" id="sidebarNewsletter">
@@ -350,19 +369,21 @@
     <!-- ===== CTA ===== -->
     <section class="cta" aria-label="Call to action">
         <div class="container">
-            <div class="cta-card" data-reveal>
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
                 <div class="cta-content">
+                    <span class="cta-tag">📬 Stay Updated</span>
                     <h2 class="cta-title">Stay <span class="gradient-text">Ahead</span> with VisionAI</h2>
                     <p class="cta-desc">
                         Subscribe to our newsletter for the latest AI video insights,
-                        tutorials, and product updates.
+                        tutorials, and product updates delivered straight to your inbox.
                     </p>
                     <div class="cta-actions">
-                        <a href="signup.html" class="btn btn-primary btn-lg">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
                             Subscribe Now
                             <span class="btn-arrow">→</span>
                         </a>
-                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Us</a>
+                        <a href="contact.html" class="btn btn-glass btn-lg">Contact Us</a>
                     </div>
                 </div>
             </div>
@@ -383,10 +404,11 @@
                         marketers, and businesses. Transform your ideas into stunning videos.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -400,18 +422,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Company</h4>
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="docs.html">Documentation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="api.html">API Reference</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
@@ -420,14 +443,21 @@
                     <h4 class="footer-heading">Newsletter</h4>
                     <p class="footer-desc">Stay updated with the latest features and releases.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
-                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">Subscribe</button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
                     </form>
-                    <p id="newsletterMessage" class="newsletter-message"></p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>

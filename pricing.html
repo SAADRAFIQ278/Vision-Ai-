@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="pricing.css" />
@@ -48,8 +47,14 @@
             <span></span>
             <span></span>
         </div>
-        <p class="loader-text">VisionAI</p>
+        <p class="loader-text">Vision<span>AI</span></p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- ===== STICKY NAVBAR ===== -->
     <header id="navbar" role="banner" aria-label="Main navigation">
@@ -74,8 +79,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -88,13 +93,19 @@
 
     <!-- ===== PRICING HERO ===== -->
     <section class="pricing-hero" aria-label="Pricing hero">
+        <div class="hero-aurora"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
         <div class="container">
-            <span class="section-tag">Pricing</span>
-            <h1 class="section-title">Choose Your <span class="gradient-text">Plan</span></h1>
-            <p class="section-desc">
-                Flexible pricing designed to fit your needs. Start creating stunning AI videos
-                with the plan that works best for you.
-            </p>
+            <div class="pricing-hero-content">
+                <span class="section-tag">Pricing</span>
+                <h1 class="section-title">Choose Your <span class="gradient-text">Plan</span></h1>
+                <p class="section-desc">
+                    Flexible pricing designed to fit your needs. Start creating stunning AI videos
+                    with the plan that works best for you.
+                </p>
+            </div>
         </div>
     </section>
 
@@ -118,6 +129,7 @@
             <div class="pricing-grid">
                 <!-- Starter Plan -->
                 <div class="pricing-card" data-plan="starter" data-reveal data-delay="100">
+                    <div class="pricing-card-glow"></div>
                     <div class="pricing-header">
                         <h4 class="pricing-name">Starter</h4>
                         <p class="pricing-desc">For individual creators</p>
@@ -135,11 +147,12 @@
                         <li>Community support</li>
                         <li>Watermark included</li>
                     </ul>
-                    <a href="signup.html" class="btn btn-outline btn-block">Get Started</a>
+                    <a href="signup.html" class="btn btn-ghost btn-block">Get Started</a>
                 </div>
 
                 <!-- Pro Plan (Featured) -->
                 <div class="pricing-card featured" data-plan="pro" data-reveal data-delay="150">
+                    <div class="pricing-card-glow"></div>
                     <div class="pricing-badge">Most Popular</div>
                     <div class="pricing-header">
                         <h4 class="pricing-name">Pro</h4>
@@ -160,14 +173,15 @@
                         <li>No watermark</li>
                         <li>API access</li>
                     </ul>
-                    <a href="signup.html" class="btn btn-primary btn-block">Get Started</a>
+                    <a href="signup.html" class="btn btn-primary btn-block btn-shine">Get Started</a>
                 </div>
 
                 <!-- Enterprise Plan -->
                 <div class="pricing-card" data-plan="enterprise" data-reveal data-delay="200">
+                    <div class="pricing-card-glow"></div>
                     <div class="pricing-header">
                         <h4 class="pricing-name">Enterprise</h4>
-                        <p class="pricing-desc">For large teams & orgs</p>
+                        <p class="pricing-desc">For large teams &amp; orgs</p>
                     </div>
                     <div class="pricing-price">
                         <span class="currency">$</span>
@@ -180,11 +194,11 @@
                         <li>Custom templates</li>
                         <li>Private model deployment</li>
                         <li>24/7 dedicated support</li>
-                        <li>SSO & enterprise security</li>
+                        <li>SSO &amp; enterprise security</li>
                         <li>Custom integrations</li>
                         <li>SLA guarantee</li>
                     </ul>
-                    <a href="contact.html" class="btn btn-outline btn-block">Contact Sales</a>
+                    <a href="contact.html" class="btn btn-ghost btn-block">Contact Sales</a>
                 </div>
             </div>
         </div>
@@ -268,7 +282,7 @@
                                 <td class="check">✓</td>
                             </tr>
                             <tr>
-                                <td>SSO & Enterprise Security</td>
+                                <td>SSO &amp; Enterprise Security</td>
                                 <td class="cross">✕</td>
                                 <td class="cross">✕</td>
                                 <td class="check">✓</td>
@@ -313,7 +327,7 @@
                         <p>Yes, you can upgrade or downgrade your plan at any time. Changes take effect at the start of your next billing cycle.</p>
                     </div>
                 </div>
-                <div class="faq-item" data-reveal>
+                <div class="faq-item" data-reveal data-delay="50">
                     <button class="faq-question" aria-expanded="false">
                         <span>Do you offer a free trial?</span>
                         <span class="faq-icon">+</span>
@@ -322,7 +336,7 @@
                         <p>Yes! We offer a 7-day free trial on all plans. No credit card required. Start creating AI videos today.</p>
                     </div>
                 </div>
-                <div class="faq-item" data-reveal>
+                <div class="faq-item" data-reveal data-delay="100">
                     <button class="faq-question" aria-expanded="false">
                         <span>What payment methods do you accept?</span>
                         <span class="faq-icon">+</span>
@@ -331,7 +345,7 @@
                         <p>We accept all major credit cards (Visa, Mastercard, American Express), PayPal, and bank transfers for enterprise plans.</p>
                     </div>
                 </div>
-                <div class="faq-item" data-reveal>
+                <div class="faq-item" data-reveal data-delay="150">
                     <button class="faq-question" aria-expanded="false">
                         <span>Can I cancel my subscription anytime?</span>
                         <span class="faq-icon">+</span>
@@ -340,7 +354,7 @@
                         <p>Absolutely. You can cancel your subscription at any time from your account settings. No cancellation fees.</p>
                     </div>
                 </div>
-                <div class="faq-item" data-reveal>
+                <div class="faq-item" data-reveal data-delay="200">
                     <button class="faq-question" aria-expanded="false">
                         <span>Is there a discount for annual billing?</span>
                         <span class="faq-icon">+</span>
@@ -349,7 +363,7 @@
                         <p>Yes! Annual billing saves you 20% compared to monthly billing. Switch to annual in the toggle above.</p>
                     </div>
                 </div>
-                <div class="faq-item" data-reveal>
+                <div class="faq-item" data-reveal data-delay="250">
                     <button class="faq-question" aria-expanded="false">
                         <span>What happens if I exceed my plan limits?</span>
                         <span class="faq-icon">+</span>
@@ -365,19 +379,21 @@
     <!-- ===== CTA ===== -->
     <section class="cta" aria-label="Call to action">
         <div class="container">
-            <div class="cta-card" data-reveal>
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
                 <div class="cta-content">
+                    <span class="cta-tag">🚀 Get Started</span>
                     <h2 class="cta-title">Start Creating with <span class="gradient-text">VisionAI</span> Today</h2>
                     <p class="cta-desc">
                         Join thousands of creators already using VisionAI. Choose your plan and
                         start generating stunning AI videos in minutes.
                     </p>
                     <div class="cta-actions">
-                        <a href="signup.html" class="btn btn-primary btn-lg">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
                             Start Free Trial
                             <span class="btn-arrow">→</span>
                         </a>
-                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
+                        <a href="contact.html" class="btn btn-glass btn-lg">Contact Sales</a>
                     </div>
                 </div>
             </div>
@@ -398,10 +414,11 @@
                         marketers, and businesses. Transform your ideas into stunning videos.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -415,18 +432,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Company</h4>
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="docs.html">Documentation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="api.html">API Reference</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
@@ -435,14 +453,21 @@
                     <h4 class="footer-heading">Newsletter</h4>
                     <p class="footer-desc">Stay updated with the latest features and releases.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
-                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">Subscribe</button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
                     </form>
-                    <p id="newsletterMessage" class="newsletter-message"></p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>

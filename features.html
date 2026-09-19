@@ -33,7 +33,6 @@
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/responsive.css" />
     <link rel="stylesheet" href="css/animations.css" />
-    <link rel="stylesheet" href="css/pages.css" />
 
     <!-- Page-specific CSS -->
     <link rel="stylesheet" href="features.css" />
@@ -48,8 +47,14 @@
             <span></span>
             <span></span>
         </div>
-        <p class="loader-text">VisionAI</p>
+        <p class="loader-text">Vision<span>AI</span></p>
+        <div class="loader-bar">
+            <div class="loader-bar-fill"></div>
+        </div>
     </div>
+
+    <!-- ===== CURSOR GLOW ===== -->
+    <div class="cursor-glow" id="cursorGlow"></div>
 
     <!-- ===== STICKY NAVBAR ===== -->
     <header id="navbar" role="banner" aria-label="Main navigation">
@@ -74,8 +79,8 @@
             </nav>
 
             <div class="nav-actions">
-                <a href="login.html" class="btn btn-outline btn-sm">Log In</a>
-                <a href="signup.html" class="btn btn-primary btn-sm">Get Started</a>
+                <a href="login.html" class="btn btn-ghost btn-sm">Log In</a>
+                <a href="signup.html" class="btn btn-primary btn-sm btn-shine">Get Started</a>
                 <button class="hamburger" aria-label="Toggle menu" aria-expanded="false">
                     <span></span>
                     <span></span>
@@ -88,13 +93,38 @@
 
     <!-- ===== FEATURES HERO ===== -->
     <section class="features-hero" aria-label="Features hero">
+        <div class="hero-aurora"></div>
+        <div class="hero-blob blob-1"></div>
+        <div class="hero-blob blob-2"></div>
+
         <div class="container">
-            <span class="section-tag">Features</span>
-            <h1 class="section-title">Powerful <span class="gradient-text">AI Tools</span> for Video Creation</h1>
-            <p class="section-desc">
-                VisionAI combines cutting-edge artificial intelligence with intuitive tools
-                to help you create professional videos faster than ever before.
-            </p>
+            <div class="features-hero-content">
+                <span class="section-tag">Features</span>
+                <h1 class="section-title">Powerful <span class="gradient-text">AI Tools</span> for Video Creation</h1>
+                <p class="section-desc">
+                    VisionAI combines cutting-edge artificial intelligence with intuitive tools
+                    to help you create professional videos faster than ever before.
+                </p>
+
+                <div class="features-hero-stats">
+                    <div class="hero-stat" data-reveal>
+                        <span class="hero-stat-number" data-count="12">0</span>
+                        <span class="hero-stat-label">AI Models</span>
+                    </div>
+                    <div class="hero-stat" data-reveal data-delay="100">
+                        <span class="hero-stat-number" data-count="200">0</span>
+                        <span class="hero-stat-label">+ Styles</span>
+                    </div>
+                    <div class="hero-stat" data-reveal data-delay="200">
+                        <span class="hero-stat-number" data-count="50">0</span>
+                        <span class="hero-stat-label">Languages</span>
+                    </div>
+                    <div class="hero-stat" data-reveal data-delay="300">
+                        <span class="hero-stat-number" data-count="99.2">0</span>
+                        <span class="hero-stat-label">% Accuracy</span>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
 
@@ -102,133 +132,207 @@
     <section class="features-grid-full" aria-label="All features">
         <div class="container">
             <div class="features-grid">
-                <div class="feature-detail-card" data-reveal data-delay="100">
+                <!-- Feature 1 - Large -->
+                <div class="feature-detail-card large" data-reveal data-delay="100">
+                    <div class="feature-card-glow"></div>
                     <span class="feature-icon">🎬</span>
+                    <span class="feature-badge">Flagship</span>
                     <h3 class="feature-title">Text-to-Video Generation</h3>
                     <p class="feature-desc">
                         Simply describe your vision in words, and VisionAI's advanced AI models
-                        will generate a fully-produced, cinematic video that matches your description.
+                        will generate a fully-produced, cinematic video that matches your description
+                        with stunning accuracy and visual fidelity.
                     </p>
+                    <div class="feature-tags">
+                        <span>⚡ Real-time</span>
+                        <span>🎨 200+ styles</span>
+                        <span>📱 8K</span>
+                    </div>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="150">
+                <!-- Feature 2 - Medium -->
+                <div class="feature-detail-card medium" data-reveal data-delay="150">
+                    <div class="feature-card-glow"></div>
                     <span class="feature-icon">🎨</span>
                     <h3 class="feature-title">AI Style Transfer</h3>
                     <p class="feature-desc">
-                        Apply cinematic styles, artistic filters, and visual effects to any video
-                        with a single click. Choose from dozens of professional styles.
+                        Apply cinematic styles, artistic filters, and visual effects with a
+                        single click. Choose from 200+ professional styles.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="200">
+                <!-- Feature 3 - Medium -->
+                <div class="feature-detail-card medium" data-reveal data-delay="200">
+                    <div class="feature-card-glow"></div>
                     <span class="feature-icon">⚡</span>
                     <h3 class="feature-title">Real-Time Rendering</h3>
                     <p class="feature-desc">
-                        Experience lightning-fast video generation with our optimized AI rendering
-                        engine. Get results in seconds, not hours.
+                        Experience lightning-fast video generation with our optimized AI
+                        rendering engine. Get results in seconds, not hours.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="100">
-                    <span class="feature-icon">🎞️</span>
+                <!-- Feature 4 - Small -->
+                <div class="feature-detail-card small" data-reveal data-delay="100">
+                    <div class="feature-icon">🎞️</div>
                     <h3 class="feature-title">Smart AI Editing</h3>
                     <p class="feature-desc">
                         Intelligent AI-assisted editing tools that understand your creative vision.
-                        Automatically cut, trim, and arrange clips based on content.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="150">
-                    <span class="feature-icon">🌐</span>
-                    <h3 class="feature-title">Multi-Language Support</h3>
+                <!-- Feature 5 - Small -->
+                <div class="feature-detail-card small" data-reveal data-delay="150">
+                    <div class="feature-icon">🌐</div>
+                    <h3 class="feature-title">Multi-Language</h3>
                     <p class="feature-desc">
-                        Generate videos in over 50 languages with natural-sounding AI voiceovers
-                        and accurate subtitle translations.
+                        Generate videos in over 50 languages with natural-sounding AI voiceovers.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="200">
-                    <span class="feature-icon">🔒</span>
+                <!-- Feature 6 - Small -->
+                <div class="feature-detail-card small" data-reveal data-delay="200">
+                    <div class="feature-icon">🔒</div>
                     <h3 class="feature-title">Enterprise Security</h3>
                     <p class="feature-desc">
-                        Bank-grade security with encrypted storage, private model deployment,
-                        and enterprise-grade access controls.
+                        Bank-grade security with encrypted storage and private model deployment.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="100">
-                    <span class="feature-icon">🎵</span>
-                    <h3 class="feature-title">AI Music & Sound Design</h3>
+                <!-- Feature 7 - Small -->
+                <div class="feature-detail-card small" data-reveal data-delay="250">
+                    <div class="feature-icon">🎵</div>
+                    <h3 class="feature-title">AI Music &amp; Sound</h3>
                     <p class="feature-desc">
-                        Automatically generate background music and sound effects that match
-                        the mood and pacing of your video.
+                        Automatically generate background music and sound effects.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="150">
-                    <span class="feature-icon">📱</span>
+                <!-- Feature 8 - Small -->
+                <div class="feature-detail-card small" data-reveal data-delay="300">
+                    <div class="feature-icon">📱</div>
                     <h3 class="feature-title">Multi-Platform Export</h3>
                     <p class="feature-desc">
-                        Export your videos in any format, optimized for social media, websites,
-                        presentations, or broadcast in up to 8K resolution.
+                        Export in any format up to 8K resolution.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="200">
+                <!-- Feature 9 - Medium -->
+                <div class="feature-detail-card medium" data-reveal data-delay="150">
+                    <div class="feature-card-glow"></div>
                     <span class="feature-icon">🤖</span>
                     <h3 class="feature-title">AI-Powered Analytics</h3>
                     <p class="feature-desc">
                         Get insights on video performance, engagement predictions, and AI
-                        recommendations to improve your content.
+                        recommendations to improve your content strategy.
                     </p>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
 
-                <div class="feature-detail-card" data-reveal data-delay="100">
-                    <span class="feature-icon">🔄</span>
-                    <h3 class="feature-title">Version Control</h3>
-                    <p class="feature-desc">
-                        Keep track of all your video versions and edits with built-in version
-                        control. Never lose your work again.
-                    </p>
-                </div>
-
-                <div class="feature-detail-card" data-reveal data-delay="150">
+                <!-- Feature 10 - Large -->
+                <div class="feature-detail-card large" data-reveal data-delay="200">
+                    <div class="feature-card-glow"></div>
                     <span class="feature-icon">👥</span>
+                    <span class="feature-badge">Pro</span>
                     <h3 class="feature-title">Collaborative Workspace</h3>
                     <p class="feature-desc">
                         Invite team members to collaborate on video projects. Share drafts,
-                        leave comments, and work together in real-time.
+                        leave comments, and work together in real-time with version control
+                        and team management features.
                     </p>
-                </div>
-
-                <div class="feature-detail-card" data-reveal data-delay="200">
-                    <span class="feature-icon">📊</span>
-                    <h3 class="feature-title">Custom Templates</h3>
-                    <p class="feature-desc">
-                        Create and save your own templates for consistent branding and
-                        faster video production.
-                    </p>
+                    <div class="feature-tags">
+                        <span>👥 Team</span>
+                        <span>💬 Comments</span>
+                        <span>📁 Version Control</span>
+                    </div>
+                    <a href="#" class="feature-link">Learn More →</a>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- ===== FEATURES CTA ===== -->
+    <!-- ===== FEATURE DEMO SECTION ===== -->
+    <section class="feature-demo-section" aria-label="Feature demo">
+        <div class="container">
+            <div class="feature-demo-wrapper" data-reveal>
+                <div class="feature-demo-content">
+                    <span class="section-tag">See It In Action</span>
+                    <h2 class="feature-demo-title">Watch <span class="gradient-text">AI Video Generation</span> in Real-Time</h2>
+                    <p class="feature-demo-desc">
+                        Experience the power of VisionAI's video generation engine. Watch as
+                        we transform a simple text prompt into a stunning cinematic video.
+                    </p>
+                    <div class="feature-demo-steps">
+                        <div class="demo-step">
+                            <span class="step-number">1</span>
+                            <span class="step-text">Enter your prompt</span>
+                        </div>
+                        <div class="demo-step">
+                            <span class="step-number">2</span>
+                            <span class="step-text">AI analyzes &amp; generates</span>
+                        </div>
+                        <div class="demo-step">
+                            <span class="step-number">3</span>
+                            <span class="step-text">Export in seconds</span>
+                        </div>
+                    </div>
+                    <a href="signup.html" class="btn btn-primary btn-lg btn-shine">Try It Free →</a>
+                </div>
+                <div class="feature-demo-video">
+                    <div class="demo-video-card glass-card">
+                        <video
+                            class="demo-video"
+                            muted
+                            loop
+                            playsinline
+                            poster="https://images.unsplash.com/photo-1531482615713-2afd69097998?w=800&h=450&fit=crop&crop=center"
+                            loading="lazy"
+                        >
+                            <source src="https://assets.mixkit.co/videos/preview/mixkit-technology-ai-..." type="video/mp4" />
+                        </video>
+                        <div class="demo-overlay">
+                            <button class="demo-play-btn" aria-label="Play demo">
+                                <span class="play-icon-lg">▶</span>
+                            </button>
+                        </div>
+                        <div class="demo-status-bar">
+                            <span class="demo-status-text">✨ AI Generating...</span>
+                            <span class="demo-progress-bar">
+                                <span class="demo-progress-fill" style="width: 0%;"></span>
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ===== CTA ===== -->
     <section class="cta" aria-label="Call to action">
         <div class="container">
-            <div class="cta-card" data-reveal>
+            <div class="cta-card glass-card" data-reveal>
+                <div class="cta-glow"></div>
                 <div class="cta-content">
+                    <span class="cta-tag">🚀 Get Started</span>
                     <h2 class="cta-title">Ready to Experience <span class="gradient-text">AI Video Magic</span>?</h2>
                     <p class="cta-desc">
                         Join thousands of creators already using VisionAI to produce stunning videos.
                         Start your free trial today.
                     </p>
                     <div class="cta-actions">
-                        <a href="signup.html" class="btn btn-primary btn-lg">
+                        <a href="signup.html" class="btn btn-primary btn-lg btn-shine">
                             Start Free Trial
                             <span class="btn-arrow">→</span>
                         </a>
-                        <a href="contact.html" class="btn btn-outline btn-lg">Contact Sales</a>
+                        <a href="contact.html" class="btn btn-glass btn-lg">Contact Sales</a>
                     </div>
                 </div>
             </div>
@@ -249,10 +353,11 @@
                         marketers, and businesses. Transform your ideas into stunning videos.
                     </p>
                     <div class="footer-social">
-                        <a href="#" aria-label="Twitter">🐦</a>
-                        <a href="#" aria-label="LinkedIn">🔗</a>
-                        <a href="#" aria-label="YouTube">📺</a>
-                        <a href="#" aria-label="GitHub">🐙</a>
+                        <a href="#" aria-label="Twitter" class="social-link">🐦</a>
+                        <a href="#" aria-label="LinkedIn" class="social-link">🔗</a>
+                        <a href="#" aria-label="YouTube" class="social-link">📺</a>
+                        <a href="#" aria-label="GitHub" class="social-link">🐙</a>
+                        <a href="#" aria-label="Discord" class="social-link">💬</a>
                     </div>
                 </div>
                 <div class="footer-links">
@@ -266,18 +371,19 @@
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Company</h4>
+                    <h4 class="footer-heading">Resources</h4>
                     <ul>
-                        <li><a href="about.html">About</a></li>
-                        <li><a href="blog.html">Blog</a></li>
-                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="docs.html">Documentation</a></li>
                         <li><a href="faq.html">FAQ</a></li>
+                        <li><a href="blog.html">Blog</a></li>
+                        <li><a href="api.html">API Reference</a></li>
                     </ul>
                 </div>
                 <div class="footer-links">
-                    <h4 class="footer-heading">Legal</h4>
+                    <h4 class="footer-heading">Company</h4>
                     <ul>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
                         <li><a href="privacy.html">Privacy Policy</a></li>
                         <li><a href="terms.html">Terms of Service</a></li>
                     </ul>
@@ -286,14 +392,21 @@
                     <h4 class="footer-heading">Newsletter</h4>
                     <p class="footer-desc">Stay updated with the latest features and releases.</p>
                     <form class="newsletter-form" id="newsletterForm" novalidate>
-                        <input type="email" placeholder="Enter your email" aria-label="Email address" required />
-                        <button type="submit" class="btn btn-primary btn-sm">Subscribe</button>
+                        <div class="newsletter-input-group">
+                            <input type="email" placeholder="Enter your email" aria-label="Email address" required />
+                            <button type="submit" class="btn btn-primary btn-sm btn-shine">Subscribe</button>
+                        </div>
+                        <p id="newsletterMessage" class="newsletter-message"></p>
                     </form>
-                    <p id="newsletterMessage" class="newsletter-message"></p>
+                    <div class="footer-badges">
+                        <span class="badge">🔒 GDPR Compliant</span>
+                        <span class="badge">✓ 256-bit Encryption</span>
+                        <span class="badge">🌍 99.9% Uptime</span>
+                    </div>
                 </div>
             </div>
             <div class="footer-bottom">
-                <p>&copy; 2026 VisionAI. All rights reserved.</p>
+                <p>&copy; 2026 VisionAI. All rights reserved. Made with ◆ by the VisionAI team.</p>
                 <div class="footer-bottom-links">
                     <a href="privacy.html">Privacy</a>
                     <a href="terms.html">Terms</a>
